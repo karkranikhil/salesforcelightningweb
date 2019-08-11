@@ -1,36 +1,70 @@
 <template>
+    <div class="fontSize-2rem margin-0 fontWeight-700">
+        Lightning Web Components (LWC)
+    </div>
 
-        <div class="fontSize-2rem margin-0 fontWeight-700">Lightning Web Components (LWC)</div>
+    <p>
+        Lightning web components are custom HTML elements built using HTML and
+        modern JavaScript.
+    </p>
+    <ul>
+        <li>
+            Lightning Web Components uses core Web Components standards and
+            provides only what’s necessary to perform well in browsers supported
+            by <strong>Salesforce</strong>
+        </li>
+        <li>
+            Lightning Web Components is lightweight and delivers exceptional
+            performance Because it’s built on code that runs natively in
+            browsers
+        </li>
+    </ul>
 
-        <p>
-           Lightning web components are custom HTML elements built using HTML and modern JavaScript.
-        </p>
-        <ul>
-            <li>Lightning Web Components uses core Web Components standards and provides only what’s necessary to perform well in browsers supported by <strong>Salesforce</strong></li>
-            <li>Lightning Web Components is lightweight and delivers exceptional performance Because it’s built on code that runs natively in browsers </li>
-        </ul>
-        
-        <h2>Web Components</h2>
-        <p>Web Components are a set of standards that allow us to write modular, reusable and encapsulated HTML elements. And the best thing about them: since they're based on web standards, we don't have to install any framework or library to start using them. You can start writing web components using vanilla javascript, right now!</p>
-        
-        <h2>Key concepts of Web components</h2>
-        <div class="key-concept-section">
-                <div><strong>1) Custom Elements</strong></div>
-                <div>The Custom Elements api allows us to create our own DOM elements. 
-                    Using this api, we can define a custom element, and inform the parser how to properly construct that element and how elements of
-                     that class should react to changes. Now you can create your own HTML element, like
-                     </div>
+    <h2>Web Components</h2>
+    <p>
+        Web Components are a set of standards that allow us to write modular,
+        reusable and encapsulated HTML elements. And the best thing about them:
+        since they're based on web standards, we don't have to install any
+        framework or library to start using them. You can start writing web
+        components using vanilla javascript, right now!
+    </p>
+
+    <h2>Key concepts of Web components</h2>
+    <div class="key-concept-section">
+        <div><strong>1) Custom Elements</strong></div>
+        <div>
+            The Custom Elements api allows us to create our own DOM elements.
+            Using this api, we can define a custom element, and inform the
+            parser how to properly construct that element and how elements of
+            that class should react to changes. Now you can create your own HTML
+            element, like
         </div>
-        <div class="key-concept-section">
-                <div><strong>2) Shadow DOM</strong></div>
-                <div>Shadow DOM gives us a way to encapsulate the styling and markup of our components. It's a sub DOM tree attached to a DOM element, to make sure none of our styling leaks out, or gets overwritten by any external styles. This makes it great for modularity.</div>                
+    </div>
+    <div class="key-concept-section">
+        <div><strong>2) Shadow DOM</strong></div>
+        <div>
+            Shadow DOM gives us a way to encapsulate the styling and markup of
+            our components. It's a sub DOM tree attached to a DOM element, to
+            make sure none of our styling leaks out, or gets overwritten by any
+            external styles. This makes it great for modularity.
         </div>
-        <div class="key-concept-section">
-                <div><strong>3) ES Modules</strong></div>
-                <div>The ES Modules specification defines the inclusion and reuse of JS documents in a standards based, modular, performant way.</div>            
+    </div>
+    <div class="key-concept-section">
+        <div><strong>3) ES Modules</strong></div>
+        <div>
+            The ES Modules specification defines the inclusion and reuse of JS
+            documents in a standards based, modular, performant way.
         </div>
-        <div class="key-concept-section">
-                <div><strong>4) HTML Templates</strong></div>
-                <div>The HTML &lt;template&gt; tag allows us to write reusable chunks of DOM. Inside a template, scripts don't run, images don't load, and styling/mark up is not rendered. A template tag itself is not even considered to be in the document, until it's activated. HTML templates are great, because for every instance of our element, only 1 template is used.</div>        
+    </div>
+    <div class="key-concept-section">
+        <div><strong>4) HTML Templates</strong></div>
+        <div>
+            The HTML &lt;template&gt; tag allows us to write reusable chunks of
+            DOM. Inside a template, scripts don't run, images don't load, and
+            styling/mark up is not rendered. A template tag itself is not even
+            considered to be in the document, until it's activated. HTML
+            templates are great, because for every instance of our element, only
+            1 template is used.
         </div>
+    </div>
 </template>

@@ -11,10 +11,10 @@
 .flex-main-section {
     flex-grow: 10;
     padding: 1rem 2rem;
-    color:#000;
+    color: #000;
     font-family: 'arial';
     width: 80%;
 }
-.width10{
-    width:10%;
+.width10 {
+    width: 10%;
 }

@@ -1,6 +1,3 @@
-
 import { LightningElement } from 'lwc';
 
-export default class WhyLwc extends LightningElement {
- 
-}
+export default class WhyLwc extends LightningElement {}

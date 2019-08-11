@@ -1,1 +1,1 @@
-export const Bootstrap ='/resources/css/bootstrap.css'
+export const Bootstrap = '/resources/css/bootstrap.css';

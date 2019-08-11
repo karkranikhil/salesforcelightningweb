@@ -10,13 +10,14 @@
         "popper.js": "^1.15.0"
     },
     "devDependencies": {
+        "gh-pages": "^2.1.1",
         "husky": "^2.3",
         "lint-staged": "^8.1.5"
     },
     "engines": {
         "node": ">=10.0.0"
     },
-    "homepage": "https://github.com/karkranikhil/schoolofsalesforce",
+    "homepage": "https://karkranikhil.github.io/schoolofsalesforce",
     "husky": {
         "hooks": {
             "pre-commit": "lint-staged"
@@ -37,7 +38,7 @@
             "git add"
         ]
     },
-    "repository": "nikhil karkra/schoolofsalesforce",
+    "repository": "https://github.com/karkranikhil/schoolofsalesforce.git",
     "scripts": {
         "build": "lwc-services build -m production",
         "build:development": "lwc-services build",
@@ -50,6 +51,8 @@
         "test:unit:coverage": "lwc-services test --coverage",
         "test:unit:debug": "lwc-services test --debug",
         "test:unit:watch": "lwc-services test --watch",
-        "watch": "lwc-services watch"
+        "watch": "lwc-services watch",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
     }
 }
