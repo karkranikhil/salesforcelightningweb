@@ -1,0 +1,55 @@
+{
+    "name": "schoolofsalesforce",
+    "version": "0.0.0",
+    "author": "nikhil karkra",
+    "bugs": "https://github.com/nikhil karkra/schoolofsalesforce/issues",
+    "dependencies": {
+        "bootstrap": "^4.3.1",
+        "jquery": "^3.4.1",
+        "lwc-services": "^1",
+        "popper.js": "^1.15.0"
+    },
+    "devDependencies": {
+        "husky": "^2.3",
+        "lint-staged": "^8.1.5"
+    },
+    "engines": {
+        "node": ">=10.0.0"
+    },
+    "homepage": "https://github.com/nikhil karkra/schoolofsalesforce",
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "keywords": [
+        "lwc"
+    ],
+    "license": "MIT",
+    "lint-staged": {
+        "**/*.{css,html,js,json,md,yaml,yml}": [
+            "prettier --write"
+        ],
+        "**/modules/**/*.js": [
+            "eslint"
+        ],
+        "*": [
+            "git add"
+        ]
+    },
+    "repository": "nikhil karkra/schoolofsalesforce",
+    "scripts": {
+        "build": "lwc-services build -m production",
+        "build:development": "lwc-services build",
+        "lint": "eslint ./src/**/*.js",
+        "prettier": "prettier --write '**/*.{css,html,js,json,md,yaml,yml}'",
+        "prettier:verify": "prettier --list-different '**/*.{css,html,js,json,md,yaml,yml}'",
+        "serve": "lwc-services serve",
+        "start":"npm run watch",
+        "test:unit": "lwc-services test",
+        "test:unit:coverage": "lwc-services test --coverage",
+        "test:unit:debug": "lwc-services test --debug",
+        "test:unit:watch": "lwc-services test --watch",
+        "watch": "lwc-services watch"
+    }
+}
