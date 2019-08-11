@@ -1,14 +1,13 @@
 import { LightningElement, api, track } from 'lwc';
 
 export default class NavBar extends LightningElement {
-    @track currentNavItem
+    @track currentNavItem;
     @api set navLists(value) {
-        this._navList = value
+        this._navList = value;
     }
     get navLists() {
         return this._navList;
     }
-
 
     // @api
     // set selectedItem(value) {
@@ -21,9 +20,8 @@ export default class NavBar extends LightningElement {
     //     return this.currentNavItem;
     // }
 
-
     handleNavItemClick(event) {
-        let selectedValue = event.currentTarget.dataset.value
+        let selectedValue = event.currentTarget.dataset.value;
         event.preventDefault();
         this.dispatchEvent(
             new CustomEvent('categorychange', {
@@ -31,6 +29,5 @@ export default class NavBar extends LightningElement {
                 bubbles: true
             })
         );
-       
     }
 }

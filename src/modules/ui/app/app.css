@@ -2,11 +2,19 @@
     display: flex;
     align-items: stretch;
     background-color: #f1f1f1;
+    min-height: 100vh;
 }
 .flex-child {
     color: white;
-    flex-grow: 1
+    flex-grow: 1;
 }
-.flex-main-section{
-    flex-grow: 10
+.flex-main-section {
+    flex-grow: 10;
+    padding: 1rem 2rem;
+    color:#000;
+    font-family: 'arial';
+    width: 80%;
+}
+.width10{
+    width:10%;
 }

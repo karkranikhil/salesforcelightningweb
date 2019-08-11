@@ -1,30 +1,26 @@
 <template>
     <div class="flex-container">
         <div class="flex-child">
-                <ui-navbar
+            <ui-navbar
                 nav-lists={routesList}
-                oncategorychange={handleCategoryChange}>
-        </ui-navbar>
-
+                oncategorychange={handleCategoryChange}
+            >
+            </ui-navbar>
         </div>
         <div class="flex-child flex-main-section">
-                <template id="nik" if:true={selectedRoute.hello.selected}>
-                         <!-- <recipe-hello></recipe-hello>
-                        <recipe-hello-binding></recipe-hello-binding>
-                        <recipe-hello-expressions></recipe-hello-expressions>
-                        <recipe-hello-conditional-rendering></recipe-hello-conditional-rendering>
-                        <recipe-hello-for-each></recipe-hello-for-each
-                        ><recipe-hello-iterator></recipe-hello-iterator>  -->
-                        <div>Hello</div>
-                    </template>
-                    
-                    <template if:true={selectedRoute.nello.selected}>
-                        <div>nello</div>
-                    </template>
-                    <template if:true={selectedRoute.pello.selected}>
-                            <div>pello</div>
-                        </template>
+            <template if:true={selectedRoute.introduction.selected}>
+                <examples-introduction></examples-introduction>
+            </template>
 
-        </div> 
+            <template if:true={selectedRoute.whyLwc.selected}>
+                <examples-why-lwc></examples-why-lwc>
+            </template>
+            <template if:true={selectedRoute.advantage.selected}>
+                <examples-advantages></examples-advantages>
+            </template>
+            <template if:true={selectedRoute.browserSupport.selected}>
+                <examples-browser-support></examples-browser-support>
+            </template>
+        </div>
     </div>
 </template>

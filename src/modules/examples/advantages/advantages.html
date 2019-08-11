@@ -1,0 +1,45 @@
+<template>
+        <div class="fontSize-2rem margin-0 fontWeight-700">Advantages of Lightning Web Components</div>
+
+        <h3>1) Better Security</h3>
+        <ul>
+            <li><strong>JavaScript Strict Mode Enforcement</strong>
+                <span>In JavaScript, strict mode is enforced in modules but optional in regular programs. However, Lightning Locker implicitly enables JavaScript strict mode everywhere. You don’t need to specify "use strict" in your code. JavaScript strict mode makes code more secure, robust, and supportable.</span>
+            </li>
+            <li><strong>DOM Access Containment</strong>
+            <span>A component can only traverse the DOM and access elements that it created. This behavior prevents the anti-pattern of reaching into DOM elements owned by other components. Lightning web components can’t use the window or document global properties to query for DOM elements. For example, use this.template.querySelector() instead of document.querySelector().</span>
+        </li>
+            <li><strong>Secure Wrappers</strong>
+            <span>For security, Lightning Locker restricts the use of global objects by hiding an object or by wrapping it in a secure version of the object. For example, the secure version of window is SecureWindow. Locker intercepts calls to window and uses SecureWindow instead.</span>
+        </li>
+            <li><strong>Restricted Access to Salesforce Global Variables</strong>
+            <span>Lightning web components don't have access to: <strong>$A, Aura, Sfdc, sforce</strong></span>
+        </li>
+        <li><strong>Content Security Policy Overview</strong>
+            <span>The Lightning Component framework uses Content Security Policy (CSP), which is a W3C standard, to control the source of content that can be loaded on a page. CSP helps prevent cross-site scripting (XSS) and other code injection attacks. All CSP rules work at the page level, and apply to all components and libraries.</span>
+         </li>
+         <li>
+            <strong>Call APIs from Apex</strong>
+            <span> To call an API from Apex, use a named credential, which specifies the URL of a callout endpoint and its required authentication parameters</span>
+         </li>
+
+        </ul>
+
+        <h3>2) Better Testing</h3>
+        <div>Install Jest for Testing Lightning Web Components</div>
+        
+        <h3>3) Better performance</h3>
+        <div>Rendering is so much faster in LWC due to browser API support. Smaller components in terms of overall markup and script size</div>
+        <h3>4) Less need for Apex</h3>
+        <ul>
+            <li>lightning-record-form, lightning-record-edit-form, and lightning-record-view-form</li>
+            <li>Components use @wire in their JavaScript class to read data from one of the wire adapters in the lightning/ui*Api modules.</li>
+        </ul>
+
+        <h3>5) Better browser compatibility</h3>
+        
+        <h3>6) Better Reusability</h3>
+        
+        <h3>7) Avoiding multiple Apex controllers</h3>
+        
+</template>

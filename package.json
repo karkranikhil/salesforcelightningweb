@@ -2,7 +2,7 @@
     "name": "schoolofsalesforce",
     "version": "0.0.0",
     "author": "nikhil karkra",
-    "bugs": "https://github.com/nikhil karkra/schoolofsalesforce/issues",
+    "bugs": "https://github.com/karkranikhil/schoolofsalesforce/issues",
     "dependencies": {
         "bootstrap": "^4.3.1",
         "jquery": "^3.4.1",
@@ -16,7 +16,7 @@
     "engines": {
         "node": ">=10.0.0"
     },
-    "homepage": "https://github.com/nikhil karkra/schoolofsalesforce",
+    "homepage": "https://github.com/karkranikhil/schoolofsalesforce",
     "husky": {
         "hooks": {
             "pre-commit": "lint-staged"
@@ -45,7 +45,7 @@
         "prettier": "prettier --write '**/*.{css,html,js,json,md,yaml,yml}'",
         "prettier:verify": "prettier --list-different '**/*.{css,html,js,json,md,yaml,yml}'",
         "serve": "lwc-services serve",
-        "start":"npm run watch",
+        "start": "npm run watch",
         "test:unit": "lwc-services test",
         "test:unit:coverage": "lwc-services test --coverage",
         "test:unit:debug": "lwc-services test --debug",

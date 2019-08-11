@@ -20,35 +20,43 @@
 
 // export { routesList, navigationElements };
 
-
 export const routesList = [
     {
-        title: 'Hello',
-        value: 'hello',
-        classlist:'active',
-        selected:true
+        title: 'Introduction',
+        value: 'introduction',
+        classlist: 'active',
+        selected: true
     },
     {
-        title: 'Nello',
-        value: 'nello',
-        classlist:'',
-        selected:false
+        title: 'Why LWC',
+        value: 'whyLwc',
+        classlist: '',
+        selected: false
     },
     {
-        title: 'Pello',
-        value: 'pello',
-        classlist:'',
-        selected:false
+        title: 'Advantages of LWC',
+        value: 'advantage',
+        classlist: '',
+        selected: false
+    },
+    {
+        title: 'Browser Support',
+        value: 'browserSupport',
+        classlist: '',
+        selected: false
     }
-]
+];
 export const selectedRoute = {
-    hello:{
-        selected:true
+    introduction: {
+        selected: true
     },
-    nello:{
-        selected:false
+    whyLwc: {
+        selected: false
     },
-    pello:{
-        selected:false
+    advantage: {
+        selected: false
+    },
+    browserSupport: {
+        selected: false
     }
-}
+};
