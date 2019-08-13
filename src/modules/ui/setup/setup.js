@@ -10,9 +10,7 @@ export default class Setup extends LightningElement {
     //         <meta charset="utf-8" />
     //         <title>Dynamic Gist Embedding</title>
     //     </head>
-        
     //     <body>
-        
     //     <p>
     //         <label for="gistList">Gists</label>
     //         <select id="gistList">
@@ -22,9 +20,7 @@ export default class Setup extends LightningElement {
     //             <option value="785766">How to PHP regex match an HTML document's meta description</option>
     //         </select>
     //     </p>
-        
     //     <div id="gistZone"></div>
-        
     //     <script type="text/javascript">
     //         document.getElementById("gistList").onchange = function(e) {
     //             if (e.target.value) {
@@ -32,40 +28,31 @@ export default class Setup extends LightningElement {
     //                 var gistFrame = document.createElement("iframe");
     //                 gistFrame.setAttribute("width", "100%");
     //                 gistFrame.id = "gistFrame";
-                    
     //                 var zone = document.getElementById("gistZone");
     //                 zone.innerHTML = "";
     //                 zone.appendChild(gistFrame);
-                    
     //                 // Create the iframe's document
     //                 var gistFrameHTML = '<html><body onload="parent.adjustIframeSize(document.body.scrollHeight)"><scr' + 'ipt type="text/javascript" src="https://gist.github.com/' + e.target.value + '.js"></sc'+'ript></body></html>';
-                    
     //                 // Set iframe's document with a trigger for this document to adjust the height
     //                 var gistFrameDoc = gistFrame.document;
-                    
     //                 if (gistFrame.contentDocument) {
     //                     gistFrameDoc = gistFrame.contentDocument;
     //                 } else if (gistFrame.contentWindow) {
     //                     gistFrameDoc = gistFrame.contentWindow.document;
     //                 }
-                    
     //                 gistFrameDoc.open();
     //                 gistFrameDoc.writeln(gistFrameHTML);
-    //                 gistFrameDoc.close();		
-                    
+    //                 gistFrameDoc.close();
     //                 console.log("iframe added");
     //             }
     //         }
-            
     //         function adjustIframeSize(newHeight) {
     //             var i = document.getElementById("gistFrame");
     //             i.style.height = parseInt(newHeight) + "px";
     //             console.log("size adjusted", newHeight);
     //         }
     //     </script>
-        
     //     </body>
     //     </html>`
     // }
-    
 }

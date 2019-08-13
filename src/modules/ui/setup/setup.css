@@ -10,13 +10,12 @@
 .key-concept-section {
     margin-bottom: 1rem;
 }
-.snippetBox{
+.snippetBox {
     padding: 1rem;
     background: #00354e;
     border-radius: 5px;
     color: yellow;
 }
-.snippetBox a{
+.snippetBox a {
     color: yellow;
 }
-

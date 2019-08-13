@@ -1,79 +1,139 @@
 <template>
-        <div class="fontSize-2rem margin-0 fontWeight-700">
-            Environment setup for Salesforce DX
-        </div>
-        <h3>1) Installing the Visual Studio Code</h3>
-        <p><strong>Visual Studio Code : </strong> It is a source code editor developed by Microsoft for Windows, Linux and macOS. It is a super fast and lightweight Source Code Editor which can be used to view, edit, run and debug source code for applications. It is mainly used by front-end developers.</p>
-        <ul>
-            <li>Download and install VS code from below url</li>
-            <div class="snippetBox">
-                <a href="https://visualstudio.microsoft.com/downloads/">https://visualstudio.microsoft.com/downloads/</a>
-            </div>
-        </ul>
-        <h3>2) Installing the Salesforce CLI</h3>
-
-        <p>Download Salesforce CLI using the appropriate link for your operating system: </p>
-        <ul>
-            <li><strong>macOS </strong></li>
-            <div class="snippetBox">
-                    <a href="https://sfdc.co/sfdx_cli_osx ">https://sfdc.co/sfdx_cli_osx </a>
-                </div>
-                <li><strong>Windows 32-bit  </strong></li>
-            <div class="snippetBox">
-                    <a href="https://sfdc.co/sfdx_cli_win">https://sfdc.co/sfdx_cli_win</a>
-                </div>
-                <li><strong>Windows 64-bit  </strong></li>
-            <div class="snippetBox">
-                    <a href="https://sfdc.co/sfdx_cli_win64">https://sfdc.co/sfdx_cli_win64 </a>
-                </div>
-                <li><strong>Debian/Ubuntu 64  </strong></li>
-            <div class="snippetBox">
-                    <a href="https://sfdc.co/sfdx_cli_linux">https://sfdc.co/sfdx_cli_linux</a>
-                </div>
-                <li><strong>Debian/Ubuntu x86 </strong></li>
-            <div class="snippetBox">
-                    <a href="https://sfdc.co/sfdx_cli_linux_x86">https://sfdc.co/sfdx_cli_linux_x86 </a>
-            </div>
-        </ul>
-
-        <h3>3) Verifying Salesforce CLI installation</h3>
-        <p>In order to verify the CLI setup is done successfull. Type the below command in Terminal</p>
+    <div class="fontSize-2rem margin-0 fontWeight-700">
+        Environment setup for Salesforce DX
+    </div>
+    <h3>1) Installing the Visual Studio Code</h3>
+    <p>
+        <strong>Visual Studio Code : </strong> It is a source code editor
+        developed by Microsoft for Windows, Linux and macOS. It is a super fast
+        and lightweight Source Code Editor which can be used to view, edit, run
+        and debug source code for applications. It is mainly used by front-end
+        developers.
+    </p>
+    <ul>
+        <li>Download and install VS code from below url</li>
         <div class="snippetBox">
-                sfdx
-         </div>
-        <p>If You see something like this it means CLI is installed successfully</p>
-        <img src="../../../resources/images/setup/sfdx_cmd.png" alt="sfdx command window" height="300px"/>
-
-        <h3>4) Verifying the CLI version</h3>
-        To work with Lightning web components, you need version 45 or greater of the Salesforce CLI. Check the installed version by running below command
-        <div class="snippetBox">
-                sfdx plugins --core
-         </div>
-         <p>The command outputs version numbers of cli and plugins like shown below:</p>
-         <img src="../../../resources/images/setup/version.png" alt="sfdx cli version" height="300px"/>
-       
-
-         <h3>5) Installing Salesforce Extension Pack in VS Code</h3>
-         <p>Salesforce Extension Pack provides powerful features for working with the Salesforce CLI, the Lightning Component framework, Apex, and Visualforce.</p>
-         <em>Note: You can’t develop Lightning web components in the Salesforce Developer Console.</em>
-
-         <ul>
-             <li>Launch Visual Studio Code.</li>
-             <li>On the left toolbar, click the Extensions icon.</li>
-             <li>Search for Salesforce Extension Pack and click Install. </li>
-         </ul>
-         <img src="../../../resources/images/setup/extension.png" alt="vscode salesforce cli plugin" width="600px" height="auto"/>
-
-         <h3>6) Verifying Salesforce Extension Pack in VS Code</h3>
-         <ul>
-             <li>In Visual Studio code, open the Command Palette by pressing <strong>Ctrl+Shift+P </strong>on Windows or <strong>Cmd+Shift+P</strong> on macOS.</li>
-             <li>Enter sfdx to filter for commands provided by the Salesforce Extensions.</li>
-
-         </ul>
-         <p>If You see something like this it means Salesforce Extension Pack is installed successfull</p>
-         <div>
-         <img src="../../../resources/images/setup/verifying_plugin.png" alt="vscode Salesforce Extension Pack verification" width="600px" height="auto"/>
+            <a href="https://visualstudio.microsoft.com/downloads/"
+                >https://visualstudio.microsoft.com/downloads/</a
+            >
         </div>
+    </ul>
+    <h3>2) Installing the Salesforce CLI</h3>
+
+    <p>
+        Download Salesforce CLI using the appropriate link for your operating
+        system:
+    </p>
+    <ul>
+        <li><strong>macOS </strong></li>
+        <div class="snippetBox">
+            <a href="https://sfdc.co/sfdx_cli_osx "
+                >https://sfdc.co/sfdx_cli_osx
+            </a>
+        </div>
+        <li><strong>Windows 32-bit </strong></li>
+        <div class="snippetBox">
+            <a href="https://sfdc.co/sfdx_cli_win"
+                >https://sfdc.co/sfdx_cli_win</a
+            >
+        </div>
+        <li><strong>Windows 64-bit </strong></li>
+        <div class="snippetBox">
+            <a href="https://sfdc.co/sfdx_cli_win64"
+                >https://sfdc.co/sfdx_cli_win64
+            </a>
+        </div>
+        <li><strong>Debian/Ubuntu 64 </strong></li>
+        <div class="snippetBox">
+            <a href="https://sfdc.co/sfdx_cli_linux"
+                >https://sfdc.co/sfdx_cli_linux</a
+            >
+        </div>
+        <li><strong>Debian/Ubuntu x86 </strong></li>
+        <div class="snippetBox">
+            <a href="https://sfdc.co/sfdx_cli_linux_x86"
+                >https://sfdc.co/sfdx_cli_linux_x86
+            </a>
+        </div>
+    </ul>
+
+    <h3>3) Verifying Salesforce CLI installation</h3>
+    <p>
+        In order to verify the CLI setup is done successfull. Type the below
+        command in Terminal
+    </p>
+    <div class="snippetBox">
+        sfdx
+    </div>
+    <p>If You see something like this it means CLI is installed successfully</p>
+    <img
+        src="https://raw.githubusercontent.com/karkranikhil/schoolofsalesforce/gh-pages/resources/images/setup/sfdx_cmd.png"
+        alt="sfdx command window"
+        height="300px"
+    />
+
+    <h3>4) Verifying the CLI version</h3>
+    To work with Lightning web components, you need version 45 or greater of the
+    Salesforce CLI. Check the installed version by running below command
+    <div class="snippetBox">
+        sfdx plugins --core
+    </div>
+    <p>
+        The command outputs version numbers of cli and plugins like shown below:
+    </p>
+    <img
+        src="https://raw.githubusercontent.com/karkranikhil/schoolofsalesforce/gh-pages/resources/images/setup/version.png"
+        alt="sfdx cli version"
+        height="300px"
+    />
+
+    <h3>5) Installing Salesforce Extension Pack in VS Code</h3>
+    <p>
+        Salesforce Extension Pack provides powerful features for working with
+        the Salesforce CLI, the Lightning Component framework, Apex, and
+        Visualforce.
+    </p>
+    <em
+        >Note: You can’t develop Lightning web components in the Salesforce
+        Developer Console.</em
+    >
+
+    <ul>
+        <li>Launch Visual Studio Code.</li>
+        <li>On the left toolbar, click the Extensions icon.</li>
+        <li>Search for Salesforce Extension Pack and click Install.</li>
+    </ul>
+    <img
+        src="https://raw.githubusercontent.com/karkranikhil/schoolofsalesforce/gh-pages/resources/images/setup/extension.png"
+        alt="vscode salesforce cli plugin"
+        width="600px"
+        height="auto"
+    />
+
+    <h3>6) Verifying Salesforce Extension Pack in VS Code</h3>
+    <ul>
+        <li>
+            In Visual Studio code, open the Command Palette by pressing
+            <strong>Ctrl+Shift+P </strong>on Windows or
+            <strong>Cmd+Shift+P</strong> on macOS.
+        </li>
+        <li>
+            Enter sfdx to filter for commands provided by the Salesforce
+            Extensions.
+        </li>
+    </ul>
+    <p>
+        If You see something like this it means Salesforce Extension Pack is
+        installed successfull
+    </p>
+    <div>
+        <img
+            src="https://raw.githubusercontent.com/karkranikhil/schoolofsalesforce/gh-pages/resources/images/setup/verifying_plugin.png"
+            alt="vscode Salesforce Extension Pack verification"
+            width="600px"
+            height="auto"
+        />
+    </div>
 
     <!-- <examples-code-box code={test} file-name={fileName}>
            
@@ -89,5 +149,4 @@
                 </code>
                 </pre>
                 </div> -->
-                
 </template>

@@ -1,4 +1,4 @@
-pre{
+pre {
     background: #001628;
     hyphens: none;
     position: relative;
@@ -23,93 +23,94 @@ pre code {
     hyphens: none;
 }
 pre[rel]::before {
-    font-family: Rubik,Lato,"Lucida Grande","Lucida Sans Unicode",Tahoma,Sans-Serif;
+    font-family: Rubik, Lato, 'Lucida Grande', 'Lucida Sans Unicode', Tahoma,
+        Sans-Serif;
     font-weight: 700;
     font-size: 12px;
     content: attr(rel);
     color: #03a9f4;
     position: absolute;
-    top: .33rem;
-    left: .52rem;
+    top: 0.33rem;
+    left: 0.52rem;
     padding: 0;
 }
-.copy-text{
+.copy-text {
     display: inline-block;
     right: 15px;
     position: absolute;
     top: 5px;
 }
-textarea{
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;  
+textarea {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
-code[class*="language-"],
-pre[class*="language-"] {
-	color: #f8f8f2;
-	background: none;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 1em;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
+code[class*='language-'],
+pre[class*='language-'] {
+    color: #f8f8f2;
+    background: none;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
     padding: 2rem;
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
 
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
     hyphens: none;
     overflow: auto;
     cursor: text;
 }
 
 /* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
+pre[class*='language-'] {
+    padding: 1em;
+    margin: 0.5em 0;
+    overflow: auto;
     border-radius: 0.3em;
     overflow: auto;
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #272822;
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+    background: #272822;
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
+:not(pre) > code[class*='language-'] {
+    padding: 0.1em;
+    border-radius: 0.3em;
+    white-space: normal;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: slategray;
+    color: slategray;
 }
 
 .token.punctuation {
-	color: #f8f8f2;
+    color: #f8f8f2;
 }
 
 .namespace {
-	opacity: .7;
+    opacity: 0.7;
 }
 
 .token.property,
@@ -117,12 +118,12 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #f92672;
+    color: #f92672;
 }
 
 .token.boolean,
 .token.number {
-	color: #ae81ff;
+    color: #ae81ff;
 }
 
 .token.selector,
@@ -131,7 +132,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #a6e22e;
+    color: #a6e22e;
 }
 
 .token.operator,
@@ -140,33 +141,33 @@ pre[class*="language-"] {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-	color: #f8f8f2;
+    color: #f8f8f2;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.function,
 .token.class-name {
-	color: #e6db74;
+    color: #e6db74;
 }
 
 .token.keyword {
-	color: #66d9ef;
+    color: #66d9ef;
 }
 
 .token.regex,
 .token.important {
-	color: #fd971f;
+    color: #fd971f;
 }
 
 .token.important,
 .token.bold {
-	font-weight: bold;
+    font-weight: bold;
 }
 .token.italic {
-	font-style: italic;
+    font-style: italic;
 }
 
 .token.entity {
-	cursor: help;
+    cursor: help;
 }

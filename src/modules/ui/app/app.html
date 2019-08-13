@@ -22,11 +22,11 @@
                 <ui-browser-support></ui-browser-support>
             </template>
             <template if:true={selectedRoute.setup.selected}>
-                    <ui-setup></ui-setup>
-                </template>
-                <template if:true={selectedRoute.singleDataBinding.selected}>
-                    <ui-data-binding-page></ui-data-binding-page>
-                </template>
+                <ui-setup></ui-setup>
+            </template>
+            <template if:true={selectedRoute.singleDataBinding.selected}>
+                <ui-data-binding-page></ui-data-binding-page>
+            </template>
         </div>
     </div>
 </template>
