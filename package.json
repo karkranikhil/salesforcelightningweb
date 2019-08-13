@@ -4,10 +4,12 @@
     "author": "nikhil karkra",
     "bugs": "https://github.com/karkranikhil/schoolofsalesforce/issues",
     "dependencies": {
+        "async-github-gist": "^1.0.0",
         "bootstrap": "^4.3.1",
         "jquery": "^3.4.1",
         "lwc-services": "^1",
-        "popper.js": "^1.15.0"
+        "popper.js": "^1.15.0",
+        "prismjs": "^1.17.1"
     },
     "devDependencies": {
         "gh-pages": "^2.1.1",

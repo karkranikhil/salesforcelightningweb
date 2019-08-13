@@ -1,0 +1,22 @@
+.margin-0 {
+    margin: 0;
+}
+.fontSize-2rem {
+    font-size: 2rem;
+}
+.fontWeight-700 {
+    font-weight: 700;
+}
+.key-concept-section {
+    margin-bottom: 1rem;
+}
+.snippetBox{
+    padding: 1rem;
+    background: #00354e;
+    border-radius: 5px;
+    color: yellow;
+}
+.snippetBox a{
+    color: yellow;
+}
+

@@ -1,0 +1,36 @@
+<template>
+        <div class="fontSize-2rem margin-0 fontWeight-700">
+                Data binding in LWC
+        </div>
+        <h3>What is Data Binding?</h3>
+        <p>Data binding in Lightning web component is the synchronization between the controller and template(HTML).</p>
+
+        <h3>What is One-Way Data Binding?</h3>
+        <p>One-way data binding is a situation where information flows in only one direction in our case from controller to template(HTML)</p>
+        <img src="../../../resources/images/databinding/singleDataBinding.png" alt="single data binding example" width="600px" height="auto"/>
+        <h3>Example of One-Way Data Binding?</h3>
+        <div>1) let's create a template </div>
+        <ul>
+            <li>We have defined the h2 tag with text </li>
+            <li><Strong class="code">&#123;fullname&#125;-</Strong> To bind a property in a template we have to surround the property with curly braces: {propertyName}.
+            </li>
+        </ul>
+        <div>
+                <ui-code-box code={template} file-name='HTML (template)' class-name="language-markup"></ui-code-box>
+        </div>
+        <div>2) let's create a controller</div>
+        <ul>
+                <li>Import LightningElement from lwc module</li>
+                <li>Create a class name DataBinding (class name always pascal case)</li>
+                <li>Define a property <span class="code">fullname</span> and assign a value <em>Nikhil karkra</em></li>
+        </ul>
+        <div>
+                <ui-code-box code={Javascript} file-name='javascript (controller)' class-name="language-js"></ui-code-box>
+        </div>
+        <div class="output-card">
+                <p>Output</p>
+                <div class="output">
+                <examples-data-binding></examples-data-binding>
+                </div>
+            </div>
+</template>

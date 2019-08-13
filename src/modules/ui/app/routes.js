@@ -44,6 +44,18 @@ export const routesList = [
         value: 'browserSupport',
         classlist: '',
         selected: false
+    },
+    {
+        title: 'Environment Setup',
+        value: 'setup',
+        classlist: '',
+        selected: false
+    },
+    {
+        title: 'Data binding',
+        value: 'singleDataBinding',
+        classlist: '',
+        selected: false
     }
 ];
 export const selectedRoute = {
@@ -57,6 +69,12 @@ export const selectedRoute = {
         selected: false
     },
     browserSupport: {
+        selected: false
+    },
+    setup: {
+        selected: false
+    },
+    singleDataBinding: {
         selected: false
     }
 };

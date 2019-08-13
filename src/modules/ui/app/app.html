@@ -9,18 +9,24 @@
         </div>
         <div class="flex-child flex-main-section">
             <template if:true={selectedRoute.introduction.selected}>
-                <examples-introduction></examples-introduction>
+                <ui-introduction></ui-introduction>
             </template>
 
             <template if:true={selectedRoute.whyLwc.selected}>
-                <examples-why-lwc></examples-why-lwc>
+                <ui-why-lwc></ui-why-lwc>
             </template>
             <template if:true={selectedRoute.advantage.selected}>
-                <examples-advantages></examples-advantages>
+                <ui-advantages></ui-advantages>
             </template>
             <template if:true={selectedRoute.browserSupport.selected}>
-                <examples-browser-support></examples-browser-support>
+                <ui-browser-support></ui-browser-support>
             </template>
+            <template if:true={selectedRoute.setup.selected}>
+                    <ui-setup></ui-setup>
+                </template>
+                <template if:true={selectedRoute.singleDataBinding.selected}>
+                    <ui-data-binding-page></ui-data-binding-page>
+                </template>
         </div>
     </div>
 </template>
