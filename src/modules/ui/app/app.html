@@ -27,6 +27,9 @@
             <template if:true={selectedRoute.singleDataBinding.selected}>
                 <ui-data-binding-page></ui-data-binding-page>
             </template>
+            <template if:true={selectedRoute.dualDataBinding.selected}>
+                <ui-two-way-data-binding-page></ui-two-way-data-binding-page>
+            </template>
         </div>
     </div>
 </template>

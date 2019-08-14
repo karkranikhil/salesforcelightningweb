@@ -56,6 +56,12 @@ export const routesList = [
         value: 'singleDataBinding',
         classlist: '',
         selected: false
+    },
+    {
+        title: 'Two way data binding',
+        value: 'dualDataBinding',
+        classlist: '',
+        selected: false
     }
 ];
 export const selectedRoute = {
@@ -75,6 +81,9 @@ export const selectedRoute = {
         selected: false
     },
     singleDataBinding: {
+        selected: false
+    },
+    dualDataBinding: {
         selected: false
     }
 };

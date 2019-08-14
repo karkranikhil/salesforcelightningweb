@@ -1,0 +1,75 @@
+<template>
+        <div class="fontSize-2rem margin-0 fontWeight-700">
+            Two-way data binding in LWC
+        </div>
+        <h3>What is Two-way data Binding?</h3>
+        <p>
+                Two-way data binding in LWC will help users to exchange data from the controller to template and from template to the controller. 
+                It will help users to establish communication bi-directionally.
+        </p>
+    
+        <h3>How to achive Two-Way Data Binding?</h3>
+        <ul>
+            <li>The Lightning Web Components programming model has given us some decorators that add functionality to a property or function.</li>
+            <li><code class="code">@track</code> is the decorator which helps us to track a private property’s value and rerender a component when it changes. </li>
+            <li>Tracked properties are also called private reactive properties.</li>
+            <li>@track helps us to achieve two way data binding</li>
+        </ul>
+        <p><strong>Note ** </strong>@track is powerful, but remember, track a property only if you want the component to rerender when the property’s value changes. Don’t track every private property.</p>
+        <img
+            src="https://raw.githubusercontent.com/karkranikhil/schoolofsalesforce/master/src/resources/images/databinding/singleDataBinding.png"
+            alt="two data binding example"
+            width="600px"
+            height="auto"
+        />
+        <h3>Example of Tne-Way Data Binding?</h3>
+        <div>1) let's see template code</div>
+        <div>
+                <ui-code-box
+                    code={template}
+                    file-name="HTML (template)"
+                    class-name="language-markup"
+                ></ui-code-box>
+            </div>
+        <ul>
+            <li>we have created two input box name and title respectively</li>
+            <li>
+                <Strong class="code">&#123;name&#125;-</Strong> is used to bind <em>name</em> property to input box
+            </li>
+            <li>
+                    <Strong class="code">&#123;title&#125;-</Strong> is used to bind <em>title</em> property to input box
+            </li>
+            <li>we have defined a <em>changeHandler</em> that will trigger on any key up.</li>
+            <li>h3 tag is used to test the two-way data binding </li>
+        </ul>
+        
+        <div>2) let's see controller code</div>
+        <div>
+                <ui-code-box
+                    code={Javascript}
+                    file-name="javascript (controller)"
+                    class-name="language-js"
+                ></ui-code-box>
+            </div>
+        <ul>
+            <li>Import LightningElement and track from lwc module</li>
+            <li>Created a class name TwoWayDataBinding</li>
+            <li>
+                Define a property <span class="code">name</span> and <span class="code">title</span> 
+            </li>
+            <li>Assigned both propeties with value <em>Nikhil karkra</em> and <em>Salesforce developer</em> respectively.
+            </li>
+            <li>we have decorated both properties with @track to track the changes</li>
+            <li>Defined a function <em>changeHandler</em> that take the value from the textbox and update the property based on the input box name</li>
+        </ul>
+        
+        <div class="output-card">
+            <p>Output</p>
+
+            <div class="padding-10">If you change the value of the input box, you will observe that the text start updating immediately along with the change</div>
+            <div class="output">
+                    <examples-two-way-data-binding></examples-two-way-data-binding>
+            </div>
+        </div>
+    </template>
+    

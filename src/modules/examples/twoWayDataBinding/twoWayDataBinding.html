@@ -1,0 +1,15 @@
+<template>
+    <div class="field">
+        <label for="name">Enter your name:</label>
+        <input id="name" type="text" name="name"  onkeyup={changeHandler}  value={name}/>
+    </div>
+
+    <div class="field">
+        <label for="title">Enter your title:</label>
+        <input id="title" type="text" name="title" onkeyup={changeHandler}  value={title} />
+    </div>
+
+    <div class="results">
+        <h3>My name is {name} and my title is {title}</h3>
+    </div>
+</template>
