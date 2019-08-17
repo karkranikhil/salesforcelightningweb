@@ -62,6 +62,18 @@ export const routesList = [
         value: 'dualDataBinding',
         classlist: '',
         selected: false
+    },
+    {
+        title: 'Render HTML conditionally',
+        value: 'templateHideShow',
+        classlist: '',
+        selected: false
+    },
+    {
+        title: 'Template Looping',
+        value: 'htmlLooping',
+        classlist: '',
+        selected: false
     }
 ];
 export const selectedRoute = {
@@ -84,6 +96,12 @@ export const selectedRoute = {
         selected: false
     },
     dualDataBinding: {
+        selected: false
+    },
+    templateHideShow: {
+        selected: false
+    },
+    htmlLooping: {
         selected: false
     }
 };

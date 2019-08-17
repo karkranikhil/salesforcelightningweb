@@ -34,9 +34,20 @@
         property only if you want the component to rerender when the property’s
         value changes. Don’t track every private property.
     </p>
+
+    <h3>Example of Two-Way Data Binding</h3>
+    <div class="output-card">
+            <p>Output</p>
     
-    <h3>Example of Tne-Way Data Binding?</h3>
-    <div>1) let's see template code</div>
+            <div class="padding-10">
+                If you change the value of the input box, you will observe that the
+                text start updating immediately along with the changes
+            </div>
+            <div class="output">
+                <examples-two-way-data-binding></examples-two-way-data-binding>
+            </div>
+        </div>
+    <div class="mt-1">1) let's see template's code</div>
     <div>
         <ui-code-box
             code={template}
@@ -61,7 +72,7 @@
         <li>h3 tag is used to test the two-way data binding</li>
     </ul>
 
-    <div>2) let's see controller code</div>
+    <div class="mt-1">2) let's see controller's code</div>
     <div>
         <ui-code-box
             code={Javascript}
@@ -89,15 +100,5 @@
         </li>
     </ul>
 
-    <div class="output-card">
-        <p>Output</p>
-
-        <div class="padding-10">
-            If you change the value of the input box, you will observe that the
-            text start updating immediately along with the changes
-        </div>
-        <div class="output">
-            <examples-two-way-data-binding></examples-two-way-data-binding>
-        </div>
-    </div>
+    
 </template>

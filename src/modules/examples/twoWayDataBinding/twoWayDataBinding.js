@@ -6,4 +6,5 @@ export default class TwoWayDataBinding extends LightningElement {
     changeHandler(event) {
         this[event.target.name] = event.target.value;
     }
+
 }

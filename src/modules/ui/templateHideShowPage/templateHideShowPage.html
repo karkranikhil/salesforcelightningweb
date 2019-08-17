@@ -1,0 +1,120 @@
+<template>
+    <div class="fontSize-2rem margin-0 fontWeight-700">
+            Render HTML Conditionally
+        </div>
+        <h3>What is Directive?</h3>
+        <p>Directives are special HTML attributes. The LWC programming model has a few custom directives that let you manipulate the DOM using markup.</p>
+        
+        <h3>How to render HTML conditionally?</h3>
+        <p>To render HTML conditionally, add the <span class="code">if:true|false</span> directive to a nested 
+            &#x3C;template&#x3E; tag that encloses the conditional content.
+        </p>
+
+        <h3>Syntax</h3>
+        <div class="snippetBox">
+                <pre><code>if:true|false=&#123;expression&#125;</code></pre>
+         </div>
+        <ul>
+            <li>Use this directive to conditionally render DOM elements in a template.</li>
+            <li>The expression can be a JavaScript identifier(property)</li>
+            <li>The expression can be a JavaScript dot notation that accesses a property from an object (user.fullName)</li>
+            <li>You can't use ternary operator inside the expression</li>
+            <li>To compute the value of expression, use a getter in the JavaScript class.</li>
+        </ul>
+        <h3>Demo</h3>
+        <div class="output-card">
+                <p>Output</p>
+                <div class="output">
+                        <examples-template-hide-show></examples-template-hide-show>
+                </div>
+            </div>
+        <h3><em>if:true</em>Demo explanation</h3>
+        <ul>
+            <li>This directive show the DOM(Document object model) only if the condtion is true.</li>
+            <li>In below example, text will only be visible if <span class="code">showText</span> property will become <span class="code">true</span> .</li>
+            <li>We are setting the <span class="code">showText</span> property <span class="code">true</span>  on click of button</li>
+        </ul>
+        <div>
+            <ui-code-box
+                code={IfTrueDemoHTML}
+                file-name="HTML (template)"
+                class-name="language-markup"
+            ></ui-code-box>
+        </div>
+        <div>
+                <ui-code-box
+                code={IfTrueDemoJS}
+                file-name="javascript (controller)"
+                class-name="language-js"
+            ></ui-code-box>
+        </div>
+
+        <h3><em>if:false</em> Demo explanation</h3>
+        <ul>
+            <li>This directive is just opposite of the if:true</li>
+            <li>This directive hide the DOM(Document object model) only if the condtion is true.</li>
+            <li>In below example, text will only be hidden if <span class="code">hideText</span> property will become <span class="code">true</span> .</li>
+            <li>We are setting the <span class="code">hideText</span> property <span class="code">true</span>  on click of button</li>
+        </ul>
+        <div>
+                <ui-code-box
+                    code={IfFalseDemoHTML}
+                    file-name="HTML (template)"
+                    class-name="language-markup"
+                ></ui-code-box>
+            </div>
+            <div>
+                    <ui-code-box
+                    code={IfFalseDemoJS}
+                    file-name="javascript (controller)"
+                    class-name="language-js"
+                ></ui-code-box>
+            </div>
+
+        <h3>Toggle Demo explanation</h3>
+        <ul>
+            <li>In above both example we were either hiding or showing the text.</li>
+            <li>Now we are doing toggling, Hide and show based on the same button.</li>
+            <li>In below example, text will be hidden on first click and on second click it become visible.</li>
+            <li>On first click <span class="code">toggleText</span> become false(hide) and on second click <span class="code">toggleText</span> become true (show).</li>
+        </ul>
+        <div>
+                <ui-code-box
+                    code={toggleDemoHTML}
+                    file-name="HTML (template)"
+                    class-name="language-markup"
+                ></ui-code-box>
+            </div>
+            <div>
+                    <ui-code-box
+                    code={toggleDemoJS}
+                    file-name="javascript (controller)"
+                    class-name="language-js"
+                ></ui-code-box>
+            </div>
+
+        <h3>Conditional based Hide/show Demo explanation</h3>
+        <ul>
+            <li>There are many scenario in which we have to hide or show HTML based on some calculation.</li>
+            <li>To compute a value for the property, we have to use a JavaScript getter.</li>
+            <li>In below example, text will be visible if you type the <span class="code">Hello</span> word in the textbox.</li>
+        </ul>
+        <div>
+                <ui-code-box
+                    code={conditionalDemoHTML}
+                    file-name="HTML (template)"
+                    class-name="language-markup"
+                ></ui-code-box>
+            </div>
+            <div>
+                    <ui-code-box
+                    code={conditionalDemoJS}
+                    file-name="javascript (controller)"
+                    class-name="language-js"
+                ></ui-code-box>
+            </div>
+
+
+
+        
+</template>

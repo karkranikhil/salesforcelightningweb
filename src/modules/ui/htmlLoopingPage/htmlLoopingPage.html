@@ -1,0 +1,107 @@
+<template>
+    <div class="fontSize-2rem margin-0 fontWeight-700">
+        Template Looping
+    </div>
+    <p>To render a list of items we have two directives.</p>
+    <ul>
+        <li><span class="code">for:each</span></li>
+        <li class="mt-1"><span class="code">iterator</span></li>
+    </ul>
+
+    <h3>1) for:each</h3>
+    <div class="snippetBox">
+            <pre><code>&#x3C;template for:each=&#123;array&#125;  for:item="currentItem" for:index="index"&#x3E; </code></pre>
+     </div>
+    <ul>
+        <li>When using the for:each directive, use for:item="currentItem" to access the current item.</li>
+        <li>To assign a key to the first element in the nested template, use the key={uniqueId}.</li>
+        <li>The key in the template is used for performance optimization and isn’t reflected in the DOM at run time.</li>
+        <li>you can use for:index="index" to access the current item index, it is optional</li>
+        <li><strong>Note **</strong> key value should never be an index</li>
+    </ul>
+    <h3>2) iterator</h3>
+    <div class="snippetBox">
+            <pre><code>&#x3C;template iterator:iteratorName=&#123;array&#125;"&#x3E; </code></pre>
+     </div>
+     <p>Using iterator name you can access these properties</p>
+     <ul>
+         <li><strong>value —</strong>The value of the item in the list. Use this property to access the properties of the array. For example, <span class="code">iteratorName.value.propertyName</span></li>
+         <li><strong>index —</strong>The index of the item in the list.</li>   
+         <li><strong>first —</strong>A boolean value indicating whether this item is the first item in the list.</li>   
+         <li><strong>last —</strong>TA boolean value indicating whether this item is the last item in the list.</li>   
+     </ul>
+     <p>To assign a key to the first element in the nested template, use the key={uniqueId}.</p>
+
+     <h3>Demo</h3>
+     <div class="output-card">
+            <p>Output</p>
+            <div class="output">
+                    <examples-html-looping></examples-html-looping>
+            </div>
+    </div>
+    <h3><em>for:each</em> with Array demo explanation</h3>
+    <ul>
+        <li>For:each is taking Array named <span class="code">carList</span> as input and currentItem is defined as <span class="code">car</span> in for:item.</li>
+        <li>As key should be unique and in this case we don't have any id so we are using javascript <span class="code">Math.random()</span> function to generate a unique number.</li>
+        <li>uniqueKey is the getter function that set the UniqueId to the key attribute</li>
+    </ul>
+    <div>
+        <ui-code-box
+            code={forEachArrayHtml}
+            file-name="HTML (template)"
+            class-name="language-markup"
+        ></ui-code-box>
+    </div>
+    <div>
+            <ui-code-box
+            code={forEachArrayJs}
+            file-name="javascript (controller)"
+            class-name="language-js"
+        ></ui-code-box>
+    </div>
+
+    <h3><em>for:each </em>with Array of object demo explanation</h3>
+    <ul>
+        <li>For:each is taking Array of object named <span class="code">programmingList</span> as input and currentItem is defined as <span class="code">program</span> in for:item.</li>
+        <li>As key should be unique and in this case each object having an unique id. So, we are mapping the same.</li>
+        <li>To access any property of object we have to use dot notation. for example program.language</li>
+    </ul>
+    <div>
+        <ui-code-box
+            code={forEachArrayObjHtml}
+            file-name="HTML (template)"
+            class-name="language-markup"
+        ></ui-code-box>
+    </div>
+    <div>
+            <ui-code-box
+            code={forEachArrayObjJs}
+            file-name="javascript (controller)"
+            class-name="language-js"
+        ></ui-code-box>
+    </div>
+
+    <h3><em>Iterator</em> Demo explanation</h3>
+    <ul>
+        <li>If you want to apply special rendering to the first and last items in the list use iterator directive.</li>
+        <li>iterator is taking Array of object named <span class="code">ceoList</span> as input and iteratorName is defined as <span class="code">ceo</span>.</li>
+        <li>we are using <span class="code">first</span> and <span class="code">last</span> iterator properties to show header and footer to the list</li>
+        <li>To access the value of the Obejct we have to use iteratorName.value property, for example - <span class="code">ceo.value.name</span></li>
+        <li>As key should be unique and in this case each object having an unique id. So, we are mapping the same.</li>
+    </ul>
+    <div>
+        <ui-code-box
+            code={iteratorHtml}
+            file-name="HTML (template)"
+            class-name="language-markup"
+        ></ui-code-box>
+    </div>
+    <div>
+            <ui-code-box
+            code={iteratorJs}
+            file-name="javascript (controller)"
+            class-name="language-js"
+        ></ui-code-box>
+    </div>
+    
+</template>
