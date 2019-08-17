@@ -1,5 +1,5 @@
 import { LightningElement } from 'lwc';
-import { htmlLoopingPageCode } from './htmlLoopingPageCode'
+import { htmlLoopingPageCode } from './htmlLoopingPageCode';
 export default class TemplateLoopingPage extends LightningElement {
     get forEachArrayHtml() {
         return htmlLoopingPageCode.example1html;

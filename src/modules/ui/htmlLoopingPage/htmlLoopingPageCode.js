@@ -16,7 +16,7 @@ export default class TemplateLooping extends LightningElement {
         return Math.random();   
     }
 }`,
-example2html: `<template>
+    example2html: `<template>
 <h3>for:each demo - Render list using Array of Objects</h3>
 <div class="container-list">
     <div class="list-group">
@@ -55,7 +55,7 @@ example2html: `<template>
             }
         ]
     }`,
-example3html: `<template>
+    example3html: `<template>
 <h3>iterator demo - Render list using Array of Objects with values, first and last properties</h3>
     <div class="container-list">
         <div class="list-group-inline">

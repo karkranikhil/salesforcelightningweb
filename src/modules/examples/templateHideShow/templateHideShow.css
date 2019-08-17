@@ -4,17 +4,21 @@
     padding: 14px 28px;
     font-size: 16px;
     cursor: pointer;
-  }
-  
-.success {background-color: #00354e;} /* Green */
-.success:hover {background-color: #00354e;}
+}
 
-section{
+.success {
+    background-color: #00354e;
+} /* Green */
+.success:hover {
+    background-color: #00354e;
+}
+
+section {
     padding: 20px;
-    background: #D5E8D4;
+    background: #d5e8d4;
     box-shadow: 0px 2px 10px #cdcdcd;
 }
-.mb-1{
+.mb-1 {
     margin-bottom: 1rem;
 }
 input {

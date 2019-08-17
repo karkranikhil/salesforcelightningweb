@@ -1,5 +1,5 @@
 import { LightningElement } from 'lwc';
-import { templateHideShowPageCode } from './templateHideShowPageCode'
+import { templateHideShowPageCode } from './templateHideShowPageCode';
 export default class TemplateHideShowPage extends LightningElement {
     get IfTrueDemoHTML() {
         return templateHideShowPageCode.example1html;

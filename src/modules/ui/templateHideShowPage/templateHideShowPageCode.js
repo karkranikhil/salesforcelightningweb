@@ -15,7 +15,7 @@ export default class TemplateHideShow extends LightningElement {
         this.showText = true
     }
 }`,
-example2html: `<template>
+    example2html: `<template>
     <section id="hide_section">
         <h3>if:false example</h3>
         <button class="btn success" onclick={hideHandler}>Click me to Hide text</button>
@@ -31,7 +31,7 @@ export default class TemplateHideShow extends LightningElement {
         this.hideText = true
     }
 }`,
-example3html: `<template>
+    example3html: `<template>
     <section id="toggle_section">
     <h3>Toggle example</h3>
     <p>Toggle means flip-flop, If first click hide the text another click show the text.</p>
@@ -48,7 +48,7 @@ export default class TemplateHideShow extends LightningElement {
         this.toggleText = !this.toggleText
     }
 }`,
-example4html: `<template>
+    example4html: `<template>
     <section id="conditional_section" class="mb-1">
     <h3>Conditional based Hide/show. Type 'Hello' in textbox.</h3>
         <input
