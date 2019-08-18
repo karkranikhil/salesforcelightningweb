@@ -74,6 +74,12 @@ export const routesList = [
         value: 'htmlLooping',
         classlist: '',
         selected: false
+    },
+    {
+        title: 'Parent to child communication',
+        value: 'parentToChildCommunication',
+        classlist: '',
+        selected: false
     }
 ];
 export const selectedRoute = {
@@ -103,5 +109,8 @@ export const selectedRoute = {
     },
     htmlLooping: {
         selected: false
+    },
+    parentToChildCommunication:{
+        selected:false
     }
 };
