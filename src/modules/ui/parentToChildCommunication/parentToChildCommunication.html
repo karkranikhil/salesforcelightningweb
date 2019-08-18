@@ -1,205 +1,431 @@
 <template>
-        <div class="fontSize-2rem margin-0 fontWeight-700">
-                Parent to child communication
+    <div class="fontSize-2rem margin-0 fontWeight-700">
+        Parent to child communication
+    </div>
+    <p>
+        To communicate between Parent and child component we should first
+        understand the <span class="code">Public properties</span>
+    </p>
+
+    <h3>What is Public Reactive properties?</h3>
+    <div>
+        Public properties define the public API for a component. This is very
+        important to communicate between two components
+    </div>
+    <ul>
+        <li>
+            To mark a property as public, annotate it with the
+            <span class="code">@api decorator.</span>
+        </li>
+        <li>
+            If a child-component make his propeties public using @api decorator
+            the parent component can access those properties.
+        </li>
+        <li>
+            Public properties are reactive. If the value of reactive property
+            changes, the component’s template rerenders any content that
+            references the property.
+        </li>
+        <li>
+            When you use the @api decorator, you must import it explicitly from
+            the engine.
+        </li>
+    </ul>
+    <div class="snippetBox">
+        <pre><code>import &#123; LightningElement, api &#125;  from 'lwc';</code></pre>
+    </div>
+
+    <ul></ul>
+
+    <h3>There are Four kind of parent to child communication</h3>
+
+    <div class="tab">
+        <button
+            class={tabProperty.section1.className}
+            name="section1"
+            onclick={setTab}
+        >
+            Passing data as string to child
+        </button>
+        <button
+            class={tabProperty.section2.className}
+            name="section2"
+            onclick={setTab}
+        >
+            Passing data as Array or Array of Object to child
+        </button>
+        <button
+            class={tabProperty.section3.className}
+            name="section3"
+            onclick={setTab}
+        >
+            Passing data to child on action at parent level
+        </button>
+        <button
+            class={tabProperty.section4.className}
+            name="section4"
+            onclick={setTab}
+        >
+            Calling child method from parent
+        </button>
+    </div>
+    <!--section 1-->
+    <template if:true={tabProperty.section1.selected}>
+        <div id="section1" class="tabcontent">
+            <h3>
+                Parent to child communication by passing data as string to a
+                child.
+            </h3>
+            <div class="output-card">
+                <p>Output</p>
+                <div class="output">
+                    <examples-alert-parent-component></examples-alert-parent-component>
+                </div>
+            </div>
+            <h4>Explanation</h4>
+            <ul>
+                <li>
+                    In below example we have created an alert-parent-component
+                    and alert-child-component
+                </li>
+                <li>
+                    Parent component pass data to child using attributes. In our
+                    case <span class="code">message</span> and
+                    <span class="code">class-name</span> are the attributes.
+                </li>
+                <li>
+                    <span class="code">class-name</span> is the optional
+                    attribute. It just give the color to the box.
+                </li>
+                <li>
+                    child component hold the data bind to
+                    <span class="code">message</span> attribute using
+                    <span class="code">@api message</span>public property and
+                    bind the property to template
+                </li>
+                <li>
+                    Also, child component hold the
+                    <span class="code">class-name</span> attribute using
+                    <span class="code">@api className</span>public property
+                </li>
+                <li>
+                    In child component
+                    <span class="code">alertClassName</span> getter uses the
+                    <span class="code">className</span> property to give css
+                    class to the child component
+                </li>
+                <li>
+                    <strong>Note **</strong> attribute names can't be
+                    Uppercase/Capital
+                </li>
+            </ul>
+            <img
+                src="https://raw.githubusercontent.com/karkranikhil/schoolofsalesforce/master/src/resources/images/parentToChild/parentToChild1.png"
+                alt="parent to child string example"
+                width="100%"
+                height="auto"
+            />
+            <div>
+                <ui-code-box
+                    code={parentTemplate1}
+                    file-name="parent HTML (template)"
+                    class-name="language-markup"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={parentJavascript1}
+                    file-name="parent javascript (controller)"
+                    class-name="language-js"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={childTemplate1}
+                    file-name="child HTML (template)"
+                    class-name="language-markup"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={childJavascript1}
+                    file-name="child javascript (controller)"
+                    class-name="language-js"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={childCSS1}
+                    file-name="child css (stylesheet)"
+                    class-name="language-css"
+                ></ui-code-box>
+            </div>
         </div>
-        <p>To communicate between Parent and child component we should first understand the <span class="code">Public properties</span></p>
-
-        <h3>What is Public Reactive properties?</h3>
-        <div>Public properties define the public API for a component. This is very important to communicate between two components</div>
-        <ul>
-            <li>To mark a property as public, annotate it with the <span class="code">@api decorator.</span></li>
-            <li>If a child-component make his propeties public using @api decorator the parent component can access those properties.</li>
-            <li>Public properties are reactive. If the value of reactive property changes, the component’s template
-                    rerenders any content that references the property.</li>
-            <li> When you use the @api decorator, you must import it explicitly from the engine.</li>        
-        </ul>
-        <div class="snippetBox">
-                <pre><code>import &#123; LightningElement, api &#125;  from 'lwc';</code></pre>
-         </div>
-
-        <ul>
-        </ul>
-
-
-
-        <h3>There are Four kind of parent to child communication</h3>
-
-        <div class="tab">
-                <button class={tabProperty.section1.className} name="section1" onclick={setTab}>Passing data as string to child</button>
-                <button class={tabProperty.section2.className} name="section2" onclick={setTab}>Passing data as Array or Array of Object to child</button>
-                <button class={tabProperty.section3.className} name="section3" onclick={setTab}>Passing data to child on action at parent level</button>
-                <button class={tabProperty.section4.className} name="section4" onclick={setTab}>Calling child method from parent</button>
+    </template>
+    <!--section 2-->
+    <template if:true={tabProperty.section2.selected}>
+        <div id="section2" class="tabcontent">
+            <h3>
+                Parent to child communication by passing data as an Array of
+                Object to a child.
+            </h3>
+            <div class="output-card">
+                <p>Output</p>
+                <div class="output">
+                    <examples-card-parent-component></examples-card-parent-component>
+                </div>
+            </div>
+            <h4>Explanation</h4>
+            <ul>
+                <li>
+                    In below example we have created an card-parent-component
+                    and card-child-component
+                </li>
+                <li>
+                    Parent component pass data to child using attributes. In our
+                    case <span class="code">user-details</span> is the
+                    attributes.
+                </li>
+                <li>
+                    child component hold the data bind to<span class="code"
+                        >user-details</span
+                    >
+                    attribute using
+                    <span class="code">@api userDetails</span>public property
+                    and bind the property to template
+                </li>
+                <li>
+                    As, <span class="code">userDetails</span> is the array of
+                    object so, template will use the for:Each loop to render the
+                    list
+                </li>
+                <li>
+                    <strong>Note **</strong> attribute names can't be
+                    Uppercase/Capital
+                </li>
+            </ul>
+            <img
+                src="https://raw.githubusercontent.com/karkranikhil/schoolofsalesforce/master/src/resources/images/parentToChild/parentToChildArray.png"
+                alt="parent to child array example"
+                width="100%"
+                height="auto"
+            />
+            <div>
+                <ui-code-box
+                    code={parentTemplate2}
+                    file-name="parent HTML (template)"
+                    class-name="language-markup"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={parentJavascript2}
+                    file-name="parent javascript (controller)"
+                    class-name="language-js"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={childTemplate2}
+                    file-name="child HTML (template)"
+                    class-name="language-markup"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={childJavascript2}
+                    file-name="child javascript (controller)"
+                    class-name="language-js"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={childCSS2}
+                    file-name="child css (stylesheet)"
+                    class-name="language-css"
+                ></ui-code-box>
+            </div>
         </div>
-        <!--section 1-->
-        <template if:true={tabProperty.section1.selected}>
-           
-            
-            <div id="section1" class="tabcontent">
-                    <h3>Parent to child communication by passing data as string to a child.</h3>
-                <div class="output-card">
-                    <p>Output</p>
-                    <div class="output">
-                        <examples-alert-parent-component></examples-alert-parent-component>
-                    </div>
-                </div>
-                <h4>Explanation</h4>
-                    <ul>
-                        <li>In below example we have created an alert-parent-component and alert-child-component</li>
-                        <li>Parent component pass data to child using attributes. In our case <span class="code">message</span> and <span class="code">class-name</span> are the attributes.</li>
-                        <li><span class="code">class-name</span> is the optional attribute. It just give the color to the box.</li>
-                        <li>child component hold the data bind to <span class="code">message</span> attribute using <span class="code">@api message</span>public property and bind the property to template </li>
-                        <li>Also, child component hold the <span class="code">class-name</span> attribute using <span class="code">@api className</span>public property</li>
-                        <li>In child component <span class="code">alertClassName</span> getter uses the <span class="code">className</span> property to give css class to the child component</li>
-                        <li><strong>Note **</strong> attribute names can't be Uppercase/Capital</li>
-                    </ul>
-                    <img
-                    src="../../../resources/images/parentToChild/parentToChild1.png"
-                    alt="parent to child string example"
-                    width="100%"
-                    height="auto"
-                />   
-                <div>
-                    <ui-code-box code={parentTemplate1} file-name="parent HTML (template)" class-name="language-markup"></ui-code-box>
-                </div>
-                <div>
-                    <ui-code-box code={parentJavascript1} file-name="parent javascript (controller)" class-name="language-js"></ui-code-box>
-                </div>
-                <div>
-                    <ui-code-box code={childTemplate1} file-name="child HTML (template)" class-name="language-markup"></ui-code-box>
-                </div>
-                <div>
-                    <ui-code-box code={childJavascript1} file-name="child javascript (controller)" class-name="language-js"></ui-code-box>
-                </div>
-                <div>
-                    <ui-code-box code={childCSS1} file-name="child css (stylesheet)" class-name="language-css"></ui-code-box>
-                </div>
-            </div>
-        </template>
-        <!--section 2-->
-        <template if:true={tabProperty.section2.selected}>
-                
-            <div id="section2" class="tabcontent">
-                    <h3>Parent to child communication by passing data as an Array of Object to a child.</h3>
-                <div class="output-card">
-                    <p>Output</p>
-                    <div class="output">
-                            <examples-card-parent-component></examples-card-parent-component>
-                    </div>
-                </div>
-                <h4>Explanation</h4>
-                    <ul>
-                        <li>In below example we have created an card-parent-component and card-child-component</li>
-                        <li>Parent component pass data to child using attributes. In our case <span class="code">user-details</span> is the attributes.</li>
-                        <li>child component hold the data bind to<span class="code">user-details</span> attribute using <span class="code">@api userDetails</span>public property and bind the property to template </li>
-                        <li>As, <span class="code">userDetails</span> is the array of object so, template will use the for:Each loop to render the list</li>
-                        <li><strong>Note **</strong> attribute names can't be Uppercase/Capital</li>
-                    </ul>
-                    <img
-                    src="../../../resources/images/parentToChild/parentToChildArray.png"
-                    alt="parent to child array example"
-                    width="100%"
-                    height="auto"
-                />  
-                <div>
-                    <ui-code-box code={parentTemplate2} file-name="parent HTML (template)" class-name="language-markup"></ui-code-box>
-                </div>
-                <div>
-                    <ui-code-box code={parentJavascript2} file-name="parent javascript (controller)" class-name="language-js"></ui-code-box>
-                </div>
-                <div>
-                    <ui-code-box code={childTemplate2} file-name="child HTML (template)" class-name="language-markup"></ui-code-box>
-                </div>
-                <div>
-                    <ui-code-box code={childJavascript2} file-name="child javascript (controller)" class-name="language-js"></ui-code-box>
-                </div>
-                <div>
-                    <ui-code-box code={childCSS2} file-name="child css (stylesheet)" class-name="language-css"></ui-code-box>
+    </template>
+    <!--section 3-->
+    <template if:true={tabProperty.section3.selected}>
+        <div id="section3" class="tabcontent">
+            <h3>Passing data to child on action at parent level</h3>
+            <h4>Explanation</h4>
+            <ul>
+                <li>
+                    In below example we have created an
+                    progress-bar-parent-component and
+                    progress-bar-child-component
+                </li>
+                <li>
+                    There is an input box at parent level on change in the value
+                    of that input box
+                    <span class="code">changeHandler</span> event get triggered
+                </li>
+                <li>
+                    Parent component pass data to child using attributes. In our
+                    case <span class="code">percentage</span> is the attributes.
+                </li>
+                <li>
+                    child component hold the data bind to<span class="code"
+                        >percentage</span
+                    >
+                    attribute using
+                    <span class="code">@api percentage</span>public property and
+                    bind the property to template
+                </li>
+                <li>
+                    In child component we are using getter
+                    <span class="code">getStyle</span> that set the width of
+                    progress bar using percentage value
+                </li>
+                <li>
+                    <strong>Note **</strong> attribute names can't be
+                    Uppercase/Capital
+                </li>
+            </ul>
+            <img
+                src="https://raw.githubusercontent.com/karkranikhil/schoolofsalesforce/master/src/resources/images/parentToChild/parentToChildChange.png"
+                alt="parent to child change example"
+                width="100%"
+                height="auto"
+            />
+            <div class="output-card">
+                <p>Output</p>
+                <div class="output">
+                    <examples-progress-bar-parent-component
+                        example1="true"
+                    ></examples-progress-bar-parent-component>
                 </div>
             </div>
-        </template>
-        <!--section 3-->
-        <template if:true={tabProperty.section3.selected}>
-            <div id="section3" class="tabcontent">
-               <h3>Passing data to child on action at parent level</h3>
-               <h4>Explanation</h4>
-                    <ul>
-                        <li>In below example we have created an progress-bar-parent-component and progress-bar-child-component</li>
-                        <li>There is an input box at parent level on change in the value of that input box <span class="code">changeHandler</span>  event get triggered</li>
-                        <li>Parent component pass data to child using attributes. In our case <span class="code">percentage</span> is the attributes.</li>
-                        <li>child component hold the data bind to<span class="code">percentage</span> attribute using <span class="code">@api percentage</span>public property and bind the property to template </li>
-                        <li>In child component we are using getter <span class="code">getStyle</span> that set the width of progress bar using percentage value</li>
-                        <li><strong>Note **</strong> attribute names can't be Uppercase/Capital</li>
-                    </ul>
-                <img
-                    src="../../../resources/images/parentToChild/parentToChildChange.png"
-                    alt="parent to child array example"
-                    width="100%"
-                    height="auto"
-                /> 
-                <div class="output-card">
-                    <p>Output</p>
-                    <div class="output">
-                        <examples-progress-bar-parent-component example1="true"></examples-progress-bar-parent-component>
-                    </div>
-                </div>
-                <div>
-                    <ui-code-box code={parentTemplate3} file-name="parent HTML (template)" class-name="language-markup"></ui-code-box>
-                </div>
-                <div>
-                    <ui-code-box code={parentJavascript3} file-name="parent javascript (controller)" class-name="language-js"></ui-code-box>
-                </div>
-                <div>
-                    <ui-code-box code={childTemplate3} file-name="child HTML (template)" class-name="language-markup"></ui-code-box>
-                </div>
-                <div>
-                    <ui-code-box code={childJavascript3} file-name="child javascript (controller)" class-name="language-js"></ui-code-box>
-                </div>
-                <div>
-                    <ui-code-box code={childCSS3} file-name="child css (stylesheet)" class-name="language-css"></ui-code-box>
+            <div>
+                <ui-code-box
+                    code={parentTemplate3}
+                    file-name="parent HTML (template)"
+                    class-name="language-markup"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={parentJavascript3}
+                    file-name="parent javascript (controller)"
+                    class-name="language-js"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={childTemplate3}
+                    file-name="child HTML (template)"
+                    class-name="language-markup"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={childJavascript3}
+                    file-name="child javascript (controller)"
+                    class-name="language-js"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={childCSS3}
+                    file-name="child css (stylesheet)"
+                    class-name="language-css"
+                ></ui-code-box>
+            </div>
+        </div>
+    </template>
+    <!--section 4-->
+    <template if:true={tabProperty.section4.selected}>
+        <div id="section4" class="tabcontent">
+            <h3>Calling child method from parent</h3>
+            <h4>Explanation</h4>
+            <ul>
+                <li>
+                    In below example we have created an
+                    progress-bar-parent-component and
+                    progress-bar-child-component
+                </li>
+                <li>
+                    On click of button
+                    <span class="code">changeColor</span> method get triggered
+                </li>
+                <li>
+                    Child component expose the property
+                    <span class="code">changeBarColor</span> using
+                    <span class="code">@api changeBarColor</span>
+                </li>
+                <li>
+                    Inside changeColor method, we have used
+                    <span class="code">this.template.querySelector();</span> to
+                    access Elements(progress-bar-child-component).
+                </li>
+                <li>
+                    By accessing the progress-bar-child-component using
+                    querySelector called the
+                    <span class="code">changeBarColor</span> method that is
+                    defined in the child
+                </li>
+                <li>
+                    As soon as <span class="code">changeBarColor</span> get
+                    called className get updated and color of the progress bar
+                    get changed.
+                </li>
+                <li>
+                    <strong>Note **</strong> attribute names can't be
+                    Uppercase/Capital
+                </li>
+            </ul>
+            <img
+                src="https://raw.githubusercontent.com/karkranikhil/schoolofsalesforce/master/src/resources/images/parentToChild/parentToChildClick.png"
+                alt="parent to child method example"
+                width="100%"
+                height="auto"
+            />
+            <div class="output-card">
+                <p>Output</p>
+                <div class="output">
+                    <examples-progress-bar-parent-component
+                        example2="true"
+                    ></examples-progress-bar-parent-component>
                 </div>
             </div>
-        </template>
-        <!--section 4-->
-        <template if:true={tabProperty.section4.selected}>
-            <div id="section4" class="tabcontent">
-                    <h3>Calling child method from parent</h3>
-                    <h4>Explanation</h4>
-                         <ul>
-                             <li>In below example we have created an progress-bar-parent-component and progress-bar-child-component</li>
-                             <li>On click of button <span class="code">changeColor</span>  method get triggered</li>
-                             <li>Child component expose the property <span class="code">changeBarColor</span>  using <span class="code">@api changeBarColor</span></li>
-                             <li>Inside changeColor method, we have used <span class="code">this.template.querySelector();</span> to access Elements(progress-bar-child-component).</li>
-                             <li>By accessing the  progress-bar-child-component using querySelector called the <span class="code">changeBarColor</span> method that is defined in the child</li>
-                             <li>As soon as <span class="code">changeBarColor</span> get called className get updated and color of the progress bar get changed.</li>
-                             <li><strong>Note **</strong> attribute names can't be Uppercase/Capital</li>
-                         </ul>
-                     <img
-                         src="../../../resources/images/parentToChild/parentToChildClick.png"
-                         alt="parent to child method example"
-                         width="100%"
-                         height="auto"
-                     /> 
-                <div class="output-card">
-                    <p>Output</p>
-                    <div class="output">
-                        <examples-progress-bar-parent-component example2="true"></examples-progress-bar-parent-component>
-                    </div>
-                </div>
-                <div>
-                    <ui-code-box code={parentTemplate4} file-name="parent HTML (template)" class-name="language-markup"></ui-code-box>
-                </div>
-                <div>
-                    <ui-code-box code={parentJavascript4} file-name="parent javascript (controller)" class-name="language-js"></ui-code-box>
-                </div>
-                <div>
-                    <ui-code-box code={childTemplate4} file-name="child HTML (template)" class-name="language-markup"></ui-code-box>
-                </div>
-                <div>
-                    <ui-code-box code={childJavascript4} file-name="child javascript (controller)" class-name="language-js"></ui-code-box>
-                </div>
-                <div>
-                    <ui-code-box code={childCSS4} file-name="child css (stylesheet)" class-name="language-css"></ui-code-box>
-                </div>
+            <div>
+                <ui-code-box
+                    code={parentTemplate4}
+                    file-name="parent HTML (template)"
+                    class-name="language-markup"
+                ></ui-code-box>
             </div>
-        </template>
+            <div>
+                <ui-code-box
+                    code={parentJavascript4}
+                    file-name="parent javascript (controller)"
+                    class-name="language-js"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={childTemplate4}
+                    file-name="child HTML (template)"
+                    class-name="language-markup"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={childJavascript4}
+                    file-name="child javascript (controller)"
+                    class-name="language-js"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={childCSS4}
+                    file-name="child css (stylesheet)"
+                    class-name="language-css"
+                ></ui-code-box>
+            </div>
+        </div>
+    </template>
 </template>

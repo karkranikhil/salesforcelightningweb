@@ -1,4 +1,2 @@
 import { LightningElement } from 'lwc';
-export default class AlertParentComponent extends LightningElement {
- 
-}
+export default class AlertParentComponent extends LightningElement {}

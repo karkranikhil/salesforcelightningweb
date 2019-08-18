@@ -36,8 +36,10 @@
             <template if:true={selectedRoute.htmlLooping.selected}>
                 <ui-html-looping-page></ui-html-looping-page>
             </template>
-            <template if:true={selectedRoute.parentToChildCommunication.selected}>
-                    <ui-parent-to-child-communication></ui-parent-to-child-communication>
+            <template
+                if:true={selectedRoute.parentToChildCommunication.selected}
+            >
+                <ui-parent-to-child-communication></ui-parent-to-child-communication>
             </template>
         </div>
     </div>

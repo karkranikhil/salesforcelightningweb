@@ -1,5 +1,5 @@
 <template>
-    <template if:true ={example1}>
+    <template if:true={example1}>
         <div class="field">
             <label for="name">Enter your percentage:</label>
             <input
@@ -12,11 +12,14 @@
                 value={percentage}
             />
         </div>
-</template>
-        <examples-progress-bar-child-component percentage={percentage} ></examples-progress-bar-child-component>
-    
-    <template if:true ={example2}>
-        <button class="btn danger" onclick={changeColor}>Click me to change progress bar color</button>
     </template>
-   
+    <examples-progress-bar-child-component
+        percentage={percentage}
+    ></examples-progress-bar-child-component>
+
+    <template if:true={example2}>
+        <button class="btn danger" onclick={changeColor}>
+            Click me to change progress bar color
+        </button>
+    </template>
 </template>

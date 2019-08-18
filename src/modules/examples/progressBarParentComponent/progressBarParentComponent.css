@@ -15,7 +15,11 @@ input {
     cursor: pointer;
     margin-bottom: 1rem;
     margin-top: 1rem;
-  }
-  
-  .danger {background-color: #f44336;} /* Red */ 
-  .danger:hover {background: #da190b;}
+}
+
+.danger {
+    background-color: #f44336;
+} /* Red */
+.danger:hover {
+    background: #da190b;
+}

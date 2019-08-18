@@ -25,7 +25,7 @@ export const parentToChildCommunicationCode = {
             return this.className ? 'alert '+this.className : 'alert'
         }
     }`,
-    childCSS1:`.alert {
+    childCSS1: `.alert {
         padding: 20px;
         background-color: #f44336;
         color: white;
@@ -37,11 +37,11 @@ export const parentToChildCommunicationCode = {
 .alert.success {background-color: #4CAF50;}
 .alert.info {background-color: #2196F3;}
 .alert.warning {background-color: #ff9800;}`,
-parentTemplate2:`<template>
+    parentTemplate2: `<template>
 <h3>Demo to show parent to child data communication using Array of Objects.</h3>
 <examples-card-child-component user-details={userDetails}></examples-card-child-component>
 </template>`,
-parentJavascript2:`import { LightningElement } from 'lwc';
+    parentJavascript2: `import { LightningElement } from 'lwc';
 export default class CardParentComponent extends LightningElement {
     userDetails =[
         {
@@ -76,7 +76,7 @@ export default class CardParentComponent extends LightningElement {
         ]
 }
 `,
-childTemplate2:`<template>
+    childTemplate2: `<template>
 <template for:each={userDetails} for:item="user">
     <div class="card" key={user.name}>
         <img src={user.imageUrl} alt={user.name} style="width:100%">
@@ -88,11 +88,11 @@ childTemplate2:`<template>
 </template>
 </template>
 `,
-childJavascript2:`import { LightningElement, api } from 'lwc';
+    childJavascript2: `import { LightningElement, api } from 'lwc';
 export default class CardChildComponent extends LightningElement {
     @api userDetails
 }`,
-childCSS2:`:host{
+    childCSS2: `:host{
     display: flex;
 }
 .card {
@@ -130,7 +130,7 @@ childCSS2:`:host{
   button:hover, a:hover {
     opacity: 0.7;
   }`,
-parentTemplate3:`<template>
+    parentTemplate3: `<template>
 <div class="field">
     <label for="name">Enter your percentage:</label>
     <input
@@ -146,7 +146,7 @@ parentTemplate3:`<template>
 <examples-progress-bar-child-component percentage={percentage} ></examples-progress-bar-child-component>
 </template>
 `,
-parentJavascript3:`import { LightningElement, track } from 'lwc';
+    parentJavascript3: `import { LightningElement, track } from 'lwc';
 export default class ProgressBarParentComponent extends LightningElement {
     @track percentage = 10
     changeHandler(event){
@@ -154,12 +154,12 @@ export default class ProgressBarParentComponent extends LightningElement {
     }
 }
 `,
-childTemplate3:`<template>
+    childTemplate3: `<template>
 <div class="myProgress">
     <div class={className} style={getStyle}>{percentage}</div>
 </div>
 </template>`,
-childJavascript3:`import { LightningElement, api, track } from 'lwc';
+    childJavascript3: `import { LightningElement, api, track } from 'lwc';
 export default class ProgressBarChildComponent extends LightningElement {
     defaultColor ="myBar";
     @track className = this.defaultColor;
@@ -170,7 +170,7 @@ export default class ProgressBarChildComponent extends LightningElement {
     }
 }
 `,
-childCSS3:`.myProgress {
+    childCSS3: `.myProgress {
     width: 100%;
     background-color: #ddd;
 }
@@ -185,11 +185,11 @@ childCSS3:`.myProgress {
 .danger{
   background-color: #f00;
 }`,
-parentTemplate4:`<template>
+    parentTemplate4: `<template>
 <button class="btn danger" onclick={changeColor}>Click me to change progress bar color</button>
 <examples-progress-bar-child-component percentage={percentage} ></examples-progress-bar-child-component>
 </template>`,
-parentJavascript4:`import { LightningElement, track } from 'lwc';
+    parentJavascript4: `import { LightningElement, track } from 'lwc';
 export default class ProgressBarParentComponent extends LightningElement {
     @track percentage = 10
     changeColor() {
@@ -197,12 +197,12 @@ export default class ProgressBarParentComponent extends LightningElement {
     }
 }
 `,
-childTemplate4:`<template>
+    childTemplate4: `<template>
 <div class="myProgress">
     <div class={className} style={getStyle}>{percentage}</div>
 </div>
 </template>`,
-childJavascript4:`import { LightningElement, api, track } from 'lwc';
+    childJavascript4: `import { LightningElement, api, track } from 'lwc';
 export default class ProgressBarChildComponent extends LightningElement {
     defaultColor ="myBar";
     dangerColor = "myBar danger";
@@ -218,7 +218,7 @@ export default class ProgressBarChildComponent extends LightningElement {
     }
 }
 `,
-childCSS4:`.myProgress {
+    childCSS4: `.myProgress {
     width: 100%;
     background-color: #ddd;
 }
@@ -232,5 +232,5 @@ childCSS4:`.myProgress {
 }
 .danger{
   background-color: #f00;
-}`,
+}`
 };

@@ -110,7 +110,7 @@ export const selectedRoute = {
     htmlLooping: {
         selected: false
     },
-    parentToChildCommunication:{
-        selected:false
+    parentToChildCommunication: {
+        selected: false
     }
 };
