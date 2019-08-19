@@ -80,6 +80,12 @@ export const routesList = [
         value: 'parentToChildCommunication',
         classlist: '',
         selected: false
+    },
+    {
+        title: 'Component lifecycle',
+        value: 'lifecycle',
+        classlist: '',
+        selected: false
     }
 ];
 export const selectedRoute = {
@@ -111,6 +117,9 @@ export const selectedRoute = {
         selected: false
     },
     parentToChildCommunication: {
+        selected: false
+    },
+    lifecycle: {
         selected: false
     }
 };

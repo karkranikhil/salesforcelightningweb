@@ -1,0 +1,11 @@
+<template>
+    <button class="btn childBtn" onclick={toggleRendering}>
+        Click me to load child component
+    </button>
+    <template if:true={showChild}>
+        <div class="box danger">
+            Error in child component! - <strong>{error}</strong>
+        </div>
+        <examples-error-callback-child-component></examples-error-callback-child-component>
+    </template>
+</template>

@@ -1,0 +1,195 @@
+<template>
+    <div class="fontSize-2rem margin-0 fontWeight-700">
+        Lightning Web Component Lifecycle Hooks
+    </div>
+    <h3>What is Lifecycle hooks?</h3>
+    <p>A lifecycle hook or lifecycle methods are a common nomenclature in modern frameworks like React, etc. They are basically callback methods which are triggered at a specific phase of a component instance’s lifecycle.</p>
+    <h3>Phases in lifecycle</h3>
+    <ul>
+        <li><strong>Mounting</strong> - This is the phase in which component get created and rendered</li>
+        <li><strong>Unmounting</strong> - This is the phase in which component get removed from DOM.</li>
+        <li><strong>Error</strong> - This phase can occur in both Mounting and Unmounting phase</li>
+    </ul>
+    <div class="tab">
+            <button
+                class={tabProperty.section1.className}
+                name="section1"
+                onclick={setTab}
+            >
+            Lifecycle hooks in Mounting Phase
+            </button>
+            <button
+                class={tabProperty.section2.className}
+                name="section2"
+                onclick={setTab}
+            >
+            Lifecycle hooks in Unmounting Phase
+            </button>
+            <button
+                class={tabProperty.section3.className}
+                name="section3"
+                onclick={setTab}
+            >
+            Lifecycle hooks in Error Phase
+            </button>
+    </div>
+    <template if:true={tabProperty.section1.selected}>
+            <div id="section1" class="tabcontent">
+                    <h3>Lifecycle hooks in Mounting Phase</h3>
+                    By looking at the below figure you can easily understand the Mounting phase
+                    <img
+                    src="../../../resources/images/lifecycle/mounting.png"
+                    alt="parent to child string example"
+                    width="100%"
+                    height="auto"
+                />
+                
+                    <h4>1. <span class="code">constructor()</span></h4>
+                    <ul>
+                        <li>This hook is invoked, when a component instance is created.</li>
+                        <li>You have to call super() first inside this</li>
+                        <li>At this point, the component properties won’t be ready yet.</li>
+                        <li>To access the host element, use this.template</li>
+                        <li>This method lifecycle flows from Parent to Child component.</li>
+                        <li>we can’t access child elements in the component body because they don’t exist yet.</li>
+                        <li>Don’t add attributes to the host element in the constructor</li>
+                        
+                    </ul>
+                    <!-- <div class="snippetBox">
+                            <div>constructor() &#123;</div>
+                            <div>&nbsp; &nbsp; &nbsp;super()</div>
+                            <div>&#125;</div>
+                          
+                        </div> -->
+                    
+            
+            
+            
+                    <h4>2. <span class="code">connectedCallback()</span></h4>
+                    <ul>
+                            <li>This hook is invoked when a component is inserted into the DOM.</li>
+                            <li>The component properties will be ready, but the child elements won’t be yet.</li>
+                            <li>This hook can fire more than once</li>
+                            <li>This method lifecycle flows from Parent to Child component.</li>
+                            <li>You can’t access child elements in the component body because they don’t exist yet.</li>
+                        </ul>
+                    <h4>3. <span class="code">render()</span></h4>
+                    <ul>
+                        <li>This callback method used to conditionally rendering a template or importing a custom one, use render() to override standard rendering functionality. </li>
+                        <li>This function is invoked after connectedCallback() and must return a valid HTML template</li>
+                    </ul>
+                    <h4>4. <span class="code">renderedCallback()</span></h4>
+                    <ul>
+                        <li>Fires when a component rendering is done.</li>
+                        <li>It can fire more than once.</li>
+                        <li>It flows from child to parent.</li>
+                        <li>This lifecycle hook is specific to Lightning Web Components, it isn’t from the HTML custom elements specification.</li>
+                        <li>When a component re-renders, all the expressions used in the template are reevaluated.</li>
+                    </ul>
+                    <div class="output-card">
+                            <p>Output</p>
+                            <div class="output">
+                                <examples-lifecycle-parent-component></examples-lifecycle-parent-component>
+                            </div>
+                        </div>
+                        <h3>Demo Code</h3>
+                        <div>
+                                <ui-code-box code={parentHtml1} file-name="parent template (HTML)" class-name="language-markup"></ui-code-box>
+                            </div>
+                            <div>
+                                 <ui-code-box code={parentJs1} file-name="parent javascript (controller)" class-name="language-js"></ui-code-box>
+                            </div>
+                            <div>
+                                <ui-code-box code={parentExtraTemplate} file-name="parent extra template (HTML)" class-name="language-markup"></ui-code-box>
+                            </div>
+                            <div>
+                                <ui-code-box code={childHtml} file-name="child template (HTML)" class-name="language-markup"></ui-code-box>
+                            </div>
+                             <div>
+                                <ui-code-box code={childJs} file-name="child javascript (controller)" class-name="language-js"></ui-code-box>
+                            </div>
+            </div>
+            
+    </template>
+    <template if:true={tabProperty.section2.selected}>
+            <div id="section2" class="tabcontent">
+                    <h3>Lifecycle hooks in unounting Phase</h3>
+                    By looking at the below figure you can easily understand the Unmounting phase
+                    <img
+                    src="../../../resources/images/lifecycle/unmounting.png"
+                    alt="parent to child string example"
+                    width="100%"
+                    height="auto"
+                />
+                    
+                    <h4><span class="code">disconnectedCallback()</span></h4>
+                    <ul>
+                            <li>Fires when a component is removed from the DOM.</li>
+                            <li>It flows from parent to child</li>
+                            <li>This callback method is specific to Lightning Web Components, it isn’t from the HTML custom elements specification.</li>
+                        </ul>
+                    <div class="output-card">
+                        <p>Output</p>
+                        <div class="output">
+                            <examples-lifecycle-parent-component></examples-lifecycle-parent-component>
+                        </div>
+                    </div>
+                    <h3>Demo Code</h3>
+                    <div>
+                            <ui-code-box code={parentHtml1} file-name="parent template (HTML)" class-name="language-markup"></ui-code-box>
+                        </div>
+                        <div>
+                             <ui-code-box code={parentJs1} file-name="parent javascript (controller)" class-name="language-js"></ui-code-box>
+                        </div>
+                        <div>
+                            <ui-code-box code={parentExtraTemplate} file-name="parent extra template (HTML)" class-name="language-markup"></ui-code-box>
+                        </div>
+                        <div>
+                            <ui-code-box code={childHtml} file-name="child template (HTML)" class-name="language-markup"></ui-code-box>
+                        </div>
+                         <div>
+                            <ui-code-box code={childJs} file-name="child javascript (controller)" class-name="language-js"></ui-code-box>
+                        </div>
+            </div>
+            
+    </template>
+    <template if:true={tabProperty.section3.selected}>
+            <div id="section3" class="tabcontent">
+                    <h4><span class="code">errorCallback(err, stack)</span></h4>
+                    <ul>
+                        <li>This method called when a descendant component throws an error in one of its callback.</li>
+                        <li>The error argument is a JavaScript native error object, and the stack argument is a string.</li>
+                        <li>This callback method is specific to Lightning Web Components, it isn’t from the HTML custom elements specification.</li>
+                    </ul>
+
+                    <div class="output-card">
+                            <p>Output</p>
+                            <div class="output">
+                                <p>Button is in parent component and on click of this, child component try to load but failed and send message <strong>Loading of child component failed</strong></p>
+                                <p>errorCallback get invoked in parent and catch the error message and display on parent component</p> 
+                                <examples-error-callback-parent-component></examples-error-callback-parent-component>
+                            </div>
+                        </div>
+                        <h3>Demo Code</h3>
+                    <div>
+                            <ui-code-box code={errorParentHtml} file-name="parent template (HTML)" class-name="language-markup"></ui-code-box>
+                    </div>
+                    <div>
+                            <ui-code-box code={errorParentJs} file-name="parent javascript (controller)" class-name="language-js"></ui-code-box>
+                    </div>
+                    <div>
+                        <ui-code-box code={errorChildHtml} file-name="child template (HTML)" class-name="language-markup"></ui-code-box>
+                    </div>
+                    <div>
+                            <ui-code-box code={errorChildJs} file-name="child javascript (controller)" class-name="language-js"></ui-code-box>
+                    </div>    
+            </div>
+            
+    </template>
+    
+
+    
+
+    
+   
+</template>

@@ -41,6 +41,9 @@
             >
                 <ui-parent-to-child-communication></ui-parent-to-child-communication>
             </template>
+            <template if:true={selectedRoute.lifecycle.selected}>
+                <ui-lifecycle-page></ui-lifecycle-page>
+            </template>
         </div>
     </div>
 </template>
