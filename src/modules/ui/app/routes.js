@@ -21,7 +21,6 @@
 // export { routesList, navigationElements };
 
 export const routesList = [
-    
     {
         title: 'Introduction',
         value: 'introduction',
@@ -102,7 +101,6 @@ export const routesList = [
     }
 ];
 export const selectedRoute = {
-    
     introduction: {
         selected: true
     },
@@ -133,13 +131,13 @@ export const selectedRoute = {
     parentToChildCommunication: {
         selected: false
     },
-    childToParentCommunication:{
+    childToParentCommunication: {
         selected: false
     },
     lifecycle: {
         selected: false
     },
-    alldemos:{
-        selected:false
-    },
+    alldemos: {
+        selected: false
+    }
 };

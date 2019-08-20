@@ -4,6 +4,10 @@
     padding: 14px 28px;
     font-size: 16px;
     cursor: pointer;
-  }
-  .success {background-color: #4CAF50;} /* Green */
-.success:hover {background-color: #46a049;}
+}
+.success {
+    background-color: #4caf50;
+} /* Green */
+.success:hover {
+    background-color: #46a049;
+}

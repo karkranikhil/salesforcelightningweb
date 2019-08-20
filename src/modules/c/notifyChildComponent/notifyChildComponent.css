@@ -1,4 +1,4 @@
-.notificationbox{
+.notificationbox {
     background-color: #ffa000;
     color: #fff;
     display: flex;
@@ -11,7 +11,7 @@
     max-width: 80%;
     margin-bottom: 1rem;
 }
-.child-section{
+.child-section {
     border: 5px solid red;
     padding: 2rem;
 }
@@ -22,7 +22,7 @@
     font-size: 16px;
     cursor: pointer;
     background-color: #01344e;
-  }
-  .content{
+}
+.content {
     display: contents;
-  }
+}

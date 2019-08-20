@@ -1,6 +1,5 @@
 import { LightningElement, track } from 'lwc';
 export default class ChildToParentCommunication extends LightningElement {
-    
     @track tabProperty = {
         section1: {
             selected: true,
@@ -13,7 +12,7 @@ export default class ChildToParentCommunication extends LightningElement {
         section3: {
             selected: false,
             className: 'tablinks'
-        },
+        }
     };
 
     setTab(event) {

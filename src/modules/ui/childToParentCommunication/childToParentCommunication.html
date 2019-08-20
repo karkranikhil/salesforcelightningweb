@@ -1,159 +1,247 @@
 <template>
-        <div class="fontSize-2rem margin-0 fontWeight-700">
-            Child to Parent communication
-        </div>
-        <p>
-            To communicate between Child to Parent component we should first
-            understand the <span class="code">Events</span>
-        </p>
-        <p>Lightning web components dispatch standard DOM events. Components can also create and dispatch custom events.</p>
-    
-        <h3>What is Event?</h3>
-        <ul>
-            <li>JavaScript's interaction with HTML is handled through events that occur when the user or the browser manipulates a page</li>
-            <li>When the page loads, it is called an event. </li>
-            <li>When the user clicks a button, that click too is an event.</li>
-            <li>Other examples include events like pressing any key, focus, blur, closing a window, resizing a window, etc.</li>
-            <li>Developers can use these events to execute JavaScript coded responses, which cause buttons to close windows, messages to be displayed to users, data to be validated, and virtually any other type of response imaginable.</li>
-        </ul>
-        <h3>Phases of Event</h3>
-        <p>The standard DOM Events describes 3 phases of event propagation:</p>
-        <ol>
-            <li><strong>Capturing phase –</strong>In this event goes down to the element.</li>
-            <li><strong>Target phase –</strong>In this event reached the target element.</li>
-            <li><strong>Bubbling phase –</strong> In this event bubbles up from the element.</li>
-            <p>**Note - Capturing phase is rarely used in real code, but sometimes can be useful. Normally it is invisible to us.</p>
-        </ol>
-        <p>Lightning web component has only two event propagation</p>
-        <ul>
-            <li><span class="code">bubbles - </span>A Boolean value indicating whether the event bubbles up through the DOM or not. Defaults to <em><strong>false</strong></em>.</li>
-            <li><span class="code">composed - </span> A Boolean value indicating whether the event can pass through the shadow boundary. Defaults to <em><strong>false</strong></em>.</li>
-        </ul>
-        
-        <h3>Create and Dispatch Events</h3>
-        <p>To create an event, use the <span class="code">CustomEvent()</span> constructor. </p>
-        <ol>
-            <li>The <span class="code">CustomEvent()</span> constructor has one required parameter, which is a string indicating the event type.</li>
-            <li> You can use any string as your event type But recommended are</li>
-            <ul>
-                <li>No uppercase letters</li>
-                <li>No spaces</li>
-                <li>Use underscores to separate words</li>
-            </ul>
-            <li>Don’t prefix your event name with the string <span class="code">on</span>, because inline event handler names must start with the string on</li>
-        </ol>
-        <li>To dispatch an event, call the <span class="code">EventTarget.dispatchEvent()</span> method.</li>
-        
+    <div class="fontSize-2rem margin-0 fontWeight-700">
+        Child to Parent communication
+    </div>
+    <p>
+        To communicate between Child to Parent component we should first
+        understand the <span class="code">Events</span>
+    </p>
+    <p>
+        Lightning web components dispatch standard DOM events. Components can
+        also create and dispatch custom events.
+    </p>
 
-        <h3>Custom events and dispatch Syntax</h3>
-        
-        <img
-                src="../../../resources//images/childToParent/customEventAndComposed.png"
+    <h3>What is Event?</h3>
+    <ul>
+        <li>
+            JavaScript's interaction with HTML is handled through events that
+            occur when the user or the browser manipulates a page
+        </li>
+        <li>When the page loads, it is called an event.</li>
+        <li>When the user clicks a button, that click too is an event.</li>
+        <li>
+            Other examples include events like pressing any key, focus, blur,
+            closing a window, resizing a window, etc.
+        </li>
+        <li>
+            Developers can use these events to execute JavaScript coded
+            responses, which cause buttons to close windows, messages to be
+            displayed to users, data to be validated, and virtually any other
+            type of response imaginable.
+        </li>
+    </ul>
+    <h3>Phases of Event</h3>
+    <p>The standard DOM Events describes 3 phases of event propagation:</p>
+    <ol>
+        <li>
+            <strong>Capturing phase –</strong>In this event goes down to the
+            element.
+        </li>
+        <li>
+            <strong>Target phase –</strong>In this event reached the target
+            element.
+        </li>
+        <li>
+            <strong>Bubbling phase –</strong> In this event bubbles up from the
+            element.
+        </li>
+        <p>
+            **Note - Capturing phase is rarely used in real code, but sometimes
+            can be useful. Normally it is invisible to us.
+        </p>
+    </ol>
+    <p>Lightning web component has only two event propagation</p>
+    <ul>
+        <li>
+            <span class="code">bubbles - </span>A Boolean value indicating
+            whether the event bubbles up through the DOM or not. Defaults to
+            <em><strong>false</strong></em
+            >.
+        </li>
+        <li>
+            <span class="code">composed - </span> A Boolean value indicating
+            whether the event can pass through the shadow boundary. Defaults to
+            <em><strong>false</strong></em
+            >.
+        </li>
+    </ul>
+
+    <h3>Create and Dispatch Events</h3>
+    <p>
+        To create an event, use the
+        <span class="code">CustomEvent()</span> constructor.
+    </p>
+    <ol>
+        <li>
+            The <span class="code">CustomEvent()</span> constructor has one
+            required parameter, which is a string indicating the event type.
+        </li>
+        <li>You can use any string as your event type But recommended are</li>
+        <ul>
+            <li>No uppercase letters</li>
+            <li>No spaces</li>
+            <li>Use underscores to separate words</li>
+        </ul>
+        <li>
+            Don’t prefix your event name with the string
+            <span class="code">on</span>, because inline event handler names
+            must start with the string on
+        </li>
+    </ol>
+    <li>
+        To dispatch an event, call the
+        <span class="code">EventTarget.dispatchEvent()</span> method.
+    </li>
+
+    <h3>Custom events and dispatch Syntax</h3>
+
+    <img
+        src="https://raw.githubusercontent.com/karkranikhil/schoolofsalesforce/child-to-parent/src/resources/images/childToParent/customEventAndComposed.png"
+        alt="parent to child string example"
+        width="75%"
+        height="auto"
+        style="width: 75%;margin: 2rem;"
+    />
+
+    <h3>There are Three kind of child to parent communication</h3>
+
+    <div class="tab">
+        <button
+            class={tabProperty.section1.className}
+            name="section1"
+            onclick={setTab}
+        >
+            Simple event
+        </button>
+        <button
+            class={tabProperty.section2.className}
+            name="section2"
+            onclick={setTab}
+        >
+            Event with Data
+        </button>
+        <button
+            class={tabProperty.section3.className}
+            name="section3"
+            onclick={setTab}
+        >
+            Event Bubbling
+        </button>
+    </div>
+    <!--section 1-->
+    <template if:true={tabProperty.section1.selected}>
+        <div id="section1" class="tabcontent">
+            <h3>
+                Child to parent communication by simple event.
+            </h3>
+            <div class="output-card">
+                <p>Output</p>
+                <div class="output">
+                    <c-modal-parent-component></c-modal-parent-component>
+                </div>
+            </div>
+            <h4>Explanation</h4>
+            <ul>
+                <li>Open modal button is in parent component</li>
+                <li>
+                    Currently child component is hidden or not loaded in DOM.
+                </li>
+                <li>
+                    on click of button <em>showHandler</em> method get invoked
+                    and show/load the child component to the DOM.
+                </li>
+                <li>
+                    On click of cancel button first new
+                    <span class="code">CustomEvent('close')</span> get created
+                    with event name <em>close</em>.
+                </li>
+                <li>
+                    Once custom event created
+                    <span class="code">this.dispatchEvent()</span> dispatch the
+                    custom event.
+                </li>
+                <li>
+                    Parent component listen to the dispatched event with
+                    <em>modalCloseHandler</em> and close the modal
+                </li>
+            </ul>
+        </div>
+    </template>
+    <!--section 2-->
+    <template if:true={tabProperty.section2.selected}>
+        <div id="section2" class="tabcontent">
+            <h3>
+                Child to parent communication by event along with data.
+            </h3>
+            <div class="output-card">
+                <p>Output</p>
+                <div class="output">
+                    <c-nav-parent-component></c-nav-parent-component>
+                </div>
+            </div>
+            <h4>Explanation</h4>
+            <ul>
+                <li>
+                    Parent component pass the list of cricketer to child
+                    component
+                </li>
+                <li>Child component render the list</li>
+                <li>
+                    on click of list child component dispatch and event with
+                    data(cricketer name) to parent
+                </li>
+                <li>Parent component capture the event and data.</li>
+                <li>
+                    Based on the data(cricketer name) recieved by parent, Card
+                    details of the selected cricketer shown in parent component
+                </li>
+            </ul>
+        </div>
+    </template>
+    <!--section 3-->
+    <template if:true={tabProperty.section3.selected}>
+        <div id="section3" class="tabcontent">
+            <h3>Child to parent communication by event bubbling.</h3>
+            <div class="output-card">
+                <p>Output</p>
+                <div class="output">
+                    <c-notify-parent-component></c-notify-parent-component>
+                </div>
+            </div>
+            <h4>Explanation</h4>
+            <img
+                src="https://raw.githubusercontent.com/karkranikhil/schoolofsalesforce/child-to-parent/src/resources/images/childToParent/bubbling.png"
                 alt="parent to child string example"
                 width="75%"
                 height="auto"
-                style="width: 75%;margin: 2rem;"
+                style="width: 75%;"
             />
-        
-        <h3>There are Three kind of child to parent communication</h3>
-
-        <div class="tab">
-            <button
-                class={tabProperty.section1.className}
-                name="section1"
-                onclick={setTab}
-            >
-                Simple event
-            </button>
-            <button
-                class={tabProperty.section2.className}
-                name="section2"
-                onclick={setTab}
-            >
-                Event with Data
-            </button>
-            <button
-                class={tabProperty.section3.className}
-                name="section3"
-                onclick={setTab}
-            >
-                Event Bubbling
-            </button>
+            <ul>
+                <li>
+                    Child component has button with event (x) and on click of
+                    that we are dispatching an event in
+                    <strong>bubbling phase</strong>
+                </li>
+                <li>
+                    Button is wrapped by another element on which there is
+                    another click event(Y).
+                </li>
+                <li>
+                    Parent element is listening to the event on div with method
+                    (Z)
+                </li>
+                <li>
+                    Once the button is clicked event(x) triggered and event
+                    start propogating towards upward.
+                </li>
+                <li>
+                    First it encountered the (y) and trigger that event and
+                    continoue the propogation
+                </li>
+                <li>
+                    Then it encountered the (Z) and triggerd the parent event
+                </li>
+            </ul>
         </div>
-        <!--section 1-->
-        <template if:true={tabProperty.section1.selected}>
-            <div id="section1" class="tabcontent">
-                <h3>
-                    Child to parent communication by simple event.
-                </h3>
-                <div class="output-card">
-                    <p>Output</p>
-                    <div class="output">
-                        <c-modal-parent-component></c-modal-parent-component>
-                    </div>
-                </div>
-                <h4>Explanation</h4>
-                <ul>
-                    <li>Open modal button is in parent component</li>
-                    <li>Currently child component is hidden or not loaded in DOM.</li>
-                    <li>on click of button <em>showHandler</em> method get invoked and show/load the child component to the DOM.</li>
-                    <li>On click of cancel button first new <span class="code">CustomEvent('close')</span> get created with event name <em>close</em>.</li>
-                    <li>Once custom event created <span class="code">this.dispatchEvent()</span> dispatch the custom event. </li>
-                    <li>Parent component listen to the dispatched event with <em>modalCloseHandler</em> and close the modal</li>
-                </ul>
-            </div>
-        </template>
-        <!--section 2-->
-        <template if:true={tabProperty.section2.selected}>
-            <div id="section2" class="tabcontent">
-                <h3>
-                        Child to parent communication by event along with data.
-                </h3>
-                <div class="output-card">
-                    <p>Output</p>
-                    <div class="output">
-                        <c-nav-parent-component></c-nav-parent-component>
-                    </div>
-                </div>
-                <h4>Explanation</h4>
-                <ul>
-                    <li>Parent component pass the list of cricketer to child component</li>
-                    <li>Child component render the list</li>
-                    <li>on click of list child component dispatch and event with data(cricketer name) to parent</li>
-                    <li>Parent component capture the event and data.</li>
-                    <li>Based on the data(cricketer name) recieved by parent, Card details of the selected cricketer shown in parent component</li>
-                </ul>
-            </div>
-        </template>
-        <!--section 3-->
-        <template if:true={tabProperty.section3.selected}>
-            <div id="section3" class="tabcontent">
-                <h3>Passing data to child on action at parent level</h3>
-                <div class="output-card">
-                        <p>Output</p>
-                        <div class="output">
-                            <c-notify-parent-component
-                            ></c-notify-parent-component>
-                        </div>
-                    </div>
-                    <h4>Explanation</h4>
-                    <img
-                        src="../../../resources//images/childToParent/bubbling.png"
-                        alt="parent to child string example"
-                        width="75%"
-                        height="auto"
-                        style="width: 75%;"
-                    />
-                    <ul>
-                        <li>Child component has button  with event (x) and on click of that we are dispatching an event in <strong>bubbling phase</strong></li>
-                        <li>Button is wrapped by another element on which there is another click event(Y).</li>
-                        <li>Parent element is listening to the event on div with method (Z)</li>
-                        <li>Once the button is clicked event(x) triggered and event start propogating towards upward.</li>
-                        <li>First it encountered the (y) and trigger that event and continoue the propogation</li>
-                        <li>Then it encountered the (Z) and triggerd the parent event</li>
-                    </ul>
-            </div>
-        </template>
-        
     </template>
-    
+</template>

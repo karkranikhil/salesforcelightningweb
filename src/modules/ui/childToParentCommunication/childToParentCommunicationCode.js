@@ -1,16 +1,16 @@
 export const childToParentCommunicationCode = {
-modalParentHtml:``,
-modalParentJS:``,
-modalChildHtml:``,
-modalChildJs:``,
+    modalParentHtml: ``,
+    modalParentJS: ``,
+    modalChildHtml: ``,
+    modalChildJs: ``,
 
-navbarParentHtml:``,
-navbarParentJS:``,
-navbarChildHtml:``,
-navbarChildJs:``,
+    navbarParentHtml: ``,
+    navbarParentJS: ``,
+    navbarChildHtml: ``,
+    navbarChildJs: ``,
 
-notifyParentHtml:``,
-notifyParentJS:``,
-notifyChildHtml:``,
-notifyChildJs:``
-}
+    notifyParentHtml: ``,
+    notifyParentJS: ``,
+    notifyChildHtml: ``,
+    notifyChildJs: ``
+};
