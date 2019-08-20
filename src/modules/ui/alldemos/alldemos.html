@@ -1,0 +1,91 @@
+<template>
+        <div class="card">
+            <p><button>Single Data Binding</button></p>
+            <div class="output">
+                <p>Here name "Nikhil Karkra" getting bind from javascript property </p>
+                <c-data-binding></c-data-binding>
+            </div>
+        </div>
+        <div class="card">
+            <p><button>Two way Data Binding</button></p>
+            <div class="padding-10">
+                If you change the value of the input box, you will observe that the
+                text start updating immediately along with the changes
+            </div>
+            <div class="output">
+                <c-two-way-data-binding></c-two-way-data-binding>
+            </div>
+        </div>
+        <div class="card">
+            <p><button>Template Hide and Show (if:true, if:false)</button></p>
+            <div class="output-card">
+                <div class="output">
+                    <c-template-hide-show></c-template-hide-show>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <p><button>Template Looping (for:each, iterator)</button></p>
+            <div class="output-card">
+                    <div class="output">
+                        <c-html-looping></c-html-looping>
+                    </div>
+                </div>
+        </div>
+        <div class="card">
+            <p><button>Parent to child communication with passing data as string</button></p>
+            <div class="output-card">
+                    <div class="output">
+                        <c-alert-parent-component></c-alert-parent-component>
+                    </div>
+                </div>
+        </div>
+        <div class="card">
+            <p><button>Parent to child communication with passing data as an Array of Objects</button></p>
+            <div class="output-card">
+                    <div class="output">
+                        <c-card-parent-component></c-card-parent-component>
+                    </div>
+                </div>
+        </div>
+        <div class="card">
+            <p><button>Parent to child communication with passing data on an Event</button></p>
+            <div class="output-card">
+                    <div class="output">
+                            <c-progress-bar-parent-component example1="true"></c-progress-bar-parent-component>
+                    </div>
+                </div>
+        </div>
+        <div class="card">
+            <p><button>Parent to child communication with Invoking child method from parent directly</button></p>
+            <div class="output-card">
+                    <div class="output">
+                        <c-progress-bar-parent-component example2="true"></c-progress-bar-parent-component>
+                    </div>
+                </div>
+        </div>
+        <div class="card">
+            <p><button>Child to parent communication with simple event</button></p>
+            <div class="output-card">
+                <div class="output">
+                    <c-modal-parent-component></c-modal-parent-component>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <p><button>Child to parent communication with event along with passing data</button></p>
+            <div class="output-card">
+                <div class="output">
+                    <c-nav-parent-component></c-nav-parent-component>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <p><button>Child to parent communication with event bubbling</button></p>
+            <div class="output-card">
+                <div class="output">
+                        <c-notify-parent-component ></c-notify-parent-component>
+                </div>
+            </div>
+        </div>
+</template>

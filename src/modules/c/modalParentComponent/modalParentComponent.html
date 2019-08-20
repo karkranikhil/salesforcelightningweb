@@ -1,0 +1,10 @@
+<template>
+    <button class="btn success" onclick={showHandler}>Open Modal</button>
+    <template if:true={showModal}>
+        <c-modal-component 
+            header-text="Message !!" 
+            body-text="This Modal is a child component. Triggered from parent and on click of Close button it will dispatch an event to parent handler and that close the modal" 
+            onclose={modalCloseHandler}>
+        </c-modal-component>
+    </template>
+</template>

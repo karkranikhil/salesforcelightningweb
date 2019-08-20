@@ -1,0 +1,11 @@
+<template>
+    <div class="parent-section" onshow={showHandler}>
+        <p>I am parent component</p>
+        <template if:true={showNotification}>
+            <div class="notificationbox">
+                <span>Notification from Child. Event bubbled successfully!</span>
+            </div>
+        </template>
+        <c-notify-child-component></c-notify-child-component>
+    </div>
+</template>

@@ -2,10 +2,10 @@ export const parentToChildCommunicationCode = {
     parentTemplate1: `<template>
     <h3>Demo to show parent to child data communication using strings.</h3>
     <div>
-        <examples-alert-child-component message="Indicates a dangerous or potentially negative action"></examples-alert-child-component>
-        <examples-alert-child-component class-name="success" message="Success! Indicates a successful or positive action."></examples-alert-child-component>
-        <examples-alert-child-component class-name="info" message="Info! Indicates a neutral informative change or action."></examples-alert-child-component>
-        <examples-alert-child-component class-name="warning" message="Warning! Indicates a warning that might need attention."></examples-alert-child-component>
+        <c-alert-child-component message="Indicates a dangerous or potentially negative action"></c-alert-child-component>
+        <c-alert-child-component class-name="success" message="Success! Indicates a successful or positive action."></c-alert-child-component>
+        <c-alert-child-component class-name="info" message="Info! Indicates a neutral informative change or action."></c-alert-child-component>
+        <c-alert-child-component class-name="warning" message="Warning! Indicates a warning that might need attention."></c-alert-child-component>
     </div>
 </template>`,
     parentJavascript1: `
@@ -39,7 +39,7 @@ export const parentToChildCommunicationCode = {
 .alert.warning {background-color: #ff9800;}`,
     parentTemplate2: `<template>
 <h3>Demo to show parent to child data communication using Array of Objects.</h3>
-<examples-card-child-component user-details={userDetails}></examples-card-child-component>
+<c-card-child-component user-details={userDetails}></c-card-child-component>
 </template>`,
     parentJavascript2: `import { LightningElement } from 'lwc';
 export default class CardParentComponent extends LightningElement {
@@ -143,7 +143,7 @@ export default class CardChildComponent extends LightningElement {
         value={percentage}
     />
 </div>
-<examples-progress-bar-child-component percentage={percentage} ></examples-progress-bar-child-component>
+<c-progress-bar-child-component percentage={percentage} ></c-progress-bar-child-component>
 </template>
 `,
     parentJavascript3: `import { LightningElement, track } from 'lwc';
@@ -187,13 +187,13 @@ export default class ProgressBarChildComponent extends LightningElement {
 }`,
     parentTemplate4: `<template>
 <button class="btn danger" onclick={changeColor}>Click me to change progress bar color</button>
-<examples-progress-bar-child-component percentage={percentage} ></examples-progress-bar-child-component>
+<c-progress-bar-child-component percentage={percentage} ></c-progress-bar-child-component>
 </template>`,
     parentJavascript4: `import { LightningElement, track } from 'lwc';
 export default class ProgressBarParentComponent extends LightningElement {
     @track percentage = 10
     changeColor() {
-        this.template.querySelector('examples-progress-bar-child-component').changeBarColor();
+        this.template.querySelector('c-progress-bar-child-component').changeBarColor();
     }
 }
 `,

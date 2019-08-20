@@ -13,7 +13,7 @@ export const lifecyclePageCode = {
         </div>
         
         <template if:true={showChild}>
-            <examples-lifecycle-child-component></examples-lifecycle-child-component>
+            <c-lifecycle-child-component></c-lifecycle-child-component>
         </template>
     </div>
 </template>`,
@@ -101,7 +101,7 @@ export default class lifecycleChildComponent extends LightningElement {
 <button class="btn childBtn" onclick={toggleRendering}>Click me to load child component</button>
 <template if:true={showChild}>
         <div class="box danger">Error in child component! - <strong>{error}</strong></div>
-        <examples-error-callback-child-component></examples-error-callback-child-component>
+        <c-error-callback-child-component></c-error-callback-child-component>
 </template>
 
 </template>`,

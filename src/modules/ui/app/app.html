@@ -8,6 +8,9 @@
             </ui-navbar>
         </div>
         <div class="flex-child flex-main-section">
+            <template if:true={selectedRoute.alldemos.selected}>
+                <ui-alldemos></ui-alldemos>
+            </template>
             <template if:true={selectedRoute.introduction.selected}>
                 <ui-introduction></ui-introduction>
             </template>
@@ -40,6 +43,11 @@
                 if:true={selectedRoute.parentToChildCommunication.selected}
             >
                 <ui-parent-to-child-communication></ui-parent-to-child-communication>
+            </template>
+            <template
+                if:true={selectedRoute.childToParentCommunication.selected}
+            >
+                <ui-child-to-parent-communication></ui-child-to-parent-communication>
             </template>
             <template if:true={selectedRoute.lifecycle.selected}>
                 <ui-lifecycle-page></ui-lifecycle-page>

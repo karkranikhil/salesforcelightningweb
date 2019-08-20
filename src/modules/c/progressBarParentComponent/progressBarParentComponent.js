@@ -9,7 +9,7 @@ export default class ProgressBarParentComponent extends LightningElement {
     }
     changeColor() {
         this.template
-            .querySelector('examples-progress-bar-child-component')
+            .querySelector('c-progress-bar-child-component')
             .changeBarColor();
     }
 }
