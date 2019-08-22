@@ -15,6 +15,7 @@
     background: #00354e;
     border-radius: 5px;
     color: yellow;
+    overflow: scroll;
 }
 .snippetBox a {
     color: yellow;
@@ -43,4 +44,7 @@
 }
 .mt-1 {
     margin-top: 1rem;
+}
+.image-container{
+    width:100%;
 }

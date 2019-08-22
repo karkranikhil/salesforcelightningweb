@@ -1,4 +1,5 @@
 <template>
+    <div class="card-section">
     <template for:each={userDetails} for:item="user">
         <div class="card" key={user.name}>
             <img src={user.imageUrl} alt={user.name} style="width:100%" />
@@ -8,4 +9,5 @@
             <p><button>{user.buttontext}</button></p>
         </div>
     </template>
+</div>
 </template>

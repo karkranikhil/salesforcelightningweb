@@ -1,4 +1,7 @@
 <template>
+        <span class="d-inline-block d-sm-none mobileMenu" onclick={showSidebarHandler}>☰</span> 
+<template if:true={showSidebar}>
+    
     <div class="sidenav">
         <template for:each={navLists} for:item="navList">
             <a
@@ -13,4 +16,5 @@
             >
         </template>
     </div>
+</template>
 </template>

@@ -88,6 +88,14 @@ export const routesList = [
         selected: false
     },
     {
+        title: 'Component to component communication',
+        value: 'compToRandomCompCommunication',
+        classlist: '',
+        selected: false
+    },
+
+    
+    {
         title: 'Component lifecycle',
         value: 'lifecycle',
         classlist: '',
@@ -132,6 +140,9 @@ export const selectedRoute = {
         selected: false
     },
     childToParentCommunication: {
+        selected: false
+    },
+    compToRandomCompCommunication:{
         selected: false
     },
     lifecycle: {

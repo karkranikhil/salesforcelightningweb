@@ -49,6 +49,9 @@
             >
                 <ui-child-to-parent-communication></ui-child-to-parent-communication>
             </template>
+            <template if:true={selectedRoute.compToRandomCompCommunication.selected}>
+                <ui-comp-to-random-comp-communication></ui-comp-to-random-comp-communication>
+            </template>
             <template if:true={selectedRoute.lifecycle.selected}>
                 <ui-lifecycle-page></ui-lifecycle-page>
             </template>

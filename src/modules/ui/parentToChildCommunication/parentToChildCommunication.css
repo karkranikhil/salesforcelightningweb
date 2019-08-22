@@ -15,6 +15,7 @@
     background: #00354e;
     border-radius: 5px;
     color: yellow;
+    overflow: scroll;
 }
 .snippetBox a {
     color: yellow;
@@ -83,3 +84,8 @@
     border: 1px solid #00364e;
     border-top: none;
 }
+@media screen and (max-width: 768px) {
+    .tab {
+        flex-direction: column;
+    }
+    }

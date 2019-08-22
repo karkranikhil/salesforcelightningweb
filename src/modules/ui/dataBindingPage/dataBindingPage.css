@@ -15,6 +15,7 @@
     background: #00354e;
     border-radius: 5px;
     color: yellow;
+    overflow: scroll;
 }
 .snippetBox a {
     color: yellow;
@@ -37,4 +38,7 @@
 .code {
     background: #f8cecc;
     padding: 5px;
+}
+.width100{
+    width:100%;
 }

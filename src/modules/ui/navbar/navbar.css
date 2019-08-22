@@ -27,6 +27,12 @@
     color: #f1f1f1;
     background: #01344e;
 }
+.mobileMenu{
+    display: none;
+    position: fixed;
+    top: 10px;
+    padding-left: 10px;
+}
 
 @media screen and (max-height: 450px) {
     .sidenav {
@@ -34,5 +40,19 @@
     }
     .sidenav a {
         font-size: 18px;
+    }
+   
+}
+
+@media screen and (max-width: 768px) {
+    .mobileMenu{
+        display: inline;
+        z-index: 9999999;
+    }
+    .sidenav{
+        position: fixed;
+        top: 50px;
+        width: 100%;
+        
     }
 }
