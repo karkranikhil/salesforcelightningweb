@@ -1,11 +1,11 @@
 export const apexCallCode = {
-controller:`public with sharing class AccountController {
+    controller: `public with sharing class AccountController {
     @AuraEnabled(cacheable=true)
     public static List<Account> getAccountList() {
         return [SELECT Id, Name, AccountNumber, Phone FROM Account LIMIT 10];
     }
 }`,
-lwcHTML1:`</template>
+    lwcHTML1: `</template>
     <template if:true={accounts.data}>
         <div class="card">
             <h3 class="header">Account details List</h3>
@@ -16,13 +16,13 @@ lwcHTML1:`</template>
         </div>
     </template>
 </template>`,
-lwcJS1:`
+    lwcJS1: `
 import { LightningElement, wire } from 'lwc';
 import getAccountList from '@salesforce/apex/AccountController.getAccountList';
 export default class WirePropertyDemo extends LightningElement {
     @wire(getAccountList) accounts;
 }`,
-lwcCSS:`.card {
+    lwcCSS: `.card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 500px;
     margin: auto;
@@ -47,7 +47,7 @@ lwcCSS:`.card {
       padding: 10px;
   
   }`,
-lwcXML:`<?xml version="1.0" encoding="UTF-8"?>
+    lwcXML: `<?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="WirePropertyDemo">
      <apiVersion>45.0</apiVersion>
     <isExposed>true</isExposed>
@@ -57,13 +57,13 @@ lwcXML:`<?xml version="1.0" encoding="UTF-8"?>
         <target>lightning__HomePage</target>
     </targets>
 </LightningComponentBundle>`,
-controller2:`public with sharing class AccountController {
+    controller2: `public with sharing class AccountController {
     @AuraEnabled(cacheable=true)
     public static List<Account> getAccountList() {
         return [SELECT Id, Name, AccountNumber, Phone FROM Account LIMIT 10];
     }
 }`,
-lwcHTML2:`</template>
+    lwcHTML2: `</template>
 <template if:true={accounts.data}>
 <div class="card">
         <h3 class="header">Account details List</h3>
@@ -78,7 +78,7 @@ lwcHTML2:`</template>
     </div>
 </template>
 </template>`,
-lwcJS2:`
+    lwcJS2: `
 import { LightningElement, wire } from 'lwc';
 import getAccountList from '@salesforce/apex/AccountController.getAccountList';
 export default class WireFunctionDemo extends LightningElement {
@@ -91,7 +91,7 @@ export default class WireFunctionDemo extends LightningElement {
             }
         }
     }`,
-lwcCSS2:`
+    lwcCSS2: `
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 500px;
@@ -120,7 +120,7 @@ h3.footer{
     padding: 10px;
 
 }`,
-lwcXML2:`<?xml version="1.0" encoding="UTF-8"?>
+    lwcXML2: `<?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="WireFunctionDemo">
      <apiVersion>45.0</apiVersion>
     <isExposed>true</isExposed>
@@ -131,13 +131,13 @@ lwcXML2:`<?xml version="1.0" encoding="UTF-8"?>
     </targets>
 </LightningComponentBundle>`,
 
-controller3:`public with sharing class AccountController {
+    controller3: `public with sharing class AccountController {
     @AuraEnabled(cacheable=true)
     public static List<Account> getAccountList() {
         return [SELECT Id, Name, AccountNumber, Phone FROM Account LIMIT 10];
     }
 }`,
-lwcHTML3:`<template>
+    lwcHTML3: `<template>
 <div class="container">
 <button onclick={handleLoad} class="btn info">Load Accounts details</button>
 
@@ -163,7 +163,7 @@ lwcHTML3:`<template>
 </div> 
 </template>
 `,
-lwcJS3:`import { LightningElement, track } from 'lwc';
+    lwcJS3: `import { LightningElement, track } from 'lwc';
 import getAccountList from '@salesforce/apex/AccountController.getAccountList';
 
 export default class ApexImperativeDemo extends LightningElement {
@@ -181,7 +181,7 @@ export default class ApexImperativeDemo extends LightningElement {
     }
 
 }`,
-lwcCSS3:`  .container{
+    lwcCSS3: `  .container{
     background:#dedede;
   }
   table {
@@ -216,7 +216,7 @@ lwcCSS3:`  .container{
   }
   .info {background-color: #2196F3;} /* Blue */
 .info:hover {background: #0b7dda;}`,
-lwcXML3:`<?xml version="1.0" encoding="UTF-8"?>
+    lwcXML3: `<?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="ApexImperativeDemo">
      <apiVersion>45.0</apiVersion>
     <isExposed>true</isExposed>
@@ -226,4 +226,4 @@ lwcXML3:`<?xml version="1.0" encoding="UTF-8"?>
         <target>lightning__HomePage</target>
     </targets>
 </LightningComponentBundle>`
-}
+};

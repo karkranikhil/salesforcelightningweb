@@ -1,5 +1,5 @@
 import { LightningElement } from 'lwc';
-import {compToRandomCompCommunicationCode} from './compToRandomCompCommunicationCode'
+import { compToRandomCompCommunicationCode } from './compToRandomCompCommunicationCode';
 export default class CompToCompRandomCommunication extends LightningElement {
     get getPubSub() {
         return compToRandomCompCommunicationCode.pubsub;
@@ -28,5 +28,4 @@ export default class CompToCompRandomCommunication extends LightningElement {
     get parentOneJs() {
         return compToRandomCompCommunicationCode.parentOneJs;
     }
-    
 }

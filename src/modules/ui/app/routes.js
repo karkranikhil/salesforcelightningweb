@@ -113,7 +113,6 @@ export const routesList = [
         selected: false
     },
     {
-        
         title: 'All Examples',
         value: 'alldemos',
         classlist: '',

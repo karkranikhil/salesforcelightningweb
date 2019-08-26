@@ -1,181 +1,215 @@
 <template>
-        <div class="fontSize-2rem margin-0 fontWeight-700">
-            Hello World lightning web component
+    <div class="fontSize-2rem margin-0 fontWeight-700">
+        Hello World lightning web component
+    </div>
+    <h3>Setup Salesforce DX Project</h3>
+    <ol>
+        <li>
+            In VS code, open the Command Palette by pressing Ctrl+Shift+P on
+            Windows or Cmd+Shift+P on macOS.
+        </li>
+        <li>Type SFDX and Select SFDX: Create Project.</li>
+        <div class="width100">
+            <img
+                src="../../../resources/images/setup/create_Project.png"
+                alt="create project"
+                class="width100 cmdImg"
+                height="auto"
+            />
         </div>
-        <h3>Setup Salesforce DX Project</h3>
-        <ol>
-            <li> In VS code, open the Command Palette by pressing Ctrl+Shift+P on Windows or Cmd+Shift+P on macOS.</li>
-            <li>Type SFDX and Select SFDX: Create Project.</li>
-            <div class="width100">
-                    <img
-                        src="../../../resources/images/setup/create_Project.png"
-                        alt="create project"
-                        class="width100 cmdImg"
-                        height="auto"
-                    />
-            </div>
-            <li>Enter HelloWorld as the project name.</li>
-            <div class="width100">
-                    <img
-                        src="../../../resources/images/setup/projectName.png"
-                        alt="hello world project name"
-                        class="width100 cmdImg"
-                        height="auto"
-                    />
-            </div>
-            <li>Press Enter.</li>
-            <li>Select a folder to store the project.</li>
-            <li>Click Create Project. You should see something like this as your base setup. </li>
-            <div class="width100">
-                    <img
-                        src="../../../resources/images/setup/folderStructure.png"
-                        alt="vscode folder structure"
-                        width="200px"
+        <li>Enter HelloWorld as the project name.</li>
+        <div class="width100">
+            <img
+                src="../../../resources/images/setup/projectName.png"
+                alt="hello world project name"
+                class="width100 cmdImg"
+                height="auto"
+            />
+        </div>
+        <li>Press Enter.</li>
+        <li>Select a folder to store the project.</li>
+        <li>
+            Click Create Project. You should see something like this as your
+            base setup.
+        </li>
+        <div class="width100">
+            <img
+                src="../../../resources/images/setup/folderStructure.png"
+                alt="vscode folder structure"
+                width="200px"
+            />
+        </div>
+    </ol>
+    <h3>Authorize Your org</h3>
+    <ol>
+        <li>
+            In Visual Studio code, open the Command Palette by pressing
+            Ctrl+Shift+P on Windows or Cmd+Shift+P on macOS.
+        </li>
+        <li>Type SFDX and Select SFDX: Authorize an Org.</li>
+        <div class="width100">
+            <img
+                src="../../../resources/images/setup/AuthorizeOrg.png"
+                alt="vscode Authorize org"
+                class="width100 cmdImg"
+                height="auto"
+            />
+        </div>
+        <li>Press Enter to accept the Project Default login URL option.</li>
+        <div class="width100">
+            <img
+                src="../../../resources/images/setup/ProjectDefault.png"
+                alt="vscode project default"
+                class="width100 cmdImg"
+                height="auto"
+            />
+        </div>
+        <li>Press Enter to accept the default alias.</li>
+        <li>Log in using your salesforce credentials.</li>
+        <div class="width100">
+            <img
+                src="../../../resources/images/setup/login_Auth.png"
+                alt="vscode project default"
+                class="width100 cmdImg"
+                height="auto"
+            />
+        </div>
+        <li>
+            After you authenticate in the browser, the CLI remembers your
+            credentials. The success message should look like this:
+        </li>
+        <div class="width100">
+            <img
+                src="../../../resources/images/setup/successAuth.png"
+                alt="vscode project default"
+                class="width100 cmdImg"
+                height="auto"
+            />
+        </div>
+    </ol>
+    <h3>Create a Lightning Web Component</h3>
+    <ol>
+        <li>
+            In Visual Studio code, open the Command Palette by pressing
+            Ctrl+Shift+P on Windows or Cmd+Shift+P on macOS.
+        </li>
+        <li>Type SFDX and Select SFDX: Create Lightning Web Component.</li>
+        <div class="width100">
+            <img
+                src="../../../resources/images/setup/CreateLWC.png"
+                alt="vscode create lightning web component"
+                class="width100 cmdImg"
+                height="auto"
+            />
+        </div>
+        <li>
+            Enter helloWorld for the name of the new component and press enter
+        </li>
+        <li>Press Enter to accept the default force-app/main/default/lwc.</li>
+        <li>View the newly created files in Visual Studio Code.</li>
+        <div class="width100">
+            <img
+                src="../../../resources/images/setup/CreateLWC.png"
+                alt="vscode create lightning web component"
+                class="width100 cmdImg"
+                height="auto"
+            />
+        </div>
+        <li>Let's add the Template to helloworld.html</li>
+        <div>
+            <ui-code-box
+                code={template}
+                file-name="template (html)"
+                class-name="language-markup"
+            ></ui-code-box>
+        </div>
+        <li>Let's add the javascript(class) to helloworld.js</li>
+        <div>
+            <ui-code-box
+                code={Javascript}
+                file-name="javascript (controller)"
+                class-name="language-js"
+            ></ui-code-box>
+        </div>
+        <li>Let's change the meta file so that it's exposed to other pages.</li>
+        <div>
+            <ui-code-box
+                code={xml}
+                file-name="js-meta.xml"
+                class-name="language-makup"
+            ></ui-code-box>
+        </div>
+    </ol>
+    <h3>Deployment</h3>
+    <ol>
+        <li>Right-click the default folder.</li>
 
-                    />
-            </div>
-        </ol>
-        <h3>Authorize Your org</h3>
-        <ol>
-            <li>In Visual Studio code, open the Command Palette by pressing Ctrl+Shift+P on Windows or Cmd+Shift+P on macOS.</li>
-            <li>Type SFDX and Select SFDX: Authorize an Org. </li>    
-            <div class="width100">
-                    <img
-                        src="../../../resources/images/setup/AuthorizeOrg.png"
-                        alt="vscode Authorize org"
-                        class="width100 cmdImg"
-                        height="auto"
-                    />
-            </div>   
-            <li>Press Enter to accept the Project Default login URL option.</li>  
-            <div class="width100">
-                    <img
-                        src="../../../resources/images/setup/ProjectDefault.png"
-                        alt="vscode project default"
-                        class="width100 cmdImg"
-                        height="auto"
-                    />
-            </div>    
-            <li>Press Enter to accept the default alias.</li>  
-            <li>Log in using your salesforce credentials.</li> 
-            <div class="width100">
-                    <img
-                        src="../../../resources/images/setup/login_Auth.png"
-                        alt="vscode project default"
-                        class="width100 cmdImg"
-                        height="auto"
-                    />
-            </div>  
-            <li>After you authenticate in the browser, the CLI remembers your credentials. The success message should look like this: </li>
-            <div class="width100">
-                    <img
-                        src="../../../resources/images/setup/successAuth.png"
-                        alt="vscode project default"
-                        class="width100 cmdImg"
-                        height="auto"
-                    />
-            </div> 
-        </ol>
-        <h3>Create a Lightning Web Component</h3>
-        <ol>
-            <li>In Visual Studio code, open the Command Palette by pressing Ctrl+Shift+P on Windows or Cmd+Shift+P on macOS.</li>
-            <li>Type SFDX and Select SFDX: Create Lightning Web Component.</li>
-            <div class="width100">
-                    <img
-                        src="../../../resources/images/setup/CreateLWC.png"
-                        alt="vscode create lightning web component"
-                        class="width100 cmdImg"
-                        height="auto"
-                    />
-            </div> 
-            <li>Enter helloWorld for the name of the new component and press enter</li>
-            <li>Press Enter to accept the default force-app/main/default/lwc.</li>
-            <li>View the newly created files in Visual Studio Code. </li>
-            <div class="width100">
-                    <img
-                        src="../../../resources/images/setup/CreateLWC.png"
-                        alt="vscode create lightning web component"
-                        class="width100 cmdImg"
-                        height="auto"
-                    />
-            </div> 
-            <li>Let's add the Template to helloworld.html </li>
-            <div>
-                <ui-code-box
-                    code={template}
-                    file-name="template (html)"
-                    class-name="language-markup"
-                ></ui-code-box>
-            </div>
-            <li>Let's add the javascript(class) to helloworld.js </li>
-            <div>
-                <ui-code-box
-                    code={Javascript}
-                    file-name="javascript (controller)"
-                    class-name="language-js"
-                ></ui-code-box>
-            </div>
-            <li>Let's change the meta file so that it's exposed to other pages. </li>
-            <div>
-                <ui-code-box
-                    code={xml}
-                    file-name="js-meta.xml"
-                    class-name="language-makup"
-                ></ui-code-box>
-            </div>
-        </ol>
-        <h3>Deployment</h3>
-        <ol>
-            <li>Right-click the default folder. </li>
-           
-            <li>Click SFDX: Deploy Source to Org.</li>
-            <div class="width100">
-                    <img
-                        src="../../../resources/images/setup/rightClickDeploy.png"
-                        alt="vscode default folder right click"
-                        class="width100 cmdImg"
-                        height="auto"
-                    />
-            </div> 
-        
-            <li>In the Output tab of the integrated terminal, view the results of your deployment. You should have also received a notice that states: SFDX: Deploy Source to Org ... ended with exit code 0. This means that the command ran successfully. </li>
-            <div class="width100">
-                    <img
-                        src="../../../resources/images/setup/successDeploy.png"
-                        alt="vscode create lightning web component"
-                        class="width100 cmdImg"
-                        height="auto"
-                    />
-            </div> 
-        </ol>
-        <h3>Add Component to App in Lightning Experience</h3>
-        <ol>
-            <li> In Visual Studio code, open the Command Palette by pressing Ctrl+Shift+P on Windows or Cmd+Shift+P on macOS.</li>
-            <li>Type SFDX and Select SFDX: Open Default Org</li>
-            <li>Click the app launcher icon  App Launcherto open the App Launcher, then click Sales.</li>
-            <li>Click the gear icon Setup Gear to reveal the Setup menu, then click Edit Page.</li>
-            <li>Drag the helloWorld Lightning web component from the list of custom components to the top of the Page Canvas and Click Save.</li>
-            <div class="width100">
-                    <img
-                        src="../../../resources/images/setup/builder.png"
-                        alt="vscode default folder right click"
-                        class="width100 cmdImg"
-                        height="auto"
-                    />
-            </div>
-            <li>Click Activate.</li>
-            <li>Click Assign as Org Default and then Click Save</li>
-            <li>Click Save again, then click Back to return to the Home page.</li>
-            <li>Refresh the page to view your new component.</li>
-            <div class="width100">
-                    <img
-                        src="../../../resources/images/setup/finalDashboard.png"
-                        alt="vscode default folder right click"
-                        class="width100 cmdImg"
-                        height="auto"
-                    />
-            </div>
-            <li>Hurray!! You’ve finally made your first Lightning web component!</li>
+        <li>Click SFDX: Deploy Source to Org.</li>
+        <div class="width100">
+            <img
+                src="../../../resources/images/setup/rightClickDeploy.png"
+                alt="vscode default folder right click"
+                class="width100 cmdImg"
+                height="auto"
+            />
+        </div>
 
-        </ol>
+        <li>
+            In the Output tab of the integrated terminal, view the results of
+            your deployment. You should have also received a notice that states:
+            SFDX: Deploy Source to Org ... ended with exit code 0. This means
+            that the command ran successfully.
+        </li>
+        <div class="width100">
+            <img
+                src="../../../resources/images/setup/successDeploy.png"
+                alt="vscode create lightning web component"
+                class="width100 cmdImg"
+                height="auto"
+            />
+        </div>
+    </ol>
+    <h3>Add Component to App in Lightning Experience</h3>
+    <ol>
+        <li>
+            In Visual Studio code, open the Command Palette by pressing
+            Ctrl+Shift+P on Windows or Cmd+Shift+P on macOS.
+        </li>
+        <li>Type SFDX and Select SFDX: Open Default Org</li>
+        <li>
+            Click the app launcher icon App Launcherto open the App Launcher,
+            then click Sales.
+        </li>
+        <li>
+            Click the gear icon Setup Gear to reveal the Setup menu, then click
+            Edit Page.
+        </li>
+        <li>
+            Drag the helloWorld Lightning web component from the list of custom
+            components to the top of the Page Canvas and Click Save.
+        </li>
+        <div class="width100">
+            <img
+                src="../../../resources/images/setup/builder.png"
+                alt="vscode default folder right click"
+                class="width100 cmdImg"
+                height="auto"
+            />
+        </div>
+        <li>Click Activate.</li>
+        <li>Click Assign as Org Default and then Click Save</li>
+        <li>Click Save again, then click Back to return to the Home page.</li>
+        <li>Refresh the page to view your new component.</li>
+        <div class="width100">
+            <img
+                src="../../../resources/images/setup/finalDashboard.png"
+                alt="vscode default folder right click"
+                class="width100 cmdImg"
+                height="auto"
+            />
+        </div>
+        <li>
+            Hurray!! You’ve finally made your first Lightning web component!
+        </li>
+    </ol>
 </template>

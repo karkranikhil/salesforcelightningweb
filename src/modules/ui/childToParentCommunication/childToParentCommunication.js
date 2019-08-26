@@ -1,5 +1,5 @@
 import { LightningElement, track } from 'lwc';
-import {childToParentCommunicationCode} from './childToParentCommunicationCode'
+import { childToParentCommunicationCode } from './childToParentCommunicationCode';
 export default class ChildToParentCommunication extends LightningElement {
     get modalParentHtml() {
         return childToParentCommunicationCode.modalParentHtml;

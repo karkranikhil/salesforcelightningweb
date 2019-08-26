@@ -28,8 +28,8 @@
                 <ui-setup></ui-setup>
             </template>
             <template if:true={selectedRoute.helloworld.selected}>
-                    <ui-hello-world></ui-hello-world>
-                </template>
+                <ui-hello-world></ui-hello-world>
+            </template>
             <template if:true={selectedRoute.singleDataBinding.selected}>
                 <ui-data-binding-page></ui-data-binding-page>
             </template>
@@ -61,9 +61,8 @@
                 <ui-lifecycle-page></ui-lifecycle-page>
             </template>
             <template if:true={selectedRoute.apexcall.selected}>
-                    <ui-apex-call></ui-apex-call>
+                <ui-apex-call></ui-apex-call>
             </template>
-           
         </div>
     </div>
 </template>

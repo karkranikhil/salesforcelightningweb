@@ -42,11 +42,11 @@
 .width100 {
     width: 100%;
 }
-.autoImg{
+.autoImg {
     max-height: 500px;
     max-width: 100%;
 }
-.cmdImg{
+.cmdImg {
     max-height: 900px;
     max-width: 500px;
 }

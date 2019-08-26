@@ -1,5 +1,5 @@
 export const compToRandomCompCommunicationCode = {
-    pubsub:`/* eslint-disable no-console */
+    pubsub: `/* eslint-disable no-console */
     const store = {};
     /**
      * subscribers a callback for an event
@@ -47,7 +47,7 @@ export const compToRandomCompCommunicationCode = {
         publish
     };
     `,
-    adjacentOneHtml:`<template>
+    adjacentOneHtml: `<template>
     <div class="child1-section">
         <p>Child 1</p>
         <button class="btn success" onclick={buttonHandler}>Success</button>
@@ -57,7 +57,7 @@ export const compToRandomCompCommunicationCode = {
     </div>
 </template>
 `,
-    adjacentOneJs:`import { LightningElement } from 'lwc';
+    adjacentOneJs: `import { LightningElement } from 'lwc';
     import pubsub from '../../lib/pubsub.js';
     export default class AdjacentOneComponent extends LightningElement {
         buttonHandler(evt) {
@@ -69,7 +69,7 @@ export const compToRandomCompCommunicationCode = {
         }
     }
     `,
-    adjacentOneCss:`.btn {
+    adjacentOneCss: `.btn {
         border: none; /* Remove borders */
         color: white; /* Add a text color */
         padding: 14px 28px; /* Add some padding */
@@ -110,7 +110,7 @@ export const compToRandomCompCommunicationCode = {
         margin: 2rem;
     }
     `,
-    adjacentTwoHtml:`<template>
+    adjacentTwoHtml: `<template>
     <div class="child2-section">
         <p>Child 2</p>
         <template for:each={accordionList} for:item="list">
@@ -132,7 +132,7 @@ export const compToRandomCompCommunicationCode = {
     </div>
 </template>
 `,
-    adjacentTwoJs:`import { LightningElement, track, api } from 'lwc';
+    adjacentTwoJs: `import { LightningElement, track, api } from 'lwc';
     import pubsub from '../../lib/pubsub.js';
     export default class AdjacentTwoComponent extends LightningElement {
         @track accordionList = [
@@ -180,7 +180,7 @@ export const compToRandomCompCommunicationCode = {
         }
     }
     `,
-    adjacentTwoCss:`.accordion {
+    adjacentTwoCss: `.accordion {
         background-color: #eee;
         color: #444;
         cursor: pointer;
@@ -246,7 +246,7 @@ export const compToRandomCompCommunicationCode = {
         margin: 2rem;
     }
     `,
-    parentOneHtml:`<template>
+    parentOneHtml: `<template>
     <div class="border-5">
         <p>Parent component</p>
         <div>
@@ -257,8 +257,7 @@ export const compToRandomCompCommunicationCode = {
         </div>
     </div>
 </template>`,
-    parentOneJs:`import { LightningElement } from 'lwc';
+    parentOneJs: `import { LightningElement } from 'lwc';
     export default class CompToCompCommunication extends LightningElement {}
-`,
-
-}
+`
+};
