@@ -5,10 +5,11 @@ export default class App extends LightningElement {
     @track urlList = urlList;
     @track selectedRoute = selectedRoute;
 
-    @track currentNavigationItem = 'introduction-to-salesforce-lightning-web-component';
-    _isWindowHistoryUpdate = false
+    @track currentNavigationItem =
+        'introduction-to-salesforce-lightning-web-component';
+    _isWindowHistoryUpdate = false;
     handleCategoryChange(event) {
-        if(event){
+        if (event) {
             this.currentNavigationItem = event.detail;
             this.routesList.forEach(item => {
                 if (item.url === event.detail) {
@@ -20,20 +21,20 @@ export default class App extends LightningElement {
                 }
             });
         } else {
-            this.setRouteList(true)
+            this.setRouteList(true);
         }
         this.scrollAndLocation();
     }
-    setRouteList(type){
-        this.routesList.forEach((item)=>{
-            if(item.url === this.currentNavigationItem){
-                this.selectedRoute[item.value].selected = type
-                item.classlist = type ? 'active':''
-            } else{
-                this.selectedRoute[item.value].selected = !type
-                item.classlist = ''
+    setRouteList(type) {
+        this.routesList.forEach(item => {
+            if (item.url === this.currentNavigationItem) {
+                this.selectedRoute[item.value].selected = type;
+                item.classlist = type ? 'active' : '';
+            } else {
+                this.selectedRoute[item.value].selected = !type;
+                item.classlist = '';
             }
-        })
+        });
     }
     connectedCallback() {
         window.scrollTo(0, 0);
@@ -41,9 +42,9 @@ export default class App extends LightningElement {
         window.onpopstate = function(event) {
             if (event.state && event.state.page) {
                 that._isWindowHistoryUpdate = true;
-                that.setRouteList(false)
+                that.setRouteList(false);
                 that.currentNavigationItem = event.state.page;
-             
+
                 that.handleCategoryChange();
             }
         };
@@ -63,7 +64,7 @@ export default class App extends LightningElement {
                 ''
             );
         }
-        this.setRouteList(true)
+        this.setRouteList(true);
     }
     scrollAndLocation() {
         if (!this._isWindowHistoryUpdate) {
