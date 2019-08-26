@@ -22,21 +22,43 @@
                 line-height: 50px;
                 color: #fff;
                 position: relative;
+                z-index: 9999;
+                font-size: 10px;
             }
             .counter {
                 position: absolute;
-                top: 0px;
-                left: 10px;
+                top: -29px;
                 z-index: 99999;
+                right: 0;
             }
-            @media screen and (max-width: 768px) {
-                .mobileMenu {
-                    padding-left: 20px;
-                }
+            .navbar {
+                position: fixed;
+                width: 100%;
+                z-index: 999999;
+            }
+            .mobileMenu {
+                padding-left: 20px;
+            }
+
+            @media screen and (min-width: 768px) {
                 .navbar {
-                    position: fixed;
+                    position: relative;
                     width: 100%;
                     z-index: 999999;
+                }
+
+                footer {
+                    background: #00354e;
+                    height: 50px;
+                    line-height: 50px;
+                    color: #fff;
+                    position: relative;
+                }
+                .counter {
+                    position: absolute;
+                    top: -29px;
+                    right: 0px;
+                    z-index: 99999;
                 }
             }
         </style>
@@ -76,4 +98,4 @@
         </footer>
     </main>
 </html>
-<script type="text/javascript" src="./0.app.js"></script><script type="text/javascript" src="./2.app.js"></script><script type="text/javascript" src="./app.js"></script>
+<script type="text/javascript" src="/0.app.js"></script><script type="text/javascript" src="/2.app.js"></script><script type="text/javascript" src="/app.js"></script>
