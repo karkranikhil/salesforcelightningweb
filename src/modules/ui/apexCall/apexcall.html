@@ -1,0 +1,327 @@
+<template>
+        <div class="fontSize-2rem margin-0 fontWeight-700">
+                Calling Apex class using LWC
+            </div>
+            <p>
+                One of the main concept in development is connected backend with frontend. In our case, will see how to connect Apex class with LWC.
+            </p>
+            <div class="snippetBox">
+                <pre><code>import apexMethod from '@salesforce/apex/Namespace.Classname.apexMethod';</code></pre>
+            </div>
+            <ul>
+                <li><strong>apexMethod -</strong> The imported symbol that identifies the Apex method.</li>
+                <li><strong>Classname -</strong>  The name of the Apex class.</li>
+                <li><strong>Namespace -</strong> The namespace of the Salesforce organization.</li>
+            </ul> 
+            <h3>Expose Apex Methods to Lightning Web Components</h3>
+            <p>To expose an Apex method to a Lightning web component, the method must be 
+                <span class="code">static</span> and either <span class="code">global</span>  or <span class="code">public</span>. Annotate the method with <span class="code">global</span>  or <span class="code">@AuraEnabled</span>.</p>
+            <div>
+                    <ui-code-box
+                        code={apexcontroller}
+                        file-name="AccountController.js (apex controller)"
+                        class-name="language-js"
+                    ></ui-code-box>
+            </div>
+            <p></p>To improve runtime performance, annotate the Apex method with <span class="code">@AuraEnabled(cacheable=true)</span>, which caches the method results on the client. To set  cacheable=true, a method must only get data, it can’t mutate (change) data.
+            
+            <h3>We can able to call the apex class in Lightning web component using these different ways.</h3>
+
+            <div class="tab">
+                <button
+                    class={tabProperty.section1.className}
+                    name="section1"
+                    onclick={setTab}
+                >
+                Wire a property
+                </button>
+                <button
+                    class={tabProperty.section2.className}
+                    name="section2"
+                    onclick={setTab}
+                >
+                Wire a function
+                </button>
+                <button
+                    class={tabProperty.section3.className}
+                    name="section3"
+                    onclick={setTab}
+                >
+                Call a method imperatively
+                </button>
+            </div>
+             <!--section 1-->
+    <template if:true={tabProperty.section1.selected}>
+            <div id="section1" class="tabcontent">
+                <h3>
+                        Wire an Apex Method to a Property
+                </h3>
+                <ul>
+                    <li> If an Apex method is annotated with @AuraEnabled(cacheable=true), you can invoke it from a component via the <span class="code">@wire</span>wire service.</li>
+                    <li>You can @wire a property if you just wanna use the response as it is.</li>
+                </ul>
+                <div class="snippetBox">
+                        <pre><code>import apexMethod from '@salesforce/apex/Namespace.Classname.apexMethod';</code></pre>
+                        <pre><code> @wire(apexMethod, { apexMethodParams })</code></pre>
+                        <pre><code> property;</code></pre>
+                </div>
+                <ol>
+                    <li><strong>apexMethodParams- </strong> An object with parameters for the apexMethod, if needed. If a parameter value is null, the method is called. If a parameter value is  undefined, the method isn’t called.</li>
+                    <li><strong>property—</strong> A private property that receives the stream of data from the wire service. If a property is decorated with @wire, the results are returned to the property’s data property or error property. </li>
+                </ol>
+                <h3>
+                       Let's build the LWC 
+                </h3>
+                <p>The template uses the if:true directive to check whether the accounts.data property is truthy. If it is, it iterates over it and renders the name of each account..</p>
+                <div>
+                        <ui-code-box
+                            code={lwcHTML1}
+                            file-name="WirePropertyDemo.html (HTML)"
+                            class-name="language-markup"
+                        ></ui-code-box>
+                </div>
+                <p>The component’s JavaScript code imports the Apex method and invokes it via the wire service. The wire service either provisions the list of accounts to the  accounts.data property, or returns an error to the accounts.error property.</p>
+                <div>
+                        <ui-code-box
+                            code={lwcJS1}
+                            file-name="WirePropertyDemo.js (Javascript)"
+                            class-name="language-js"
+                        ></ui-code-box>
+                </div>
+                <p>Below is the css for the Card</p>
+                <div>
+                        <ui-code-box
+                            code={lwcCSS}
+                            file-name="WirePropertyDemo.css (stylesheet)"
+                            class-name="language-css"
+                        ></ui-code-box>
+                </div>
+                <p>Exposed the component true in meta file</p>
+                <div>
+                        <ui-code-box
+                            code={lwcXML}
+                            file-name="WirePropertyDemo.js-meta.xml (meta file)"
+                            class-name="language-markup"
+                        ></ui-code-box>
+                </div>
+
+                <ul>
+                    <li>Deploy your code to Org</li>
+                    <li>Edit the page and you will see your component in the left side of the process builder</li>
+                    <li>drag your component to the page and save it</li>
+                    <li>You will see the below output</li>
+                </ul>
+
+                <div class="image-container">
+                    <img
+                        src="../../../resources/images/apex/builderWireToProperty.png"
+                        alt="builder wire to property"
+                        width="100%"
+                        height="auto"
+                    />
+                </div>
+
+                <div class="image-container">
+                    <img
+                        src="../../../resources/images/apex/WireToProperty.png"
+                        alt="builder wire to property output"
+                        width="100%"
+                        height="auto"
+                    />
+                </div>
+            </div>
+
+        </template>
+        <!--section 2-->
+        <template if:true={tabProperty.section2.selected}>
+            <div id="section2" class="tabcontent">
+                    <h3>
+                            Wire an Apex Method to a Function
+                    </h3>
+                    <ul>
+                        <li> If an Apex method is annotated with @AuraEnabled(cacheable=true), you can invoke it from a component via the <span class="code">@wire</span>wire service.</li>
+                        <li>You can @wire to a function if you want to operate on the returned data.</li>
+                    </ul>
+                    <div class="snippetBox">
+                            <pre><code>import apexMethod from '@salesforce/apex/Namespace.Classname.apexMethod';</code></pre>
+                            <pre><code> @wire(apexMethod, { apexMethodParams })</code></pre>
+                            <pre><code> function;</code></pre>
+                    </div>
+                    <ol>
+                        <li><strong>apexMethodParams- </strong> An object with parameters for the apexMethod, if needed. If a parameter value is null, the method is called. If a parameter value is  undefined, the method isn’t called.</li>
+                        <li><strong>property—</strong> A private function that receives the stream of data from the wire service.If a function is decorated with @wire, the results are returned in an object with a data property or an  error property. </li>
+                    </ol>
+                    <h3>
+                           Let's code the LWC
+                    </h3>
+                    <p>The template uses the if:true directive to check whether the accounts.data property is truthy. If it is, it iterates over it and renders the name, accountnumber and phone of each account..</p>
+                    <div>
+                            <ui-code-box
+                                code={lwcHTML2}
+                                file-name="WireFunctionDemo.html (HTML)"
+                                class-name="language-markup"
+                            ></ui-code-box>
+                    </div>
+                    <p>The component’s JavaScript code imports the Apex method and invokes it via the wire service. The wire service either provisions the list of accounts to the  accounts.data property, or returns an error to the accounts.error property.</p>
+                    <div>
+                            <ui-code-box
+                                code={lwcJS2}
+                                file-name="WireFunctionDemo.js (Javascript)"
+                                class-name="language-js"
+                            ></ui-code-box>
+                    </div>
+                    <p>Below is the css for the LWC WireFunctionDemo</p>
+                    <div>
+                            <ui-code-box
+                                code={lwcCSS2}
+                                file-name="WireFunctionDemo.css (stylesheet)"
+                                class-name="language-css"
+                            ></ui-code-box>
+                    </div>
+                    <p>Exposed the component true in meta file</p>
+                    <div>
+                            <ui-code-box
+                                code={lwcXML2}
+                                file-name="WireFunctionDemo.js-meta.xml (meta file)"
+                                class-name="language-markup"
+                            ></ui-code-box>
+                    </div>
+    
+                    <ul>
+                        <li>Deploy your code to Org</li>
+                        <li>Edit the page and you will see your component in the left side of the process builder</li>
+                        <li>drag your component to the page and save it</li>
+                        <li>You will see the below output.</li>
+                    </ul>
+    
+                    <div class="image-container">
+                        <img
+                            src="../../../resources/images/apex/wireToFunction.png"
+                            alt="builder wire to property"
+                            width="100%"
+                            height="auto"
+                        />
+                    </div>
+               </div> 
+        </template>
+        <!--section 3-->
+        <template if:true={tabProperty.section3.selected}>
+            <div id="section3" class="tabcontent">
+                    <h3>Call an Apex Method Imperatively</h3>
+                    <div class="snippetBox">
+                            <pre><code>import apexMethod from '@salesforce/apex/Namespace.Classname.apexMethod';</code></pre>
+                            <pre><code> apexMethod({apexMethodParams}).</code></pre>
+                            <pre><code>then(result=>{}).</code></pre>
+                            <pre><code>catch(error=>{})</code></pre>
+                    </div>
+                    <ul>
+                        <li> To work with javascript asynchronous programming we should first understand what is <span class="code">Promise</span>?.</li>
+                        
+                    </ul>
+                    <h3>Promise</h3>
+                    <ul>
+                        <li>Promises are one of the most exciting features to come from Javascript recently, bringing cleaner more readable code to asynchronous Javascript programming. </li>
+                        <li>A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. </li>
+                        <li>This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.</li>
+                        <li>A Promise is in one of these states:</li>
+                        <li>
+                            <ol>
+                                <li><strong>pending:</strong> initial state, neither fulfilled nor rejected.</li>
+                                <li><strong>fulfilled:</strong> meaning that the operation completed successfully.</li>
+                                <li><strong>rejected:</strong> meaning that the operation failed.</li>
+                            </ol>
+                        </li>
+                        <li>In our case Apex server send us the promise object and we need to handle these two using 
+                            <span class="code">.then()</span>
+                             and <span class="code">.catch()</span> method.</li>    
+                        
+                    </ul>
+                    <ul>
+                            <li><strong>.then()</strong></li>
+                            <div class="snippetBox">
+                                    <pre><code>promise.then(</code></pre>
+                                    <pre><code> function(result) </code></pre>
+                                    <pre><code>function(error)</code></pre>
+                                    <pre><code>);</code></pre>
+                            </div>
+                            <li> The first argument of .then is a function that runs when the promise is resolved, and receives the result.</li>
+                            <li> The second argument of .then is a function that runs when the promise is rejected, and receives the error.</li>
+                            <li><strong>.catch()</strong> </li>
+                            <div class="snippetBox">
+                                    <pre><code>promise.then()</code></pre>
+                                    <pre><code>.catch(error => {</code></pre>
+                                    <pre><code>console.error(error)</code></pre>
+                                    <pre><code>});</code></pre>
+                            </div>
+                            <li>If we’re interested only in errors, we can use .catch(error), which is gives us the error object:</li>
+                        </ul>
+                    
+                    
+                    
+                    
+                    <h3>
+                            Let's build the LWC 
+                     </h3>
+                    <p>The template uses the if:true directive to check whether the accounts.data property is truthy. If it is, it iterates over it and renders the name, accountnumber and phone of each account..</p>
+                    <div>
+                            <ui-code-box
+                                code={lwcHTML3}
+                                file-name="ApexImperativeDemo.html (HTML)"
+                                class-name="language-markup"
+                            ></ui-code-box>
+                    </div>
+                    <p>The component’s JavaScript code imports the Apex method</p> 
+                    <p>On click of button handleLoad get triggered and call the getAccountList() method</p>
+                    <p>Once getAccountList() get called it gives the response as Promise and will handle that using .then() and .catch() properties.</p>
+                    <div>
+                            <ui-code-box
+                                code={lwcJS3}
+                                file-name="ApexImperativeDemo.js (Javascript)"
+                                class-name="language-js"
+                            ></ui-code-box>
+                    </div>
+                    <p>Below is the css for the LWC ApexImperativeDemo</p>
+                    <div>
+                            <ui-code-box
+                                code={lwcCSS3}
+                                file-name="ApexImperativeDemo.css (stylesheet)"
+                                class-name="language-css"
+                            ></ui-code-box>
+                    </div>
+                    <p>Exposed the component true in meta file</p>
+                    <div>
+                            <ui-code-box
+                                code={lwcXML3}
+                                file-name="ApexImperativeDemo.js-meta.xml (meta file)"
+                                class-name="language-markup"
+                            ></ui-code-box>
+                    </div>
+    
+                    <ul>
+                        <li>Deploy your code to Org</li>
+                        <li>Edit the page and you will see your component in the left side of the process builder</li>
+                        <li>drag your component to the page and save it</li>
+                        <li>You will see the below output.</li>
+                    </ul>
+    
+                    <div class="image-container">
+                        <img
+                            src="../../../resources/images/apex/buttonApex.png"
+                            alt="click button to load accounts"
+                            width="100%"
+                            height="auto"
+                        />
+                    </div>
+                    <div class="image-container">
+                            <img
+                                src="../../../resources/images/apex/loadApex.png"
+                                alt="loaded accounts"
+                                width="100%"
+                                height="auto"
+                            />
+                        </div>
+               
+            </div>
+             
+        </template>
+</template>

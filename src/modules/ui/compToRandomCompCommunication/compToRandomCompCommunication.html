@@ -1,13 +1,101 @@
 <template>
-    <div class="border-5">
-    <p>Parent component</p>
-    <div>
-        <p></p>
-        <c-adjacent-one-component></c-adjacent-one-component>
+    <div class="fontSize-2rem margin-0 fontWeight-700">
+        Component to component communication
     </div>
+    <p>
+        To communicate between a component to a random component we should first
+        understand the <span class="code">publish–subscribe design pattern</span>
+    </p>
+    <h3>PubSub design pattern</h3>
+    <p> publish–subscribe is a messaging pattern where senders of messages, called publishers, do not program the messages to be sent directly to specific receivers, called subscribers, but instead categorize published messages into classes without knowledge of which subscribers, if any, there may be.</p> 
+    <p>Similarly, subscribers express interest in one or more classes and only receive messages that are of interest, without knowledge of which publishers, if any, there are.</p>
+    <h3>Subscriber flow</h3>
+    <ul>
+        <li>subscribe is the method that has two arguments eventName and other is the callback function</li>
+        <li>Whenever the subscribe method is triggered it check the eventName in the store. Is it exists or not?</li>
+        <li>If eventName exists it update the callback at eventName location in the store.</li>
+        <li>If eventName doesn't exists it add  eventname and callback to the store</li>
+    </ul>
+    <img
+    src="../../../resources/images/setup/subscription.png"
+    alt="subscription flowchart"
+    width="75%"
+    height="auto"
+    style="width: 75%;margin: 2rem;"
+    />
+    <h3>Publisher flow</h3>
+    <ul>
+            <li>publish is the method that has two arguments eventName and other is the data</li>
+            <li>Whenever the publish method is triggered it check the eventName in the store. Is it exists or not?</li>
+            <li>If eventName exists it pull the callback stored in store based on the eventname</li>
+            <li>If eventName doesn't exists it doesn't do anything.</li>
+        </ul>
+    <img
+        src="../../../resources/images/setup/publisher.png"
+        alt="publisher flowchart"
+        width="75%"
+        height="auto"
+        style="width: 75%;margin: 2rem;"
+    />
+    
     <div>
-        <p></p>
-        <c-adjacent-two-component></c-adjacent-two-component>
+        <ui-code-box
+            code={getPubSub}
+            file-name="pubsub"
+            class-name="language-js"
+        ></ui-code-box>
     </div>
-</div>
+
+    <h3>Component to component communication Demo</h3>
+    <div class="output-card">
+        <p>Output</p>
+        <div class="output">
+            <c-comp-to-comp-communication></c-comp-to-comp-communication>
+        </div>
+    </div>
+    <h3>Source code of demo</h3>
+    <div>
+            <ui-code-box
+                code={adjacentOneHtml}
+                file-name="adjacentOneHtml (template)"
+                class-name="language-markup"
+            ></ui-code-box>
+        </div>
+        <div>
+            <ui-code-box
+                code={adjacentOneJs}
+                file-name="adjacentOneJs (controller)"
+                class-name="language-js"
+            ></ui-code-box>
+        </div>
+        <div>
+                <ui-code-box
+                    code={adjacentOneCss}
+                    file-name="adjacentOneCss (stylesheet)"
+                    class-name="language-css"
+                ></ui-code-box>
+            </div>
+        <div>
+            <ui-code-box
+                code={adjacentTwoHtml}
+                file-name="adjacentTwoHtml (template)"
+                class-name="language-markup"
+            ></ui-code-box>
+        </div>
+        <div>
+            <ui-code-box
+                code={adjacentTwoJs}
+                file-name="adjacentTwoJs (controller)"
+                class-name="language-js"
+            ></ui-code-box>
+        </div>
+        <div>
+            <ui-code-box
+                code={adjacentTwoCss}
+                file-name="adjacentTwoCss (stylesheet)"
+                class-name="language-css"
+            ></ui-code-box>
+        </div>
+
 </template>
+

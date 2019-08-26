@@ -34,7 +34,7 @@ const publish = (eventName, payload) => {
             try {
                 callback(payload);
             } catch (error) {
-                console.error(error)
+                console.error(error);
             }
         });
     }

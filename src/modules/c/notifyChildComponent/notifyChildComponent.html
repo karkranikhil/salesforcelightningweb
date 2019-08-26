@@ -3,8 +3,10 @@
         <p>I am child component</p>
         <template if:true={showChildNotification}>
             <div class="notificationbox">
-                <span>Notification in Child component. Event bubbled till parent
-                    element in same component</span>
+                <span
+                    >Notification in Child component. Event bubbled till parent
+                    element in same component</span
+                >
             </div>
         </template>
         <div class="content" onclick={childHandler}>

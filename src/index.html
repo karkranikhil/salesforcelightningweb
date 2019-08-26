@@ -20,25 +20,49 @@
                     background: #00354e;
                     height: 50px;
                     line-height: 50px;
-                    color:#fff;
+                    color: #fff;
                     position: relative;
+                    z-index: 9999;
+                    font-size: 10px;
                 }
                 .counter{
                     position: absolute;
-                    top: 0px;
-                    left: 10px;
+                    top: -29px;
+                    z-index: 99999;
+                    right: 0;
+                }
+                .navbar {
+                    position: fixed;
+                    width: 100%;
+                    z-index: 999999;
+                }
+                .mobileMenu {
+                    padding-left: 20px;
+                }
+           
+            @media screen and (min-width: 768px) {
+                
+                .navbar {
+                    position: relative;
+                    width: 100%;
+                    z-index: 999999;
+                }
+                
+                footer {
+                    background: #00354e;
+                    height: 50px;
+                    line-height: 50px;
+                    color: #fff;
+                    position: relative;
+                }
+                .counter {
+                    position: absolute;
+                    top: -29px;
+                    right: 0px;
                     z-index: 99999;
                 }
-                @media screen and (max-width: 768px) {
-                    .mobileMenu{
-                        padding-left: 20px;
-                    }
-                    .navbar{
-                        position: fixed;
-                        width: 100%;
-                        z-index: 999999;
-                    }
-                }
+                
+            }
         </style>
     </head>
     <main class="container-fluid p-0">
@@ -48,8 +72,7 @@
         >
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <h4 style="color:white;"> 
-                        
+                    <h4 style="color:white;">
                         <span class="mobileMenu">Salesforce Lightning Web</span>
                     </h4>
                 </li>
@@ -57,14 +80,23 @@
         </nav>
         <ui-app></ui-app>
         <footer>
-    <center>
-        Copyright 2019-2020 by Salesforce Lightning Web. All Rights Reserved.
-    </center>
-    <span class="float-right counter">
-            <script type="text/javascript" src="//widget.supercounters.com/ssl/hit.js"></script>
-            <script type="text/javascript">sc_hit(1553405,0,5);</script><br><noscript><a href="http://www.supercounters.com/">free online counter</a></noscript>
-        
-    </span>
+            <center>
+                Copyright 2019-2020 by Salesforce Lightning Web. All Rights
+                Reserved.
+            </center>
+            <span class="float-right counter">
+                <script
+                    type="text/javascript"
+                    src="//widget.supercounters.com/ssl/hit.js"
+                ></script>
+                <script type="text/javascript">
+                    sc_hit(1553405, 0, 5);</script
+                ><br /><noscript
+                    ><a href="http://www.supercounters.com/"
+                        >free online counter</a
+                    ></noscript
+                >
+            </span>
         </footer>
     </main>
 </html>

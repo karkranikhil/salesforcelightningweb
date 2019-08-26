@@ -3,7 +3,7 @@ import { routesList, selectedRoute } from './routes';
 export default class App extends LightningElement {
     @track routesList = routesList;
     @track selectedRoute = selectedRoute;
-
+    
     @track currentNavigationItem = 'hello';
     handleCategoryChange(event) {
         this.currentNavigationItem = event.detail;
@@ -16,5 +16,8 @@ export default class App extends LightningElement {
                 this.selectedRoute[item.value].selected = false;
             }
         });
+    }
+    connectedCallback(){
+        window.scrollTo(0,0)
     }
 }

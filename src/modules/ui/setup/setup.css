@@ -20,3 +20,10 @@
 .snippetBox a {
     color: yellow;
 }
+.width100{
+    width:100%;
+}
+.cmdImg{
+    max-height: 500px;
+    max-width: 500px;
+}

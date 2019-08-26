@@ -21,7 +21,7 @@ export default class ModalParentComponent extends LightningElement {
         this.showModal = false;
     }
 }`,
-modalChildHtml: `<template>
+    modalChildHtml: `<template>
     <div id="myModal" class="modal">
         <div class="modal-content">
             <header>
@@ -34,7 +34,7 @@ modalChildHtml: `<template>
         </div>
     </div>
 </template>`,
-modalChildJs: `import { LightningElement, api } from 'lwc';
+    modalChildJs: `import { LightningElement, api } from 'lwc';
 export default class ModalComponent extends LightningElement {
     @api headerText;
     @api bodyText;
@@ -42,7 +42,7 @@ export default class ModalComponent extends LightningElement {
         this.dispatchEvent(new CustomEvent('close'));
     }
 }`,
-modalChildCss:`/* The Modal (background) */
+    modalChildCss: `/* The Modal (background) */
 .modal {
     display: block; 
     position: fixed; /* Stay in place */
@@ -83,7 +83,7 @@ modalChildCss:`/* The Modal (background) */
 }
 `,
 
-navbarParentHtml: `<template>
+    navbarParentHtml: `<template>
 <h3>select your favourite cricketer in child component and see details in parent component</h3>
 <div class="flex">
     <p>I am parent component</p>
@@ -102,7 +102,7 @@ navbarParentHtml: `<template>
 </div>
 </template>
 `,
-navbarParentJS: `import { LightningElement, track } from 'lwc';
+    navbarParentJS: `import { LightningElement, track } from 'lwc';
 export default class NavParentComponent extends LightningElement {
     @track pageName = null;
     @track selectedPlayer = null;
@@ -166,7 +166,7 @@ export default class NavParentComponent extends LightningElement {
     }
 }
 `,
-navbarChildHtml: `<template>
+    navbarChildHtml: `<template>
 <p>I am Child component</p>
 <div class="vertical-menu">
     <template for:each={navList} for:item="list">
@@ -182,7 +182,7 @@ navbarChildHtml: `<template>
 </div>
 </template>
 `,
-navbarChildJs: `import { LightningElement, api } from 'lwc';
+    navbarChildJs: `import { LightningElement, api } from 'lwc';
 export default class NavbarComponent extends LightningElement {
     @api navList;
     handleNavSelection(event) {
@@ -195,7 +195,7 @@ export default class NavbarComponent extends LightningElement {
     }
 }
 `,
-navbarChildCss:`:host {
+    navbarChildCss: `:host {
     border: 5px solid red;
     padding: 2rem;
     margin: 2rem;
@@ -223,7 +223,7 @@ navbarChildCss:`:host {
 }
 `,
 
-notifyParentHtml: `<template>
+    notifyParentHtml: `<template>
 <div class="parent-section" onshow={showHandler}>
     <p>I am parent component</p>
     <template if:true={showNotification}>
@@ -235,7 +235,7 @@ notifyParentHtml: `<template>
 </div>
 </template>
 `,
-notifyParentJS: `import { LightningElement, track } from 'lwc';
+    notifyParentJS: `import { LightningElement, track } from 'lwc';
 export default class NotifyParentComponent extends LightningElement {
     @track showNotification = false;
     showHandler() {
@@ -243,7 +243,7 @@ export default class NotifyParentComponent extends LightningElement {
     }
 }
 `,
-notifyChildHtml: `<template>
+    notifyChildHtml: `<template>
 <div class="child-section">
     <p>I am child component</p>
     <template if:true={showChildNotification}>
@@ -261,7 +261,7 @@ notifyChildHtml: `<template>
 </div>
 </template>
 `,
-notifyChildJs: `import { LightningElement, track } from 'lwc';
+    notifyChildJs: `import { LightningElement, track } from 'lwc';
 export default class NotifyChildComponent extends LightningElement {
     @track showChildNotification = false;
     childHandler() {
@@ -276,7 +276,7 @@ export default class NotifyChildComponent extends LightningElement {
     }
 }
 `,
-notifyChildCss:`.notificationbox {
+    notifyChildCss: `.notificationbox {
     background-color: #43a047;
     color: #fff;
     display: flex;

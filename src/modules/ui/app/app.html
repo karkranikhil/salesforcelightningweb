@@ -27,6 +27,9 @@
             <template if:true={selectedRoute.setup.selected}>
                 <ui-setup></ui-setup>
             </template>
+            <template if:true={selectedRoute.helloworld.selected}>
+                    <ui-hello-world></ui-hello-world>
+                </template>
             <template if:true={selectedRoute.singleDataBinding.selected}>
                 <ui-data-binding-page></ui-data-binding-page>
             </template>
@@ -49,12 +52,18 @@
             >
                 <ui-child-to-parent-communication></ui-child-to-parent-communication>
             </template>
-            <template if:true={selectedRoute.compToRandomCompCommunication.selected}>
+            <template
+                if:true={selectedRoute.compToRandomCompCommunication.selected}
+            >
                 <ui-comp-to-random-comp-communication></ui-comp-to-random-comp-communication>
             </template>
             <template if:true={selectedRoute.lifecycle.selected}>
                 <ui-lifecycle-page></ui-lifecycle-page>
             </template>
+            <template if:true={selectedRoute.apexcall.selected}>
+                    <ui-apex-call></ui-apex-call>
+            </template>
+           
         </div>
     </div>
 </template>

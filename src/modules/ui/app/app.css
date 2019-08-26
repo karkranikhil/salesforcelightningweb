@@ -21,7 +21,7 @@
 }
 
 @media screen and (max-width: 768px) {
-.flex-container {
-    padding-top: 60px;
-}
+    .flex-container {
+        padding-top: 60px;
+    }
 }

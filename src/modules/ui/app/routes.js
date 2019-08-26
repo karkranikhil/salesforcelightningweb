@@ -52,6 +52,12 @@ export const routesList = [
         selected: false
     },
     {
+        title: 'Hello world demo',
+        value: 'helloworld',
+        classlist: '',
+        selected: false
+    },
+    {
         title: 'Data binding',
         value: 'singleDataBinding',
         classlist: '',
@@ -94,7 +100,6 @@ export const routesList = [
         selected: false
     },
 
-    
     {
         title: 'Component lifecycle',
         value: 'lifecycle',
@@ -102,6 +107,13 @@ export const routesList = [
         selected: false
     },
     {
+        title: 'Apex call',
+        value: 'apexcall',
+        classlist: '',
+        selected: false
+    },
+    {
+        
         title: 'All Examples',
         value: 'alldemos',
         classlist: '',
@@ -124,6 +136,9 @@ export const selectedRoute = {
     setup: {
         selected: false
     },
+    helloworld: {
+        selected: false
+    },
     singleDataBinding: {
         selected: false
     },
@@ -142,10 +157,13 @@ export const selectedRoute = {
     childToParentCommunication: {
         selected: false
     },
-    compToRandomCompCommunication:{
+    compToRandomCompCommunication: {
         selected: false
     },
     lifecycle: {
+        selected: false
+    },
+    apexcall: {
         selected: false
     },
     alldemos: {

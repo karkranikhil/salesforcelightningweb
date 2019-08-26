@@ -1,13 +1,23 @@
 <template>
-    <h3>select your favourite cricketer in child component and see details in parent component</h3>
+    <h3>
+        select your favourite cricketer in child component and see details in
+        parent component
+    </h3>
     <div class="flex">
         <p>I am parent component</p>
-        <c-navbar-component nav-list={navList} onselection={selectedNavHandler}></c-navbar-component>
-      
+        <c-navbar-component
+            nav-list={navList}
+            onselection={selectedNavHandler}
+        ></c-navbar-component>
+
         <template if:true={selectedPlayer}>
             <div class="card">
-                    <div>
-                <img src={selectedPlayer.imgUrl} alt="Avatar" style="width:100%"/>
+                <div>
+                    <img
+                        src={selectedPlayer.imgUrl}
+                        alt="Avatar"
+                        style="width:100%"
+                    />
                 </div>
                 <div class="container">
                     <p><strong>Player Name:</strong> {selectedPlayer.name}</p>

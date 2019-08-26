@@ -1,20 +1,23 @@
 <template>
-        <span class="d-inline-block d-sm-none mobileMenu" onclick={showSidebarHandler}>☰</span> 
-<template if:true={showSidebar}>
-    
-    <div class="sidenav">
-        <template for:each={navLists} for:item="navList">
-            <a
-                key={navList.title}
-                title={navList.title}
-                href="javascript:void(0)"
-                data-value={navList.value}
-                onclick={handleNavItemClick}
-                id={navList.title}
-                class={navList.classlist}
-                >{navList.title}</a
-            >
-        </template>
-    </div>
-</template>
+    <span
+        class="d-inline-block d-sm-none mobileMenu"
+        onclick={showSidebarHandler}
+        >☰</span
+    >
+    <template if:true={showSidebar}>
+        <div class="sidenav">
+            <template for:each={navLists} for:item="navList">
+                <a
+                    key={navList.title}
+                    title={navList.title}
+                    href="javascript:void(0)"
+                    data-value={navList.value}
+                    onclick={handleNavItemClick}
+                    id={navList.title}
+                    class={navList.classlist}
+                    >{navList.title}</a
+                >
+            </template>
+        </div>
+    </template>
 </template>

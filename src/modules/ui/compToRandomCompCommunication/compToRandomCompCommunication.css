@@ -1,3 +1,89 @@
-.border-5{
+.border-5 {
     border: 5px solid;
+}
+.margin-0 {
+    margin: 0;
+}
+.fontSize-2rem {
+    font-size: 2rem;
+}
+.fontWeight-700 {
+    font-weight: 700;
+}
+.key-concept-section {
+    margin-bottom: 1rem;
+}
+.snippetBox {
+    padding: 1rem;
+    background: #00354e;
+    border-radius: 5px;
+    color: yellow;
+    overflow: scroll;
+}
+.snippetBox a {
+    color: yellow;
+}
+.output-card {
+    border: 2px solid #cdcdcd;
+    border-radius: 5px;
+    background: #fff;
+}
+.output-card > p {
+    margin: 0 !important;
+    color: #fff;
+    font-weight: 700;
+    font-style: italic;
+    background: #00354e;
+}
+.output-card > .output {
+    padding: 1rem;
+}
+.code {
+    background: #f8cecc;
+    padding: 5px;
+}
+.padding-10 {
+    padding: 10px;
+}
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #00364e;
+    background-color: #f1f1f1;
+    display: flex;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border-left: 1px solid #00364e;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 16px;
+    flex: 1;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #00364e;
+    color: white;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #00364e;
+    color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+    padding: 6px 12px;
+    border: 1px solid #00364e;
+    border-top: none;
 }
