@@ -1,0 +1,42 @@
+.margin-0 {
+    margin: 0;
+}
+.fontSize-2rem {
+    font-size: 2rem;
+}
+.fontWeight-700 {
+    font-weight: 700;
+}
+.cheat_sheet_output_title{
+    margin-top: 0;
+    background: #00354e;
+    color: white;
+    padding: 5px;
+    margin-bottom: 2px;
+}
+table{
+    width: 100%;
+}
+code{
+    font-weight: 700;
+    font-size: 14px;
+    background: antiquewhite;
+}
+.card__text{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card__text div{
+    min-width: 46%;
+    padding: 0% 2%;
+    margin: 5px 0%;
+
+}
+.card_header{
+    background: #00354e;
+    color: white;
+    padding: 5px;
+    padding: 10px 2%;
+    font-size: 16px;
+
+}

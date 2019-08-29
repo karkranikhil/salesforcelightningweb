@@ -1,0 +1,21 @@
+<template>
+    <div class="fontSize-2rem margin-0 fontWeight-700">
+        Salesforce CLI Cheat Sheet
+    </div>
+       
+<template for:each={cheatSheetCode} for:item="wrapper">
+    <div key={wrapper.header}>
+        <div class="card_header">{wrapper.header}</div>
+        <div>
+            <template for:each={wrapper.data} for:item="code">
+                <div class="card__text" key={code.value}>
+                    <div>{code.label}</div>
+                    <div><strong>{code.value}</strong></div>
+                </div>
+            </template>
+        </div>
+    </div>
+
+</template>
+  
+</template>

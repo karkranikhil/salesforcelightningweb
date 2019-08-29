@@ -123,7 +123,14 @@ export const routesList = [
     {
         title: 'Apex call',
         value: 'apexcall',
-        url: 'Apex-service-call-in-lightning-web-component',
+        url: 'apex-service-call-in-lightning-web-component',
+        classlist: '',
+        selected: false
+    },
+    {
+        title: 'Salesforce DX CLI Cheat Sheet',
+        value: 'cheatSheet',
+        url: 'salesforce-dx-cli-cheat-cheet',
         classlist: '',
         selected: false
     },
@@ -181,6 +188,10 @@ export const selectedRoute = {
     apexcall: {
         selected: false
     },
+    cheatSheet: {
+        selected: false
+    },
+    
     alldemos: {
         selected: false
     }
@@ -200,6 +211,7 @@ export const urlList = [
     'child-to-parent-communication-in-lightning-web-component',
     'component-to-component-communication-in-lightning-web-component',
     'lifecycle-hooks-in-lightning-web-component',
-    'Apex-service-call-in-lightning-web-component',
+    'apex-service-call-in-lightning-web-component',
+    'salesforce-dx-cli-cheat-cheet',
     'salesforce-lightning-web-all-demo'
 ];
