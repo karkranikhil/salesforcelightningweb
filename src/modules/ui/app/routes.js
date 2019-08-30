@@ -191,7 +191,7 @@ export const selectedRoute = {
     cheatSheet: {
         selected: false
     },
-    
+
     alldemos: {
         selected: false
     }

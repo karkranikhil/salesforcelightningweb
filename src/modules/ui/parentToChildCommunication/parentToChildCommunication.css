@@ -89,3 +89,9 @@
         flex-direction: column;
     }
 }
+.image-container {
+    width: 100%;
+}
+.maxWidth700{
+    max-width: 900px;
+}

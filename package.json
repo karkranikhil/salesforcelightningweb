@@ -19,7 +19,7 @@
     "engines": {
         "node": ">=10.0.0"
     },
-    "homepage": "https://karkranikhil.github.io/salesforcelightningweb",
+    "homepage": "https://karkranikhil.github.io/salesforcelightningweb/",
     "husky": {
         "hooks": {
             "pre-commit": "lint-staged"

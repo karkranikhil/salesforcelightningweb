@@ -89,7 +89,7 @@
             </ul>
             <div class="snippetBox">
                 <pre><code>import apexMethod from '@salesforce/apex/Namespace.Classname.apexMethod';</code></pre>
-                <pre><code> @wire(apexMethod, { apexMethodParams })</code></pre>
+                <pre><code> @wire(apexMethod, &#123; apexMethodParams &#125;)</code></pre>
                 <pre><code> property;</code></pre>
             </div>
             <ol>
@@ -163,7 +163,7 @@
 
             <div class="image-container">
                 <img
-                    src="https://raw.githubusercontent.com/karkranikhil/salesforcelightningweb/master/src/resources/images/apex/builderWireToProperty.png"
+                    src="./resources/images/apex/builderWireToProperty.png"
                     alt="builder wire to property"
                     width="100%"
                     height="auto"
@@ -172,7 +172,7 @@
 
             <div class="image-container">
                 <img
-                    src="https://raw.githubusercontent.com/karkranikhil/salesforcelightningweb/master/src/resources/images/apex/WireToProperty.png"
+                    src="./resources/images/apex/WireToProperty.png"
                     alt="builder wire to property output"
                     width="100%"
                     height="auto"
@@ -200,7 +200,7 @@
             </ul>
             <div class="snippetBox">
                 <pre><code>import apexMethod from '@salesforce/apex/Namespace.Classname.apexMethod';</code></pre>
-                <pre><code> @wire(apexMethod, { apexMethodParams })</code></pre>
+                <pre><code> @wire(apexMethod, &#123; apexMethodParams &#125;)</code></pre>
                 <pre><code> function;</code></pre>
             </div>
             <ol>
@@ -274,7 +274,7 @@
 
             <div class="image-container">
                 <img
-                    src="https://raw.githubusercontent.com/karkranikhil/salesforcelightningweb/master/src/resources/images/apex/wireToFunction.png"
+                    src="./resources/images/apex/wireToFunction.png"
                     alt="builder wire to property"
                     width="100%"
                     height="auto"
@@ -288,9 +288,11 @@
             <h3>Call an Apex Method Imperatively</h3>
             <div class="snippetBox">
                 <pre><code>import apexMethod from '@salesforce/apex/Namespace.Classname.apexMethod';</code></pre>
-                <pre><code> apexMethod({apexMethodParams}).</code></pre>
-                <pre><code>then(result=>{}).</code></pre>
-                <pre><code>catch(error=>{})</code></pre>
+                <pre><code> apexMethod(&#123;apexMethodParams&#125;).then(result=>{</code></pre>
+                    <pre><code>// handle your data here</code></pre>
+                <pre><code>}).catch(error=>{</code></pre>
+                    <pre><code>// handle your error here</code></pre>
+                <pre><code>})</code></pre>
             </div>
             <ul>
                 <li>
@@ -431,7 +433,7 @@
 
             <div class="image-container">
                 <img
-                    src="https://raw.githubusercontent.com/karkranikhil/salesforcelightningweb/master/src/resources/images/apex/buttonApex.png"
+                    src="./resources/images/apex/buttonApex.png"
                     alt="click button to load accounts"
                     width="100%"
                     height="auto"
@@ -439,7 +441,7 @@
             </div>
             <div class="image-container">
                 <img
-                    src="https://raw.githubusercontent.com/karkranikhil/salesforcelightningweb/master/src/resources/images/apex/loadApex.png"
+                    src="./resources/images/apex/loadApex.png"
                     alt="loaded accounts"
                     width="100%"
                     height="auto"
