@@ -1,158 +1,202 @@
 <template>
-        <div class="fontSize-2rem margin-0 fontWeight-700">
-                Passing Markup into Slots
-        </div>
-        <p>Add a slot to a component’s HTML file so a parent component can pass markup into the component. A component can have zero or more slots.</p>
-        <p>A slot (<span class="code">&#x3C;slot&#x3E;&#x3C;/slot&#x3E;</span>) is a placeholder for markup that a parent component passes into a component’s body. Slots are part of the Web Component specification.</p>
+    <div class="fontSize-2rem margin-0 fontWeight-700">
+        Passing Markup into Slots
+    </div>
+    <p>
+        Add a slot to a component’s HTML file so a parent component can pass
+        markup into the component. A component can have zero or more slots.
+    </p>
+    <p>
+        A slot (<span class="code">&#x3C;slot&#x3E;&#x3C;/slot&#x3E;</span>) is
+        a placeholder for markup that a parent component passes into a
+        component’s body. Slots are part of the Web Component specification.
+    </p>
 
-        <p><strong>Note ** </strong> You can’t pass an Aura component into a slot.</p>
-        <h3>There are two types of slots</h3>
-        <ol>
-                <li>Unnamed Slots - If you have only one markup to pass down to child we use unnamed Slots.</li>
-                <li>Named Slots - If you have more then one markup to pass down to child we use Named Slots.</li>
-        </ol>
-        <div class="tab">
-                <button
-                        class={tabProperty.section1.className}
-                        name="section1"
-                        onclick={setTab}
-                >
-                        Unnamed slots
-                </button>
-                <button
-                        class={tabProperty.section2.className}
-                        name="section2"
-                        onclick={setTab}
-                >
-                        Named slots
-                </button>
-         </div>
-        <!--section 1-->
-        <template if:true={tabProperty.section1.selected}>
+    <p>
+        <strong>Note ** </strong> You can’t pass an Aura component into a slot.
+    </p>
+    <h3>There are two types of slots</h3>
+    <ol>
+        <li>
+            Unnamed Slots - If you have only one markup to pass down to child we
+            use unnamed Slots.
+        </li>
+        <li>
+            Named Slots - If you have more then one markup to pass down to child
+            we use Named Slots.
+        </li>
+    </ol>
+    <div class="tab">
+        <button
+            class={tabProperty.section1.className}
+            name="section1"
+            onclick={setTab}
+        >
+            Unnamed slots
+        </button>
+        <button
+            class={tabProperty.section2.className}
+            name="section2"
+            onclick={setTab}
+        >
+            Named slots
+        </button>
+    </div>
+    <!--section 1-->
+    <template if:true={tabProperty.section1.selected}>
         <div id="section1" class="tabcontent">
-                <h3>
+            <h3>
                 Unnamed slot demo
-                </h3>
-                <div class="output-card">
-                        <p>Output</p>
-                        <div class="output">
-                                <c-slot-parent-component unamed="true"></c-slot-parent-component>
-                        </div>
+            </h3>
+            <div class="output-card">
+                <p>Output</p>
+                <div class="output">
+                    <c-slot-parent-component
+                        unamed="true"
+                    ></c-slot-parent-component>
                 </div>
-                <h3>Explanation of code</h3>
-                <ul>    
-                        <li>This example has an unnamed slot.</li>
-                        <li>An unnamed slot is a placeholder for any markup that a parent component passes into the body of <span class="code">c-slot-child-component.</span></li>
-                        <li>When c-slot-child-component is rendered, the unnamed slot is replaced with the markup passed into the body of c-slot-child-component. </li>
-                        <li><strong>Note **</strong> If a component has more than one unnamed slot, the markup passed into the body of the component is inserted into all the unnamed slots. This UI pattern is unusual. A component usually has zero or one unnamed slot.
-                        </li>
-                </ul>
-                <h3>Code for above demo</h3>
-                <div>
+            </div>
+            <h3>Explanation of code</h3>
+            <ul>
+                <li>This example has an unnamed slot.</li>
+                <li>
+                    An unnamed slot is a placeholder for any markup that a
+                    parent component passes into the body of
+                    <span class="code">c-slot-child-component.</span>
+                </li>
+                <li>
+                    When c-slot-child-component is rendered, the unnamed slot is
+                    replaced with the markup passed into the body of
+                    c-slot-child-component.
+                </li>
+                <li>
+                    <strong>Note **</strong> If a component has more than one
+                    unnamed slot, the markup passed into the body of the
+                    component is inserted into all the unnamed slots. This UI
+                    pattern is unusual. A component usually has zero or one
+                    unnamed slot.
+                </li>
+            </ul>
+            <h3>Code for above demo</h3>
+            <div>
                 <ui-code-box
-                        code={parentHtml}
-                        file-name="slotParentComponent.html"
-                        class-name="language-markup"
+                    code={parentHtml}
+                    file-name="slotParentComponent.html"
+                    class-name="language-markup"
                 ></ui-code-box>
-                </div>
-                <div>
+            </div>
+            <div>
                 <ui-code-box
-                        code={parentJS}
-                        file-name="slotParentComponent.js"
-                        class-name="language-js"
+                    code={parentJS}
+                    file-name="slotParentComponent.js"
+                    class-name="language-js"
                 ></ui-code-box>
-                </div>
-                <div>
+            </div>
+            <div>
                 <ui-code-box
-                        code={parentcss}
-                        file-name="slotParentComponent.css"
-                        class-name="language-css"
+                    code={parentcss}
+                    file-name="slotParentComponent.css"
+                    class-name="language-css"
                 ></ui-code-box>
-                </div>
-                <div>
+            </div>
+            <div>
                 <ui-code-box
-                        code={childHTML}
-                        file-name="slotChildComponent.html"
-                        class-name="language-markup"
+                    code={childHTML}
+                    file-name="slotChildComponent.html"
+                    class-name="language-markup"
                 ></ui-code-box>
-                </div>
-                <div>
+            </div>
+            <div>
                 <ui-code-box
-                        code={childJS}
-                        file-name="slotChildComponent.js"
-                        class-name="language-js"
+                    code={childJS}
+                    file-name="slotChildComponent.js"
+                    class-name="language-js"
                 ></ui-code-box>
                 <ui-code-box
-                        code={childcss}
-                        file-name="slotChildComponent.css"
-                        class-name="language-css"
+                    code={childcss}
+                    file-name="slotChildComponent.css"
+                    class-name="language-css"
                 ></ui-code-box>
-                </div>
+            </div>
         </div>
-        </template>
-        <!--section 2-->
-        <template if:true={tabProperty.section2.selected}>
+    </template>
+    <!--section 2-->
+    <template if:true={tabProperty.section2.selected}>
         <div id="section2" class="tabcontent">
-                        <h3>
-                                        Named slot demo
-                                        </h3>
-                                        <div class="output-card">
-                                                <p>Output</p>
-                                                <div class="output">
-                                                        <c-slot-parent-component named="true"></c-slot-parent-component>
-                                                </div>
-                                        </div>
-                                        <h3>Explanation of code</h3>
-                                        <ul>
-                                                <li>This example has an two Named slot with name <span class="code">content1</span> & <span class="code">content2</span> one unnamed.</li>
-                                                <li>When c-slot-child-component is rendered, the named slot is replaced with respective name given by the markup passed into the body of c-slot-child-component.</li>
-                                                <li>In our case content1 and content2 replaced by the named slot and unnamed slot is replaced by unnamed slot content</li>
-                                                <li><strong>Note **</strong> If a component has more than one unnamed slot, the markup passed into the body of the component is inserted into all the unnamed slots. 
-                                                </li>
-                                        </ul>
-                                        <h3>Code for above demo</h3>
-                                        <div>
-                                        <ui-code-box
-                                                code={parentHtml1}
-                                                file-name="slotParentComponent.html"
-                                                class-name="language-markup"
-                                        ></ui-code-box>
-                                        </div>
-                                        <div>
-                                        <ui-code-box
-                                                code={parentJS1}
-                                                file-name="slotParentComponent.js"
-                                                class-name="language-js"
-                                        ></ui-code-box>
-                                        </div>
-                                        <div>
-                                        <ui-code-box
-                                                code={parentcss1}
-                                                file-name="slotParentComponent.css"
-                                                class-name="language-css"
-                                        ></ui-code-box>
-                                        </div>
-                                        <div>
-                                        <ui-code-box
-                                                code={childHTML1}
-                                                file-name="slotChildComponent.html"
-                                                class-name="language-markup"
-                                        ></ui-code-box>
-                                        </div>
-                                        <div>
-                                        <ui-code-box
-                                                code={childJS1}
-                                                file-name="slotChildComponent.js"
-                                                class-name="language-js"
-                                        ></ui-code-box>
-                                        <ui-code-box
-                                                code={childcss1}
-                                                file-name="slotChildComponent.css"
-                                                class-name="language-css"
-                                        ></ui-code-box>
-                                        </div>
-                                </div>
-  
-        </template>
-        
-</template> 
+            <h3>
+                Named slot demo
+            </h3>
+            <div class="output-card">
+                <p>Output</p>
+                <div class="output">
+                    <c-slot-parent-component
+                        named="true"
+                    ></c-slot-parent-component>
+                </div>
+            </div>
+            <h3>Explanation of code</h3>
+            <ul>
+                <li>
+                    This example has an two Named slot with name
+                    <span class="code">content1</span> &
+                    <span class="code">content2</span> one unnamed.
+                </li>
+                <li>
+                    When c-slot-child-component is rendered, the named slot is
+                    replaced with respective name given by the markup passed
+                    into the body of c-slot-child-component.
+                </li>
+                <li>
+                    In our case content1 and content2 replaced by the named slot
+                    and unnamed slot is replaced by unnamed slot content
+                </li>
+                <li>
+                    <strong>Note **</strong> If a component has more than one
+                    unnamed slot, the markup passed into the body of the
+                    component is inserted into all the unnamed slots.
+                </li>
+            </ul>
+            <h3>Code for above demo</h3>
+            <div>
+                <ui-code-box
+                    code={parentHtml1}
+                    file-name="slotParentComponent.html"
+                    class-name="language-markup"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={parentJS1}
+                    file-name="slotParentComponent.js"
+                    class-name="language-js"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={parentcss1}
+                    file-name="slotParentComponent.css"
+                    class-name="language-css"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={childHTML1}
+                    file-name="slotChildComponent.html"
+                    class-name="language-markup"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={childJS1}
+                    file-name="slotChildComponent.js"
+                    class-name="language-js"
+                ></ui-code-box>
+                <ui-code-box
+                    code={childcss1}
+                    file-name="slotChildComponent.css"
+                    class-name="language-css"
+                ></ui-code-box>
+            </div>
+        </div>
+    </template>
+</template>

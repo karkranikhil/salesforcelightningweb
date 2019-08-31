@@ -1,10 +1,10 @@
-export const chartsDemoCode={
-templateHTML:`<template>
+export const chartsDemoCode = {
+    templateHTML: `<template>
     <c-highcharts-child-component></c-highcharts-child-component>
 </template>`,
-templateJS:`import { LightningElement } from 'lwc';
+    templateJS: `import { LightningElement } from 'lwc';
 export default class HighchartsChildComponent extends LightningElement {}`,
-externalConfig:`export const barChartConfig = {
+    externalConfig: `export const barChartConfig = {
     /* chart type*/
     chart: {
         type: 'column'
@@ -144,7 +144,7 @@ export const pieChartConfig = {
             ]
         }]
   }`,
-templateHTML1:`<template>
+    templateHTML1: `<template>
 <div class="main-section">
     <div class="pie-section">
             <h3>Pie chart demo</h3>
@@ -166,7 +166,7 @@ templateHTML1:`<template>
     </div>
 </div>
 </template>`,
-templateJS1:`import { LightningElement } from 'lwc';
+    templateJS1: `import { LightningElement } from 'lwc';
 import {pieChartConfig, barChartConfig, donutConfigData} from './chartsConfig'
 export default class HighchartsChildComponent extends LightningElement {
 
@@ -200,7 +200,7 @@ export default class HighchartsChildComponent extends LightningElement {
     Highcharts.chart(donutCtx, this.donutConfigData);
 }
 }`,
-templateCSS1:`.main-section{
+    templateCSS1: `.main-section{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -215,4 +215,4 @@ templateCSS1:`.main-section{
      max-width: 100%;
       margin: 0 auto;
 }`
-}
+};
