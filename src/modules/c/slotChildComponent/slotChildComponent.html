@@ -1,0 +1,20 @@
+<template>
+    <template if:true={unamed}>
+    <div class="child-section">
+        <h4>I am a child component</h4>
+        <div>
+            <slot></slot>
+        </div>
+    </div>
+    </template>
+    <template if:true={named}>
+            <div class="child-section">
+            <h4>I am a child component</h4>
+            <div>
+                <slot name="content1"></slot>
+                <slot name="content2"></slot>
+                <slot></slot>
+            </div>
+        </div>
+    </template>
+</template>

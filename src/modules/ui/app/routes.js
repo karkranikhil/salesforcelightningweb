@@ -128,6 +128,13 @@ export const routesList = [
         selected: false
     },
     {
+        title: 'Passing Markup into Slots',
+        value: 'slotDemo',
+        url: 'pass-markup-into-slots-in-lightning-web-component',
+        classlist: '',
+        selected: false
+    },
+    {
         title: 'Salesforce DX CLI Cheat Sheet',
         value: 'cheatSheet',
         url: 'salesforce-dx-cli-cheat-cheet',
@@ -191,6 +198,9 @@ export const selectedRoute = {
     cheatSheet: {
         selected: false
     },
+    slotDemo: {
+        selected: false
+    },
 
     alldemos: {
         selected: false
@@ -212,6 +222,7 @@ export const urlList = [
     'component-to-component-communication-in-lightning-web-component',
     'lifecycle-hooks-in-lightning-web-component',
     'apex-service-call-in-lightning-web-component',
+    'pass-markup-into-slots-in-lightning-web-component',
     'salesforce-dx-cli-cheat-cheet',
     'salesforce-lightning-web-all-demo'
 ];
