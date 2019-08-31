@@ -135,6 +135,13 @@ export const routesList = [
         selected: false
     },
     {
+        title: 'Charts using JavaScript Library',
+        value: 'charts',
+        url: 'javaScript-charting-libraries-in-lightning-web-component',
+        classlist: '',
+        selected: false
+    },
+    {
         title: 'Salesforce DX CLI Cheat Sheet',
         value: 'cheatSheet',
         url: 'salesforce-dx-cli-cheat-cheet',
@@ -201,6 +208,9 @@ export const selectedRoute = {
     slotDemo: {
         selected: false
     },
+    charts: {
+        selected: false
+    },
 
     alldemos: {
         selected: false
@@ -223,6 +233,7 @@ export const urlList = [
     'lifecycle-hooks-in-lightning-web-component',
     'apex-service-call-in-lightning-web-component',
     'pass-markup-into-slots-in-lightning-web-component',
+    'javaScript-charting-libraries-in-lightning-web-component',
     'salesforce-dx-cli-cheat-cheet',
     'salesforce-lightning-web-all-demo'
 ];

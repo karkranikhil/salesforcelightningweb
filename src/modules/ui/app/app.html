@@ -64,7 +64,10 @@
                 <ui-apex-call></ui-apex-call>
             </template>
             <template if:true={selectedRoute.slotDemo.selected}>
-                    <ui-slot-demo></ui-slot-demo>
+                <ui-slot-demo></ui-slot-demo>
+            </template>
+            <template if:true={selectedRoute.charts.selected}>
+                    <ui-charts-demo></ui-charts-demo>
                 </template>
             <template if:true={selectedRoute.cheatSheet.selected}>
                 <ui-cheat-sheet></ui-cheat-sheet>

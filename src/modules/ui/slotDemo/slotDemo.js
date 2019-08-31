@@ -1,19 +1,42 @@
 import { LightningElement, track } from 'lwc';
-import {slotDemoCode} from './slotDemoCode'
+import { slotDemoCode } from './slotDemoCode';
 export default class SlotDemo extends LightningElement {
-
-    get parentHtml(){return slotDemoCode.parentHtml}
-    get parentJS(){return slotDemoCode.parentJS}
-    get parentcss(){return slotDemoCode.parentcss}
-    get childHTML(){return slotDemoCode.childHTML}
-    get childcss(){return slotDemoCode.childcss}
-    get childJS(){return slotDemoCode.childJS}
-    get parentHtml1(){return slotDemoCode.parentHtml1}
-    get parentJS1(){return slotDemoCode.parentJS1}
-    get parentcss1(){return slotDemoCode.parentcss1}
-    get childHTML1(){return slotDemoCode.childHTML1}
-    get childcss1(){return slotDemoCode.childcss1}
-    get childJS1(){return slotDemoCode.childJS1}
+    get parentHtml() {
+        return slotDemoCode.parentHtml;
+    }
+    get parentJS() {
+        return slotDemoCode.parentJS;
+    }
+    get parentcss() {
+        return slotDemoCode.parentcss;
+    }
+    get childHTML() {
+        return slotDemoCode.childHTML;
+    }
+    get childcss() {
+        return slotDemoCode.childcss;
+    }
+    get childJS() {
+        return slotDemoCode.childJS;
+    }
+    get parentHtml1() {
+        return slotDemoCode.parentHtml1;
+    }
+    get parentJS1() {
+        return slotDemoCode.parentJS1;
+    }
+    get parentcss1() {
+        return slotDemoCode.parentcss1;
+    }
+    get childHTML1() {
+        return slotDemoCode.childHTML1;
+    }
+    get childcss1() {
+        return slotDemoCode.childcss1;
+    }
+    get childJS1() {
+        return slotDemoCode.childJS1;
+    }
 
     @track tabProperty = {
         section1: {

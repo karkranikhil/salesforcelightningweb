@@ -1,20 +1,29 @@
 <template>
-        <template if:true={unamed}>
-    <div class="parent-section">
-        <h4>I am parent component</h4>
-        <c-slot-child-component unamed="true">
-            <h1>Content from parent component passing through slot</h1>
-        </c-slot-child-component>
-    </div>
+    <template if:true={unamed}>
+        <div class="parent-section">
+            <h4>I am parent component</h4>
+            <c-slot-child-component unamed="true">
+                <h1>Content from parent component passing through slot</h1>
+            </c-slot-child-component>
+        </div>
     </template>
     <template if:true={named}>
-            <div class="parent-section">
+        <div class="parent-section">
             <h4>I am parent component</h4>
             <c-slot-child-component named="true">
-                <p slot="content1">I am Content1 from parent component passing through <strong>named slot content1</strong></p>
-                <p slot="content2">I am Content2 from parent component passing through <strong>named slot content2</strong></p>
-                <p>I am Content3 from parent component passing through <strong>unnamed slot</strong></p>
+                <p slot="content1">
+                    I am Content1 from parent component passing through
+                    <strong>named slot content1</strong>
+                </p>
+                <p slot="content2">
+                    I am Content2 from parent component passing through
+                    <strong>named slot content2</strong>
+                </p>
+                <p>
+                    I am Content3 from parent component passing through
+                    <strong>unnamed slot</strong>
+                </p>
             </c-slot-child-component>
-            </div>
+        </div>
     </template>
 </template>

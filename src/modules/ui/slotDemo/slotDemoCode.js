@@ -1,5 +1,5 @@
 export const slotDemoCode = {
-    parentHtml:`<template>
+    parentHtml: `<template>
     <div class="parent-section">
         <h4>I am parent component</h4>
         <c-slot-child-component>
@@ -7,13 +7,13 @@ export const slotDemoCode = {
         </c-slot-child-component>
     </div>
 </template>`,
-parentJS:`import { LightningElement } from 'lwc';
+    parentJS: `import { LightningElement } from 'lwc';
 export default class SlotParentComponent extends LightningElement {}`,
-parentcss:`.parent-section{
+    parentcss: `.parent-section{
     border: 5px solid black;
     padding: 0 15px;
 }`,
-childHTML:`<template>
+    childHTML: `<template>
 <div class="child-section">
     <h4>I am a child component</h4>
     <div>
@@ -21,14 +21,14 @@ childHTML:`<template>
     </div>
 </div>
 </template>`,
-childJS:`import { LightningElement } from 'lwc';
+    childJS: `import { LightningElement } from 'lwc';
 export default class SlotChildomponent extends LightningElement {}`,
-childcss:`.child-section{
+    childcss: `.child-section{
     border: 5px solid red;
     margin-bottom: 1rem;
     padding: 1rem;
 }`,
-parentHtml1:`<template>
+    parentHtml1: `<template>
     <div class="parent-section">
     <h4>I am parent component</h4>
     <c-slot-child-component>
@@ -38,13 +38,13 @@ parentHtml1:`<template>
     </c-slot-child-component>
 </div>
 </template>`,
-parentJS1:`import { LightningElement } from 'lwc';
+    parentJS1: `import { LightningElement } from 'lwc';
 export default class SlotParentComponent extends LightningElement {}`,
-parentcss1:`.parent-section{
+    parentcss1: `.parent-section{
     border: 5px solid black;
     padding: 0 15px;
 }`,
-childHTML1:`<template>
+    childHTML1: `<template>
 <div class="child-section">
             <h4>I am a child component</h4>
             <div>
@@ -54,11 +54,11 @@ childHTML1:`<template>
             </div>
         </div>
 </template>`,
-childJS1:`import { LightningElement } from 'lwc';
+    childJS1: `import { LightningElement } from 'lwc';
 export default class SlotChildomponent extends LightningElement {}`,
-childcss1:`.child-section{
+    childcss1: `.child-section{
     border: 5px solid red;
     margin-bottom: 1rem;
     padding: 1rem;
 }`
-}
+};

@@ -1,0 +1,71 @@
+<template>
+        <div class="fontSize-2rem margin-0 fontWeight-700">
+             Charts using JavaScript Library Highcharts.js
+            </div>
+            <p>You can use third-party JavaScript charting libraries(d3, highcharts etc.) with Lightning web components for interactive charts and graphs.</p>
+            <p>Using JavaScript to manipulate the DOM isn’t recommended because the Lightning Web Components engine does it more efficiently. However, there are some third-party JavaScript libraries that take over the DOM.</p>
+            <p>When using these libraries, add <span class="code">lwc:dom="manual"</span> to any empty native HTML element that you want to manipulate with JavaScript. When the engine sees the directive, it preserves encapsulation. The owner of the component calls appendChild() on that element to manually insert the DOM.</p>
+            
+            <h3>Charts using highcharts Library</h3>
+            
+            <div class="output-card">
+                <p>Output</p>
+                <div class="output">
+                    <c-highcharts-parent-component></c-highcharts-parent-component>
+                </div>
+            </div>
+            <h3>Explanations</h3>
+            <ul>
+                <li>For this demo will use the <a href="https://www.highcharts.com/" target="_blank">highcharts</a> Library.</li>
+                <li>First Will create an empty container where we will load the highcharts </li>
+                <li>To each container will define the <span class="code">lwc:dom="manual"</span> directive that tells Lightning Web Components that the DOM in this element has been inserted manually.</li>
+                <li>First Will load the library under the renderedCallback hook </li>
+                <li>Second take the context of the container where you wanna load the highcharts</li>
+                <li>Lastly, use the <span class="code">Highcharts.chart</span> method with context and configuration based on the chart type </li>
+                <li>Here we are creating the three charts (pie, bar and donut) </li>
+            </ul>
+            <h4>Code</h4>
+            <div>
+                <ui-code-box
+                    code={templateHTML}
+                    file-name="highchartsParentComponent.html"
+                    class-name="language-markup"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={templateJS}
+                    file-name="highchartsParentComponent.js"
+                    class-name="language-js"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={templateHTML1}
+                    file-name="highchartsChildComponent.html"
+                    class-name="language-markup"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={templateJS1}
+                    file-name="highchartsChildComponent.js"
+                    class-name="language-js"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={externalConfig}
+                    file-name="chartsConfig.js"
+                    class-name="language-js"
+                ></ui-code-box>
+            </div>
+            <div>
+                <ui-code-box
+                    code={templateCSS1}
+                    file-name="highchartsChildComponent.css"
+                    class-name="language-css"
+                ></ui-code-box>
+            </div>
+
+</template>
