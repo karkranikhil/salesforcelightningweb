@@ -1,0 +1,189 @@
+<template>
+    <div class="fontSize-2rem margin-0 fontWeight-700">
+        Multiple worksheets in excel using LWC
+    </div>
+    <p>
+        Downloading the table data in Excel sheet is easy but downloading the
+        multiple table data in multiple worksheets of Excel is quite
+        challenging. To achive this in LWC we need to follow the following steps
+    </p>
+    <h3>1) Download the xlsx.js</h3>
+    <ul>
+        <li>
+            I have done some modification in the <strong>xlsx.js</strong> to
+            make it compatible with salesforce lightning. So, use the following
+            link and download the exact file.
+        </li>
+        <div class="snippetBox">
+            <a
+                href="src/modules/lib/xlsx.full.min.js"
+                download="xlsx.full.min.js"
+                >xlsx.full.min.js</a
+            >
+        </div>
+    </ul>
+    <h3>2) Add the xlsx.js to static resources</h3>
+    <ul>
+        <li>
+            Create a folder with name <strong>xlsx</strong> and put the file
+            <strong>xlsx.full.min.js</strong> in it. Zip the folder and upload
+            to the <i>Static resources</i> as shown below.
+        </li>
+        <img
+            src="./resources/images/xlsx/static_resource.png"
+            alt="static resource snapshot"
+            width="50%"
+            height="auto"
+            style="width: 50%;margin: 2rem;"
+        />
+    </ul>
+    <h3>3) Create lightning web component - <i>xlsxDemo</i></h3>
+    <p>
+        Create a LWC with name xlsxDemo and add the following code to the
+        xlsxDemo.js file.
+    </p>
+    <ul>
+        <li>
+            In the below code we have used the two apex method
+            <i>getContactLists</i> && <i>getAccountLists</i> to get the data
+            from contact and account table respectively.
+        </li>
+        <li>
+            Within the <i>connectedCallback</i> lifecycle hook we have called
+            the <i>getContactLists</i> && <i>getAccountLists</i> and using
+            promise resolved them.
+        </li>
+        <li>
+            We have strored the contact list headers in
+            <code class="code">this.contactHeader</code> and data in
+            <code class="code">this.contactData</code>
+        </li>
+        <li>
+            Similary,Store the account list headers in
+            <code class="code">this.accountHeader</code> and data in
+            <code class="code">this.accountData</code>
+        </li>
+        <li>
+            Using
+            <code class="code">this.xlsFormatter</code> method to create the
+            array of tables data and array of header. Also, using the<code
+                class="code"
+                >this.workSheetNameList</code
+            >
+            which contains the list of worksheet name.
+        </li>
+        <div>
+            <ui-code-box
+                code={xlsxDemoJS}
+                file-name="xlsxDemo.js (javascript)"
+                class-name="language-javascript"
+            ></ui-code-box>
+        </div>
+    </ul>
+    <p>Replace the following code in <strong>xlsxDemo.html</strong> file.</p>
+    <ul>
+        <li>
+            In <strong>xlsxDemo.html</strong> we are calling the xlsxMain
+            component. In <code class="code">c-xlsx-main</code> component we are
+            passing the <code class="code">xlsHeader</code>,
+            <code class="code">filename</code>,
+            <code class="code">workSheetNameList</code>and
+            <code class="code">xlsData</code> which is the header of the excel
+            sheet, name of the excel sheet, worksheet names and excel sheet data
+            respectively.
+        </li>
+        <li>
+            Created a download button on click of which downloading of excel
+            sheet will trigger
+        </li>
+        <li>
+            Created the Account and Contact table using
+            <code class="code">for:each</code> loop
+        </li>
+
+        <div>
+            <ui-code-box
+                code={xlsxDemoHTML}
+                file-name="xlsxDemo.html (template)"
+                class-name="language-html"
+            ></ui-code-box>
+        </div>
+    </ul>
+    <p>
+        Replace the following code in
+        <strong>xlsxDemo.js-meta.xml</strong> file.
+    </p>
+    <div>
+        <ui-code-box
+            code={xlsxDemoMeta}
+            file-name="xlsxDemo.js-meta.xml"
+            class-name="language-xml"
+        ></ui-code-box>
+    </div>
+
+    <h3>4) Create lightning web component - <i>xlsxMain</i></h3>
+    <p>
+        In this component we will write our logic for downloading the excel with
+        multiple worksheet.
+    </p>
+    <p>
+        In this component first will include the file
+        <i>xlsx.full.min.js</i> from the static resources
+    </p>
+    <p>
+        We have used the <i>loadScript</i> to upload the
+        <i>xlsx.full.min.js</i> to the component using the renderedCallback
+        lifecycle hook.
+    </p>
+    <p>
+        In this component we need replace <strong>xlsxMain.js</strong> code with
+        the following code rest all file remain as it is.
+    </p>
+    <p>
+        <code class="code">@api download</code> method get called once the
+        download button clicked on the screen.
+    </p>
+    <div>
+        <ui-code-box
+            code={xlsxMainJS}
+            file-name="xlsxDemo.js-meta.xml"
+            class-name="language-xml"
+        ></ui-code-box>
+    </div>
+
+    <h3>5) Run your code</h3>
+    <p>Deploy both the component to your org.</p>
+    <p>
+        Edit your page where you want to show this component and it will take
+        your to the app builder.
+    </p>
+    <p>
+        drag the xlsxDemo component listed under custom heading to the page and
+        save it
+    </p>
+    <p>Go to the page and you will see the following output</p>
+    <img
+        src="./resources/images/xlsx/example.png"
+        alt="Component on the salesforce org"
+        width="75%"
+        height="auto"
+        style="width: 75%;margin: 2rem;"
+    />
+
+    <h3>5) Download the excel sheet with muiltiple worksheet</h3>
+    <li>
+        Once you click on the download button, excel sheet with name
+        <i><b>nikhil_demo.xlsx</b></i> get's download
+    </li>
+    <li>If you open the excel sheet you will see the following output</li>
+    <img
+        src="./resources/images/xlsx/downloaded_sheet.png"
+        alt="downloaded xls sheet"
+        width="75%"
+        height="auto"
+        style="width: 75%;margin: 2rem;"
+    />
+
+    <li>Number 1 represents the file name</li>
+    <li>Number 2 represents the worksheets name</li>
+</template>

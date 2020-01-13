@@ -142,6 +142,13 @@ export const routesList = [
         selected: false
     },
     {
+        title: 'Multiple worksheets in excel using lwc',
+        value: 'xlsxDemo',
+        url: 'multiple-worksheets-in-excel-using-lwc',
+        classlist: '',
+        selected: false
+    },
+    {
         title: 'Salesforce DX CLI Cheat Sheet',
         value: 'cheatSheet',
         url: 'salesforce-dx-cli-cheat-cheet',
@@ -211,7 +218,9 @@ export const selectedRoute = {
     charts: {
         selected: false
     },
-
+    xlsxDemo: {
+        selected: false
+    },
     alldemos: {
         selected: false
     }
@@ -234,6 +243,7 @@ export const urlList = [
     'apex-service-call-in-lightning-web-component',
     'pass-markup-into-slots-in-lightning-web-component',
     'javaScript-charting-libraries-in-lightning-web-component',
+    'multiple-worksheets-in-excel-using-lwc',
     'salesforce-dx-cli-cheat-cheet',
     'salesforce-lightning-web-all-demo'
 ];
